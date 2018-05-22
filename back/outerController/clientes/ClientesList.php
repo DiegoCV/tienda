@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(°u° )/ Anarchy \( °u°)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    Podrías agradecernos con unos cuantos billetes _/(n.n)\_  \\
+//    M�s delgado  \\
 include_once realpath('../../innerController/ClientesController.php');
 
 $list=ClientesController::listAll();
@@ -22,4 +22,4 @@ foreach ($list as $obj => $Clientes) {
 }
 echo $rta;
 
-//That´s all folks!
+//That�s all folks!

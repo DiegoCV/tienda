@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(Â°uÂ° )/ Anarchy \( Â°uÂ°)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    They call me Mr. Espagueti  \\
+//    ¡Vaya! ¡Al fin harás algo mejor que una calculadora!  \\
 
 
 class Tienda {
@@ -99,4 +99,4 @@ class Tienda {
 
 
 }
-//ThatÂ´s all folks!
+//That´s all folks!

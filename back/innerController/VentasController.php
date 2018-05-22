@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(Â°uÂ° )/ Anarchy \( Â°uÂ°)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    Antes que me hubiera apasionado por mujer alguna, juguÃ© mi corazÃ³n al azar y me lo ganÃ³ la Violencia.  \\
+//    Para entender la recursividad, primero debes entender la recursividad  \\
 
 require_once realpath("../..").'\innerController\GlobalController.php';
 require_once realpath("../..").'\dao\interfaz\IFactoryDao.php';
@@ -17,22 +17,22 @@ require_once realpath("../..").'\dto\Vendedor.php';
 class VentasController {
 
   /**
-   * Para su comodidad, defina aquÃ­ el gestor de conexiÃ³n predilecto para esta entidad
-   * @return idGestor Devuelve el identificador del gestor de conexiÃ³n
+   * Para su comodidad, defina aquí el gestor de conexión predilecto para esta entidad
+   * @return idGestor Devuelve el identificador del gestor de conexión
    */
   private static function getGestorDefault(){
       return DEFAULT_GESTOR;
   }
   /**
-   * Para su comodidad, defina aquÃ­ el nombre de base de datos predilecto para esta entidad
+   * Para su comodidad, defina aquí el nombre de base de datos predilecto para esta entidad
    * @return dbName Devuelve el nombre de la base de datos a emplear
    */
   private static function getDataBaseDefault(){
       return DEFAULT_DBNAME;
   }
   /**
-   * Crea un objeto Ventas a partir de sus parÃ¡metros y lo guarda en base de datos.
-   * Puede recibir NullPointerException desde los mÃ©todos del Dao
+   * Crea un objeto Ventas a partir de sus parámetros y lo guarda en base de datos.
+   * Puede recibir NullPointerException desde los métodos del Dao
    * @param idVENTAS
    * @param iVA_VENTAS
    * @param iMPUESTOCONSUMO_VENTAS
@@ -58,7 +58,7 @@ class VentasController {
 
   /**
    * Selecciona un objeto Ventas de la base de datos a partir de su(s) llave(s) primaria(s).
-   * Puede recibir NullPointerException desde los mÃ©todos del Dao
+   * Puede recibir NullPointerException desde los métodos del Dao
    * @param idVENTAS
    * @param vENDEDOR_idVENDEDOR
    * @param vENDEDOR_TIENDA_idTIENDA
@@ -79,7 +79,7 @@ class VentasController {
 
   /**
    * Modifica los atributos de un objeto Ventas  ya existente en base de datos.
-   * Puede recibir NullPointerException desde los mÃ©todos del Dao
+   * Puede recibir NullPointerException desde los métodos del Dao
    * @param idVENTAS
    * @param iVA_VENTAS
    * @param iMPUESTOCONSUMO_VENTAS
@@ -101,7 +101,7 @@ class VentasController {
 
   /**
    * Elimina un objeto Ventas de la base de datos a partir de su(s) llave(s) primaria(s).
-   * Puede recibir NullPointerException desde los mÃ©todos del Dao
+   * Puede recibir NullPointerException desde los métodos del Dao
    * @param idVENTAS
    * @param vENDEDOR_idVENDEDOR
    * @param vENDEDOR_TIENDA_idTIENDA
@@ -120,7 +120,7 @@ class VentasController {
 
   /**
    * Lista todos los objetos Ventas de la base de datos.
-   * Puede recibir NullPointerException desde los mÃ©todos del Dao
+   * Puede recibir NullPointerException desde los métodos del Dao
    * @return $result Array con los objetos Ventas en base de datos o Null
    */
   public static function listAll(){
@@ -133,7 +133,7 @@ class VentasController {
 
   /**
    * Lista todos los objetos Ventas de la base de datos a partir de idVENTAS.
-   * Puede recibir NullPointerException desde los mÃ©todos del Dao
+   * Puede recibir NullPointerException desde los métodos del Dao
    * @param idVENTAS
    * @return $result Array con los objetos en base de datos o Null
    */
@@ -150,7 +150,7 @@ class VentasController {
 
   /**
    * Lista todos los objetos Ventas de la base de datos a partir de VENDEDOR_idVENDEDOR.
-   * Puede recibir NullPointerException desde los mÃ©todos del Dao
+   * Puede recibir NullPointerException desde los métodos del Dao
    * @param vENDEDOR_idVENDEDOR
    * @return $result Array con los objetos en base de datos o Null
    */
@@ -167,7 +167,7 @@ class VentasController {
 
   /**
    * Lista todos los objetos Ventas de la base de datos a partir de VENDEDOR_TIENDA_idTIENDA.
-   * Puede recibir NullPointerException desde los mÃ©todos del Dao
+   * Puede recibir NullPointerException desde los métodos del Dao
    * @param vENDEDOR_TIENDA_idTIENDA
    * @return $result Array con los objetos en base de datos o Null
    */
@@ -184,4 +184,4 @@ class VentasController {
 
 
 }
-//ThatÂ´s all folks!
+//That´s all folks!

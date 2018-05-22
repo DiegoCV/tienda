@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(°u° )/ Anarchy \( °u°)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    ¿Sabías que Anarchy se generó a sí mismo?  \\
+//    Bastar� decir que soy Juan Pablo Castel, el pintor que mat� a Mar�a Iribarne...  \\
 include_once realpath('../../innerController/Clientes_has_ventasController.php');
 
 $CLIENTES_idCLIENTES = $_POST['CLIENTES_idCLIENTES'];
@@ -14,4 +14,4 @@ $VENTAS_idVENTAS = $_POST['VENTAS_idVENTAS'];
 Clientes_has_ventasController::insert($CLIENTES_idCLIENTES, $CLIENTES_TIENDA_idTIENDA, $VENTAS_idVENTAS);
 echo "true";
 
-//That´s all folks!
+//That�s all folks!

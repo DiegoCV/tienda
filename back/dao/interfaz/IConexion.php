@@ -1,24 +1,24 @@
 <?php
 /*
               -------Creado por-------
-             \(Â°uÂ° )/ Anarchy \( Â°uÂ°)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    MÃ¡s delgado  \\
+//    En esto paso mis sábados en la noche ( ¬.¬)  \\
 
 interface IConexion {
 
     /**     
-     * Crea una conexiÃ³n si no se ha establecido antes; en caso contrario, devuelve la ya existente
+     * Crea una conexión si no se ha establecido antes; en caso contrario, devuelve la ya existente
      * @param dbName Nombre de la base de datos que se desea conectar.
-     * @return ConexiÃ³n a base de datos dependiente del gestor en uso
+     * @return Conexión a base de datos dependiente del gestor en uso
      */
      public function obtener($dbName);
      /**
-     * Cierra la conexiÃ³n a la base de datos
+     * Cierra la conexión a la base de datos
      */
      public function cerrar();
 
 }
-//ThatÂ´s all folks!
+//That´s all folks!

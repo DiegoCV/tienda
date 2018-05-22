@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(Â°uÂ° )/ Anarchy \( Â°uÂ°)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    Â¡Alza el puÃ±o y ven! Â¡En la hoguera hay de beber!  \\
+//    Cuenta la leyenda que si gritas 'Soy programador' las nenas caerán a tus pies  \\
 
 require_once realpath("../..").'\innerController\GlobalController.php';
 require_once realpath("../..").'\dao\interfaz\IFactoryDao.php';
@@ -19,22 +19,22 @@ require_once realpath("../..").'\dto\Proveedores.php';
 class ProductosController {
 
   /**
-   * Para su comodidad, defina aquÃ­ el gestor de conexiÃ³n predilecto para esta entidad
-   * @return idGestor Devuelve el identificador del gestor de conexiÃ³n
+   * Para su comodidad, defina aquí el gestor de conexión predilecto para esta entidad
+   * @return idGestor Devuelve el identificador del gestor de conexión
    */
   private static function getGestorDefault(){
       return DEFAULT_GESTOR;
   }
   /**
-   * Para su comodidad, defina aquÃ­ el nombre de base de datos predilecto para esta entidad
+   * Para su comodidad, defina aquí el nombre de base de datos predilecto para esta entidad
    * @return dbName Devuelve el nombre de la base de datos a emplear
    */
   private static function getDataBaseDefault(){
       return DEFAULT_DBNAME;
   }
   /**
-   * Crea un objeto Productos a partir de sus parÃ¡metros y lo guarda en base de datos.
-   * Puede recibir NullPointerException desde los mÃ©todos del Dao
+   * Crea un objeto Productos a partir de sus parámetros y lo guarda en base de datos.
+   * Puede recibir NullPointerException desde los métodos del Dao
    * @param idPRODUCTOS
    * @param nOMBRE_PRODUCTO
    * @param uNIDAD_PRODUCTO
@@ -74,7 +74,7 @@ class ProductosController {
 
   /**
    * Selecciona un objeto Productos de la base de datos a partir de su(s) llave(s) primaria(s).
-   * Puede recibir NullPointerException desde los mÃ©todos del Dao
+   * Puede recibir NullPointerException desde los métodos del Dao
    * @param idPRODUCTOS
    * @param tIENDA_idTIENDA
    * @param cATEGORIA_idCATEGORIA
@@ -99,7 +99,7 @@ class ProductosController {
 
   /**
    * Modifica los atributos de un objeto Productos  ya existente en base de datos.
-   * Puede recibir NullPointerException desde los mÃ©todos del Dao
+   * Puede recibir NullPointerException desde los métodos del Dao
    * @param idPRODUCTOS
    * @param nOMBRE_PRODUCTO
    * @param uNIDAD_PRODUCTO
@@ -133,7 +133,7 @@ class ProductosController {
 
   /**
    * Elimina un objeto Productos de la base de datos a partir de su(s) llave(s) primaria(s).
-   * Puede recibir NullPointerException desde los mÃ©todos del Dao
+   * Puede recibir NullPointerException desde los métodos del Dao
    * @param idPRODUCTOS
    * @param tIENDA_idTIENDA
    * @param cATEGORIA_idCATEGORIA
@@ -156,7 +156,7 @@ class ProductosController {
 
   /**
    * Lista todos los objetos Productos de la base de datos.
-   * Puede recibir NullPointerException desde los mÃ©todos del Dao
+   * Puede recibir NullPointerException desde los métodos del Dao
    * @return $result Array con los objetos Productos en base de datos o Null
    */
   public static function listAll(){
@@ -169,7 +169,7 @@ class ProductosController {
 
   /**
    * Lista todos los objetos Productos de la base de datos a partir de idPRODUCTOS.
-   * Puede recibir NullPointerException desde los mÃ©todos del Dao
+   * Puede recibir NullPointerException desde los métodos del Dao
    * @param idPRODUCTOS
    * @return $result Array con los objetos en base de datos o Null
    */
@@ -186,7 +186,7 @@ class ProductosController {
 
   /**
    * Lista todos los objetos Productos de la base de datos a partir de TIENDA_idTIENDA.
-   * Puede recibir NullPointerException desde los mÃ©todos del Dao
+   * Puede recibir NullPointerException desde los métodos del Dao
    * @param tIENDA_idTIENDA
    * @return $result Array con los objetos en base de datos o Null
    */
@@ -203,7 +203,7 @@ class ProductosController {
 
   /**
    * Lista todos los objetos Productos de la base de datos a partir de CATEGORIA_idCATEGORIA.
-   * Puede recibir NullPointerException desde los mÃ©todos del Dao
+   * Puede recibir NullPointerException desde los métodos del Dao
    * @param cATEGORIA_idCATEGORIA
    * @return $result Array con los objetos en base de datos o Null
    */
@@ -220,7 +220,7 @@ class ProductosController {
 
   /**
    * Lista todos los objetos Productos de la base de datos a partir de PROVEEDORES_idPROVEEDORES.
-   * Puede recibir NullPointerException desde los mÃ©todos del Dao
+   * Puede recibir NullPointerException desde los métodos del Dao
    * @param pROVEEDORES_idPROVEEDORES
    * @return $result Array con los objetos en base de datos o Null
    */
@@ -237,7 +237,7 @@ class ProductosController {
 
   /**
    * Lista todos los objetos Productos de la base de datos a partir de PROVEEDORES_TIENDA_idTIENDA.
-   * Puede recibir NullPointerException desde los mÃ©todos del Dao
+   * Puede recibir NullPointerException desde los métodos del Dao
    * @param pROVEEDORES_TIENDA_idTIENDA
    * @return $result Array con los objetos en base de datos o Null
    */
@@ -254,4 +254,4 @@ class ProductosController {
 
 
 }
-//ThatÂ´s all folks!
+//That´s all folks!

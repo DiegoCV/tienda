@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(°u° )/ Anarchy \( °u°)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    ¡Oh! (°o° ) ¡es Fredy Arciniegas, el intelectualoide millonario!  \\
+//    Para entender la recursividad, primero debes entender la recursividad  \\
 include_once realpath('../../innerController/VendedorController.php');
 
 $idVENDEDOR = $_POST['idVENDEDOR'];
@@ -13,4 +13,4 @@ $TIENDA_idTIENDA = $_POST['TIENDA_idTIENDA'];
 VendedorController::insert($idVENDEDOR, $TIENDA_idTIENDA);
 echo "true";
 
-//That´s all folks!
+//That�s all folks!

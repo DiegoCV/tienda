@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(Â°uÂ° )/ Anarchy \( Â°uÂ°)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    MÃ¡talos a todos, y que dios elija  \\
+//    Antes que me hubiera apasionado por mujer alguna, jugué mi corazón al azar y me lo ganó la Violencia.  \\
 include_once realpath('../..').'\dao\interfaz\IConexion.php';
 
 class Conexion implements IConexion{
@@ -33,9 +33,9 @@ class Conexion implements IConexion{
            }           
     }
     /**     
-     * Crea una conexiÃ³n si no se ha establecido antes; en caso contrario, devuelve la ya existente
-     * Toma los parÃ¡metros de conexiÃ³n de la clase Properties y usa el driver mysql.jdbc para establecer una conexiÃ³n. 
-     * @return ConexiÃ³n a base de datos mySql
+     * Crea una conexión si no se ha establecido antes; en caso contrario, devuelve la ya existente
+     * Toma los parámetros de conexión de la clase Properties y usa el driver mysql.jdbc para establecer una conexión. 
+     * @return Conexión a base de datos mySql
      * @param dbName Nombre de la base de datos que se desea conectar     */
    public function obtener($dbName){
       if ($this->cnx == null) {
@@ -53,7 +53,7 @@ class Conexion implements IConexion{
    }
 
      /**
-     * Cierra la conexiÃ³n a la base de datos
+     * Cierra la conexión a la base de datos
      * @throws SQLException
      */
    public function cerrar(){
@@ -63,4 +63,4 @@ class Conexion implements IConexion{
    }
 
 }
-//ThatÂ´s all folks!
+//That´s all folks!

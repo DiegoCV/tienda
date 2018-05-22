@@ -1,20 +1,20 @@
 <?php
 /*
               -------Creado por-------
-             \(°u° )/ Anarchy \( °u°)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    ...Y como plato principal: ¡Código espagueti!  \\
-    require_once realpath("..").'\dao\factory\FactoryDao.php';
+//    La noche est� estrellada, y tiritan, azules, los astros, a lo lejos  \\
+    require_once realpath("../..").'\dao\factory\FactoryDao.php';
 
 /**
-   * Para su comodidad, defina aquí el gestor de conexión predilecto para su proyecto
+   * Para su comodidad, defina aqu� el gestor de conexi�n predilecto para su proyecto
    */
-    define("DEFAULT_GESTOR", FactoryDao::$NULL_GESTOR);
+    define("DEFAULT_GESTOR", FactoryDao::$MYSQL_FACTORY);
   /**
-   * Para su comodidad, defina aquí el nombre de base de datos predilecto para su proyecto
+   * Para su comodidad, defina aqu� el nombre de base de datos predilecto para su proyecto
    */    
-    define("DEFAULT_DBNAME", "dbName");
+    define("DEFAULT_DBNAME", "tienda");
 
-//That´s all folks!
+//That�s all folks!

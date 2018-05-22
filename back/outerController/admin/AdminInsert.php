@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(°u° )/ Anarchy \( °u°)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    ¿Eres capaz de hackear mi Facebook?  \\
+//    M�s delgado  \\
 include_once realpath('../../innerController/AdminController.php');
 
 $idADMIN = $_POST['idADMIN'];
@@ -19,4 +19,4 @@ $TIENDA_idTIENDA = $_POST['TIENDA_idTIENDA'];
 AdminController::insert($idADMIN, $NOMBRE, $APELLIDO, $PASS_ADMIN, $DIRECCION, $FECHANACIMIENTO, $FECHAINGRESO, $TIENDA_idTIENDA);
 echo "true";
 
-//That´s all folks!
+//That�s all folks!

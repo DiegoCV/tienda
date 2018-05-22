@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(¬∞u¬∞ )/ Anarchy \( ¬∞u¬∞)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    ¬øSab√≠as que hay una vida afuera de tu cuarto?  \\
+//    °Muerte a todos los humanos!  \\
 
 include_once realpath('../..').'\dao\interfaz\IAdminDao.php';
 include_once realpath('../..').'\dto\Admin.php';
@@ -16,7 +16,7 @@ class AdminDao implements IAdminDao{
 private $cn;
 
     /**
-     * Inicializa una √∫nica conexi√≥n a la base de datos, que se usar√° para cada consulta.
+     * Inicializa una ˙nica conexiÛn a la base de datos, que se usar· para cada consulta.
      */
     function __construct($conexion) {
             $this->cn =$conexion;
@@ -83,7 +83,7 @@ $tIENDA_idTIENDA=$admin->getTIENDA_idTIENDA()->getIdTIENDA();
 
     /**
      * Modifica un objeto Admin en la base de datos.
-     * @param admin objeto con la informaci√≥n a modificar
+     * @param admin objeto con la informaciÛn a modificar
      * @return  Valor de la llave primaria 
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
@@ -125,7 +125,7 @@ $tIENDA_idTIENDA=$admin->getTIENDA_idTIENDA()->getIdTIENDA();
 
     /**
      * Busca un objeto Admin en la base de datos.
-     * @return ArrayList<Admin> Puede contener los objetos consultados o estar vac√≠o
+     * @return ArrayList<Admin> Puede contener los objetos consultados o estar vacÌo
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function listAll(){
@@ -160,7 +160,7 @@ $tIENDA_idTIENDA=$admin->getTIENDA_idTIENDA()->getIdTIENDA();
     /**
      * Busca un objeto Admin en la base de datos.
      * @param admin objeto con la(s) llave(s) primaria(s) para consultar
-     * @return ArrayList<Admin> Puede contener los objetos consultados o estar vac√≠o
+     * @return ArrayList<Admin> Puede contener los objetos consultados o estar vacÌo
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function listByIdADMIN($admin){
@@ -196,7 +196,7 @@ $tIENDA_idTIENDA=$admin->getTIENDA_idTIENDA()->getIdTIENDA();
     /**
      * Busca un objeto Admin en la base de datos.
      * @param admin objeto con la(s) llave(s) primaria(s) para consultar
-     * @return ArrayList<Admin> Puede contener los objetos consultados o estar vac√≠o
+     * @return ArrayList<Admin> Puede contener los objetos consultados o estar vacÌo
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function listByTIENDA_idTIENDA($admin){
@@ -231,7 +231,7 @@ $tIENDA_idTIENDA=$admin->getTIENDA_idTIENDA()->getIdTIENDA();
 
     /**
      * Busca un objeto Admin en la base de datos.
-     * @param admin objeto con los atributos de inicio de sesi√≥n
+     * @param admin objeto con los atributos de inicio de sesiÛn
      * @return El objeto consultado o null
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
@@ -281,10 +281,10 @@ $pASS_ADMIN=$admin->getPASS_ADMIN();
           return $data;
     }
     /**
-     * Cierra la conexi√≥n actual a la base de datos
+     * Cierra la conexiÛn actual a la base de datos
      */
   public function close(){
       $cn=null;
   }
 }
-//That¬¥s all folks!
+//That¥s all folks!

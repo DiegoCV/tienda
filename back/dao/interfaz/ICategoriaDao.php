@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(°u° )/ Anarchy \( °u°)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    Te veeeeeooooo  \\
+//    404 Frase no encontrada  \\
 
 
 interface ICategoriaDao {
@@ -18,7 +18,7 @@ interface ICategoriaDao {
   public function insert($categoria);
     /**
      * Modifica un objeto Categoria en la base de datos.
-     * @param categoria objeto con la información a modificar
+     * @param categoria objeto con la informaci�n a modificar
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function update($categoria);
@@ -37,13 +37,13 @@ interface ICategoriaDao {
   public function select($categoria);
     /**
      * Lista todos los objetos Categoria en la base de datos.
-     * @return Array<Categoria> Puede contener los objetos consultados o estar vacío
+     * @return Array<Categoria> Puede contener los objetos consultados o estar vac�o
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function listAll();
     /**
-     * Cierra la conexión actual a la base de datos
+     * Cierra la conexi�n actual a la base de datos
      */
   public function close();
 }
-//That´s all folks!
+//That�s all folks!

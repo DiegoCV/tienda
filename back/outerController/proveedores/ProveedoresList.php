@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(°u° )/ Anarchy \( °u°)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    Todos los animales son iguales, pero algunos animales son más iguales que otros  \\
+//    Ojos de perro azul  \\
 include_once realpath('../../innerController/ProveedoresController.php');
 
 $list=ProveedoresController::listAll();
@@ -22,4 +22,4 @@ foreach ($list as $obj => $Proveedores) {
 }
 echo $rta;
 
-//That´s all folks!
+//That�s all folks!

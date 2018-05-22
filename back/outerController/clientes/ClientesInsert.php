@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(Â°uÂ° )/ Anarchy \( Â°uÂ°)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    Â¡Anarchy! Apoyando la vagancia desde 2017  \\
+//    -¡UNO! -¡¡ +4 !!  \\
 include_once realpath('../../innerController/ClientesController.php');
 
 $idCLIENTES = $_POST['idCLIENTES'];
@@ -17,4 +17,4 @@ $TIENDA_idTIENDA = $_POST['TIENDA_idTIENDA'];
 ClientesController::insert($idCLIENTES, $NOMBRE_CLIENTES, $DIRECCION_CLIENTES, $FECHANACIMIENTO_CLIENTES, $EMAIL_CLIENTES, $TIENDA_idTIENDA);
 echo "true";
 
-//ThatÂ´s all folks!
+//That´s all folks!

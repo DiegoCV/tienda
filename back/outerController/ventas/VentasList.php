@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(°u° )/ Anarchy \( °u°)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    ¿Sabías que Anarchy se generó a sí mismo?  \\
+//    �Anarchy! Apoyando la vagancia desde 2017  \\
 include_once realpath('../../innerController/VentasController.php');
 
 $list=VentasController::listAll();
@@ -24,4 +24,4 @@ foreach ($list as $obj => $Ventas) {
 }
 echo $rta;
 
-//That´s all folks!
+//That�s all folks!

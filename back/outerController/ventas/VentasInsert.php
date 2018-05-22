@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(°u° )/ Anarchy \( °u°)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    ...Y como plato principal: ¡Código espagueti!  \\
+//    Oh gloria de las glorias, oh divino testamento de la eterna majestad de la creaci�n de dios  \\
 include_once realpath('../../innerController/VentasController.php');
 
 $idVENTAS = $_POST['idVENTAS'];
@@ -17,4 +17,4 @@ $VENDEDOR_TIENDA_idTIENDA = $_POST['VENDEDOR_TIENDA_idTIENDA'];
 VentasController::insert($idVENTAS, $IVA_VENTAS, $IMPUESTOCONSUMO_VENTAS, $FECHACOMPRA_VENTAS, $VENDEDOR_idVENDEDOR, $VENDEDOR_TIENDA_idTIENDA);
 echo "true";
 
-//That´s all folks!
+//That�s all folks!

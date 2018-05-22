@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(Â°uÂ° )/ Anarchy \( Â°uÂ°)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    Nuestra empresa cuenta con una divisiÃ³n sÃ³lo para las frases. DisfrÃºtalas  \\
+//    Los animales, asombrados, pasaron su mirada del cerdo al hombre, y del hombre al cerdo; y, nuevamente, del cerdo al hombre; pero ya era imposible distinguir quién era uno y quién era otro.  \\
 
 include_once realpath('../..').'\dao\interfaz\ICategoriaDao.php';
 include_once realpath('../..').'\dto\Categoria.php';
@@ -15,7 +15,7 @@ class CategoriaDao implements ICategoriaDao{
 private $cn;
 
     /**
-     * Inicializa una Ãºnica conexiÃ³n a la base de datos, que se usarÃ¡ para cada consulta.
+     * Inicializa una única conexión a la base de datos, que se usará para cada consulta.
      */
     function __construct($conexion) {
             $this->cn =$conexion;
@@ -67,7 +67,7 @@ $dESCRIPCION=$categoria->getDESCRIPCION();
 
     /**
      * Modifica un objeto Categoria en la base de datos.
-     * @param categoria objeto con la informaciÃ³n a modificar
+     * @param categoria objeto con la información a modificar
      * @return  Valor de la llave primaria 
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
@@ -102,7 +102,7 @@ $dESCRIPCION=$categoria->getDESCRIPCION();
 
     /**
      * Busca un objeto Categoria en la base de datos.
-     * @return ArrayList<Categoria> Puede contener los objetos consultados o estar vacÃ­o
+     * @return ArrayList<Categoria> Puede contener los objetos consultados o estar vacío
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function listAll(){
@@ -142,10 +142,10 @@ $dESCRIPCION=$categoria->getDESCRIPCION();
           return $data;
     }
     /**
-     * Cierra la conexiÃ³n actual a la base de datos
+     * Cierra la conexión actual a la base de datos
      */
   public function close(){
       $cn=null;
   }
 }
-//ThatÂ´s all folks!
+//That´s all folks!

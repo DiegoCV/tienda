@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(Â°uÂ° )/ Anarchy \( Â°uÂ°)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    No es una cola ni es una pila, es tu proyecto que no compila  \\
+//    Un generador de código no basta. Ahora debo inventar también un generador de frases tontas  \\
 
 
 class Admin {
@@ -147,4 +147,4 @@ class Admin {
 
 
 }
-//ThatÂ´s all folks!
+//That´s all folks!

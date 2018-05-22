@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(°u° )/ Anarchy \( °u°)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    Ahora con 25% menos groserías  \\
+//    Si crees que las mujeres son dif�ciles, no conoces Anarchy  \\
 include_once realpath('../../innerController/ProveedoresController.php');
 
 $idPROVEEDORES = $_POST['idPROVEEDORES'];
@@ -17,4 +17,4 @@ $TIENDA_idTIENDA = $_POST['TIENDA_idTIENDA'];
 ProveedoresController::insert($idPROVEEDORES, $NOMBREEMPRESA_PROVEEDORES, $NOMBREEMPLEADO_PROVEEDORES, $DESCUENTO_PROVEEDOR, $FECHAINGRESO_PROVEEDORES, $TIENDA_idTIENDA);
 echo "true";
 
-//That´s all folks!
+//That�s all folks!

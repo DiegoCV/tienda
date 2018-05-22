@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(°u° )/ Anarchy \( °u°)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    -¡UNO! -¡¡ +4 !!  \\
+//    They call me Mr. Espagueti  \\
 
 
 class Clientes {
@@ -115,4 +115,4 @@ class Clientes {
 
 
 }
-//That´s all folks!
+//That�s all folks!

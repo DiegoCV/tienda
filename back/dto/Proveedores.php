@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(°u° )/ Anarchy \( °u°)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    404 Frase no encontrada  \\
+//    �Cuantas frases como esta crees que puedo escribir?  \\
 
 
 class Proveedores {
@@ -115,4 +115,4 @@ class Proveedores {
 
 
 }
-//That´s all folks!
+//That�s all folks!

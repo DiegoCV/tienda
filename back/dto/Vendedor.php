@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(°u° )/ Anarchy \( °u°)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    Cuando uses Anarchy, Georgie, tú también flotarás  \\
+//    Bueno �y ahora qu�?  \\
 
 
 class Vendedor {
@@ -51,4 +51,4 @@ class Vendedor {
 
 
 }
-//That´s all folks!
+//That�s all folks!

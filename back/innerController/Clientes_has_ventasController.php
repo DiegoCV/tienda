@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(Â°uÂ° )/ Anarchy \( Â°uÂ°)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    La noche estÃ¡ estrellada, y tiritan, azules, los astros, a lo lejos  \\
+//    Ya no la quiero, es cierto, pero tal vez la quiero. Es tan corto el amor, y es tan largo el olvido.  \\
 
 require_once realpath("../..").'\innerController\GlobalController.php';
 require_once realpath("../..").'\dao\interfaz\IFactoryDao.php';
@@ -18,22 +18,22 @@ require_once realpath("../..").'\dto\Ventas.php';
 class Clientes_has_ventasController {
 
   /**
-   * Para su comodidad, defina aquÃ­ el gestor de conexiÃ³n predilecto para esta entidad
-   * @return idGestor Devuelve el identificador del gestor de conexiÃ³n
+   * Para su comodidad, defina aquí el gestor de conexión predilecto para esta entidad
+   * @return idGestor Devuelve el identificador del gestor de conexión
    */
   private static function getGestorDefault(){
       return DEFAULT_GESTOR;
   }
   /**
-   * Para su comodidad, defina aquÃ­ el nombre de base de datos predilecto para esta entidad
+   * Para su comodidad, defina aquí el nombre de base de datos predilecto para esta entidad
    * @return dbName Devuelve el nombre de la base de datos a emplear
    */
   private static function getDataBaseDefault(){
       return DEFAULT_DBNAME;
   }
   /**
-   * Crea un objeto Clientes_has_ventas a partir de sus parÃ¡metros y lo guarda en base de datos.
-   * Puede recibir NullPointerException desde los mÃ©todos del Dao
+   * Crea un objeto Clientes_has_ventas a partir de sus parámetros y lo guarda en base de datos.
+   * Puede recibir NullPointerException desde los métodos del Dao
    * @param cLIENTES_idCLIENTES
    * @param cLIENTES_TIENDA_idTIENDA
    * @param vENTAS_idVENTAS
@@ -53,7 +53,7 @@ class Clientes_has_ventasController {
 
   /**
    * Selecciona un objeto Clientes_has_ventas de la base de datos a partir de su(s) llave(s) primaria(s).
-   * Puede recibir NullPointerException desde los mÃ©todos del Dao
+   * Puede recibir NullPointerException desde los métodos del Dao
    * @param cLIENTES_idCLIENTES
    * @param cLIENTES_TIENDA_idTIENDA
    * @param vENTAS_idVENTAS
@@ -74,7 +74,7 @@ class Clientes_has_ventasController {
 
   /**
    * Modifica los atributos de un objeto Clientes_has_ventas  ya existente en base de datos.
-   * Puede recibir NullPointerException desde los mÃ©todos del Dao
+   * Puede recibir NullPointerException desde los métodos del Dao
    * @param cLIENTES_idCLIENTES
    * @param cLIENTES_TIENDA_idTIENDA
    * @param vENTAS_idVENTAS
@@ -90,7 +90,7 @@ class Clientes_has_ventasController {
 
   /**
    * Elimina un objeto Clientes_has_ventas de la base de datos a partir de su(s) llave(s) primaria(s).
-   * Puede recibir NullPointerException desde los mÃ©todos del Dao
+   * Puede recibir NullPointerException desde los métodos del Dao
    * @param cLIENTES_idCLIENTES
    * @param cLIENTES_TIENDA_idTIENDA
    * @param vENTAS_idVENTAS
@@ -109,7 +109,7 @@ class Clientes_has_ventasController {
 
   /**
    * Lista todos los objetos Clientes_has_ventas de la base de datos.
-   * Puede recibir NullPointerException desde los mÃ©todos del Dao
+   * Puede recibir NullPointerException desde los métodos del Dao
    * @return $result Array con los objetos Clientes_has_ventas en base de datos o Null
    */
   public static function listAll(){
@@ -122,7 +122,7 @@ class Clientes_has_ventasController {
 
   /**
    * Lista todos los objetos Clientes_has_ventas de la base de datos a partir de CLIENTES_idCLIENTES.
-   * Puede recibir NullPointerException desde los mÃ©todos del Dao
+   * Puede recibir NullPointerException desde los métodos del Dao
    * @param cLIENTES_idCLIENTES
    * @return $result Array con los objetos en base de datos o Null
    */
@@ -139,7 +139,7 @@ class Clientes_has_ventasController {
 
   /**
    * Lista todos los objetos Clientes_has_ventas de la base de datos a partir de CLIENTES_TIENDA_idTIENDA.
-   * Puede recibir NullPointerException desde los mÃ©todos del Dao
+   * Puede recibir NullPointerException desde los métodos del Dao
    * @param cLIENTES_TIENDA_idTIENDA
    * @return $result Array con los objetos en base de datos o Null
    */
@@ -156,7 +156,7 @@ class Clientes_has_ventasController {
 
   /**
    * Lista todos los objetos Clientes_has_ventas de la base de datos a partir de VENTAS_idVENTAS.
-   * Puede recibir NullPointerException desde los mÃ©todos del Dao
+   * Puede recibir NullPointerException desde los métodos del Dao
    * @param vENTAS_idVENTAS
    * @return $result Array con los objetos en base de datos o Null
    */
@@ -173,4 +173,4 @@ class Clientes_has_ventasController {
 
 
 }
-//ThatÂ´s all folks!
+//That´s all folks!

@@ -1,10 +1,10 @@
 /*
               -------Creado por-------
-             \(°u° )/ Anarchy \( °u°)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    Pero el ruiseñor no respondió; yacía muerto sobre las altas hierbas, con el corazón traspasado de espinas.  \\
+//    Has encontrado la frase #1024 �Felicidades! Ahora tu proyecto funcionar� a la primera  \\
         var READY_STATE_UNINITIALIZED=0; 
         var READY_STATE_LOADING=1; 
         var READY_STATE_LOADED=2;
@@ -50,4 +50,4 @@
      });    
     }
 
-//That´s all folks!
+//That�s all folks!

@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(°u° )/ Anarchy \( °u°)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    Era más fácil crear un framework que aprender a usar uno existente  \\
+//    Qu�date con quien te quiera por tu back-end, no por tu front-end  \\
 include_once realpath('../../innerController/ProductosController.php');
 
 $idPRODUCTOS = $_POST['idPRODUCTOS'];
@@ -24,4 +24,4 @@ $PROVEEDORES_TIENDA_idTIENDA = $_POST['PROVEEDORES_TIENDA_idTIENDA'];
 ProductosController::insert($idPRODUCTOS, $NOMBRE_PRODUCTO, $UNIDAD_PRODUCTO, $COSTO_PRODUCTO, $PRECIOVENTA_PRODUCTO, $VALORMINIMO_PRODUCTO, $FECHAINGRESO_PRODUCTO, $CATEGORIA_PRODUCTO, $FECHAVENCIMIENTO_PRODUCTO, $TIENDA_idTIENDA, $CATEGORIA_idCATEGORIA, $PROVEEDORES_idPROVEEDORES, $PROVEEDORES_TIENDA_idTIENDA);
 echo "true";
 
-//That´s all folks!
+//That�s all folks!

@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(Â°uÂ° )/ Anarchy \( Â°uÂ°)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    En esto paso mis sÃ¡bados en la noche ( Â¬.Â¬)  \\
+//    Alguna vez Anarchy se llamó Molotov ( u.u) *Nostalgia  \\
 
 
 interface IVendedorDao {
@@ -18,7 +18,7 @@ interface IVendedorDao {
   public function insert($vendedor);
     /**
      * Modifica un objeto Vendedor en la base de datos.
-     * @param vendedor objeto con la informaciÃ³n a modificar
+     * @param vendedor objeto con la información a modificar
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function update($vendedor);
@@ -37,27 +37,27 @@ interface IVendedorDao {
   public function select($vendedor);
     /**
      * Lista todos los objetos Vendedor en la base de datos.
-     * @return Array<Vendedor> Puede contener los objetos consultados o estar vacÃ­o
+     * @return Array<Vendedor> Puede contener los objetos consultados o estar vacío
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function listAll();
     /**
      * Lista todos los objetos Vendedor en la base de datos que coincidan con la llave primaria.
      * @param vendedor objeto con la(s) llave(s) primaria(s) para consultar
-     * @return Array<Vendedor> Puede contener los objetos consultados o estar vacÃ­o
+     * @return Array<Vendedor> Puede contener los objetos consultados o estar vacío
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function listByIdVENDEDOR($vendedor);
     /**
      * Lista todos los objetos Vendedor en la base de datos que coincidan con la llave primaria.
      * @param vendedor objeto con la(s) llave(s) primaria(s) para consultar
-     * @return Array<Vendedor> Puede contener los objetos consultados o estar vacÃ­o
+     * @return Array<Vendedor> Puede contener los objetos consultados o estar vacío
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function listByTIENDA_idTIENDA($vendedor);
     /**
-     * Cierra la conexiÃ³n actual a la base de datos
+     * Cierra la conexión actual a la base de datos
      */
   public function close();
 }
-//ThatÂ´s all folks!
+//That´s all folks!

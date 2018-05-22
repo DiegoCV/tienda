@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(°u° )/ Anarchy \( °u°)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    Esta es una frase de prueba ¿Quieres ver la de verdad? ( ͡~ ͜ʖ ͡°)  \\
+//    Un tequila, antes de que empiecen los trancazos  \\
 include_once realpath('../../innerController/AdminController.php');
 
 $list=AdminController::listAll();
@@ -24,4 +24,4 @@ foreach ($list as $obj => $Admin) {
 }
 echo $rta;
 
-//That´s all folks!
+//That�s all folks!

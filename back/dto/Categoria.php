@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(°u° )/ Anarchy \( °u°)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    No hay de qué so no más de papa  \\
+//    �No es m�s sencillo hacer todo en el Main?  \\
 
 
 class Categoria {
@@ -51,4 +51,4 @@ class Categoria {
 
 
 }
-//That´s all folks!
+//That�s all folks!

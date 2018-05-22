@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(Â°uÂ° )/ Anarchy \( Â°uÂ°)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    Si crees que las mujeres son difÃ­ciles, no conoces Anarchy  \\
+//    Antes que me hubiera apasionado por mujer alguna, jugué mi corazón al azar y me lo ganó la Violencia.  \\
 
 require_once realpath("../..").'\innerController\GlobalController.php';
 require_once realpath("../..").'\dao\interfaz\IFactoryDao.php';
@@ -15,22 +15,22 @@ require_once realpath("../..").'\dao\interfaz\ITiendaDao.php';
 class TiendaController {
 
   /**
-   * Para su comodidad, defina aquÃ­ el gestor de conexiÃ³n predilecto para esta entidad
-   * @return idGestor Devuelve el identificador del gestor de conexiÃ³n
+   * Para su comodidad, defina aquí el gestor de conexión predilecto para esta entidad
+   * @return idGestor Devuelve el identificador del gestor de conexión
    */
   private static function getGestorDefault(){
       return DEFAULT_GESTOR;
   }
   /**
-   * Para su comodidad, defina aquÃ­ el nombre de base de datos predilecto para esta entidad
+   * Para su comodidad, defina aquí el nombre de base de datos predilecto para esta entidad
    * @return dbName Devuelve el nombre de la base de datos a emplear
    */
   private static function getDataBaseDefault(){
       return DEFAULT_DBNAME;
   }
   /**
-   * Crea un objeto Tienda a partir de sus parÃ¡metros y lo guarda en base de datos.
-   * Puede recibir NullPointerException desde los mÃ©todos del Dao
+   * Crea un objeto Tienda a partir de sus parámetros y lo guarda en base de datos.
+   * Puede recibir NullPointerException desde los métodos del Dao
    * @param idTIENDA
    * @param nOMBRE_TIENDA
    * @param dIERECCION_TIENDA
@@ -54,7 +54,7 @@ class TiendaController {
 
   /**
    * Selecciona un objeto Tienda de la base de datos a partir de su(s) llave(s) primaria(s).
-   * Puede recibir NullPointerException desde los mÃ©todos del Dao
+   * Puede recibir NullPointerException desde los métodos del Dao
    * @param idTIENDA
    * @return El objeto en base de datos o Null
    */
@@ -71,7 +71,7 @@ class TiendaController {
 
   /**
    * Modifica los atributos de un objeto Tienda  ya existente en base de datos.
-   * Puede recibir NullPointerException desde los mÃ©todos del Dao
+   * Puede recibir NullPointerException desde los métodos del Dao
    * @param idTIENDA
    * @param nOMBRE_TIENDA
    * @param dIERECCION_TIENDA
@@ -93,7 +93,7 @@ class TiendaController {
 
   /**
    * Elimina un objeto Tienda de la base de datos a partir de su(s) llave(s) primaria(s).
-   * Puede recibir NullPointerException desde los mÃ©todos del Dao
+   * Puede recibir NullPointerException desde los métodos del Dao
    * @param idTIENDA
    */
   public static function delete($idTIENDA){
@@ -108,7 +108,7 @@ class TiendaController {
 
   /**
    * Lista todos los objetos Tienda de la base de datos.
-   * Puede recibir NullPointerException desde los mÃ©todos del Dao
+   * Puede recibir NullPointerException desde los métodos del Dao
    * @return $result Array con los objetos Tienda en base de datos o Null
    */
   public static function listAll(){
@@ -121,4 +121,4 @@ class TiendaController {
 
 
 }
-//ThatÂ´s all folks!
+//That´s all folks!

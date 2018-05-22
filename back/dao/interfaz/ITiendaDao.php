@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(Â°uÂ° )/ Anarchy \( Â°uÂ°)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    En esto paso mis sÃ¡bados en la noche ( Â¬.Â¬)  \\
+//    Ella existió sólo en un sueño. Él es un poema que el poeta nunca escribió.  \\
 
 
 interface ITiendaDao {
@@ -18,7 +18,7 @@ interface ITiendaDao {
   public function insert($tienda);
     /**
      * Modifica un objeto Tienda en la base de datos.
-     * @param tienda objeto con la informaciÃ³n a modificar
+     * @param tienda objeto con la información a modificar
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function update($tienda);
@@ -37,13 +37,13 @@ interface ITiendaDao {
   public function select($tienda);
     /**
      * Lista todos los objetos Tienda en la base de datos.
-     * @return Array<Tienda> Puede contener los objetos consultados o estar vacÃ­o
+     * @return Array<Tienda> Puede contener los objetos consultados o estar vacío
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function listAll();
     /**
-     * Cierra la conexiÃ³n actual a la base de datos
+     * Cierra la conexión actual a la base de datos
      */
   public function close();
 }
-//ThatÂ´s all folks!
+//That´s all folks!

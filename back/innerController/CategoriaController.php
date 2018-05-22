@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(Â°uÂ° )/ Anarchy \( Â°uÂ°)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    Â¡Santos frameworks Batman!  \\
+//    ¿Has escuchado hablar del grandioso señor Arciniegas?  \\
 
 require_once realpath("../..").'\innerController\GlobalController.php';
 require_once realpath("../..").'\dao\interfaz\IFactoryDao.php';
@@ -15,22 +15,22 @@ require_once realpath("../..").'\dao\interfaz\ICategoriaDao.php';
 class CategoriaController {
 
   /**
-   * Para su comodidad, defina aquÃ­ el gestor de conexiÃ³n predilecto para esta entidad
-   * @return idGestor Devuelve el identificador del gestor de conexiÃ³n
+   * Para su comodidad, defina aquí el gestor de conexión predilecto para esta entidad
+   * @return idGestor Devuelve el identificador del gestor de conexión
    */
   private static function getGestorDefault(){
       return DEFAULT_GESTOR;
   }
   /**
-   * Para su comodidad, defina aquÃ­ el nombre de base de datos predilecto para esta entidad
+   * Para su comodidad, defina aquí el nombre de base de datos predilecto para esta entidad
    * @return dbName Devuelve el nombre de la base de datos a emplear
    */
   private static function getDataBaseDefault(){
       return DEFAULT_DBNAME;
   }
   /**
-   * Crea un objeto Categoria a partir de sus parÃ¡metros y lo guarda en base de datos.
-   * Puede recibir NullPointerException desde los mÃ©todos del Dao
+   * Crea un objeto Categoria a partir de sus parámetros y lo guarda en base de datos.
+   * Puede recibir NullPointerException desde los métodos del Dao
    * @param idCATEGORIA
    * @param dESCRIPCION
    */
@@ -48,7 +48,7 @@ class CategoriaController {
 
   /**
    * Selecciona un objeto Categoria de la base de datos a partir de su(s) llave(s) primaria(s).
-   * Puede recibir NullPointerException desde los mÃ©todos del Dao
+   * Puede recibir NullPointerException desde los métodos del Dao
    * @param idCATEGORIA
    * @return El objeto en base de datos o Null
    */
@@ -65,7 +65,7 @@ class CategoriaController {
 
   /**
    * Modifica los atributos de un objeto Categoria  ya existente en base de datos.
-   * Puede recibir NullPointerException desde los mÃ©todos del Dao
+   * Puede recibir NullPointerException desde los métodos del Dao
    * @param idCATEGORIA
    * @param dESCRIPCION
    */
@@ -81,7 +81,7 @@ class CategoriaController {
 
   /**
    * Elimina un objeto Categoria de la base de datos a partir de su(s) llave(s) primaria(s).
-   * Puede recibir NullPointerException desde los mÃ©todos del Dao
+   * Puede recibir NullPointerException desde los métodos del Dao
    * @param idCATEGORIA
    */
   public static function delete($idCATEGORIA){
@@ -96,7 +96,7 @@ class CategoriaController {
 
   /**
    * Lista todos los objetos Categoria de la base de datos.
-   * Puede recibir NullPointerException desde los mÃ©todos del Dao
+   * Puede recibir NullPointerException desde los métodos del Dao
    * @return $result Array con los objetos Categoria en base de datos o Null
    */
   public static function listAll(){
@@ -109,4 +109,4 @@ class CategoriaController {
 
 
 }
-//ThatÂ´s all folks!
+//That´s all folks!

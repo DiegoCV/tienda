@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(°u° )/ Anarchy \( °u°)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    Pero el ruiseñor no respondió; yacía muerto sobre las altas hierbas, con el corazón traspasado de espinas.  \\
+//    Ojos de perro azul  \\
 
 
 interface IClientes_has_ventasDao {
@@ -18,7 +18,7 @@ interface IClientes_has_ventasDao {
   public function insert($clientes_has_ventas);
     /**
      * Modifica un objeto Clientes_has_ventas en la base de datos.
-     * @param clientes_has_ventas objeto con la información a modificar
+     * @param clientes_has_ventas objeto con la informaci�n a modificar
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function update($clientes_has_ventas);
@@ -37,34 +37,34 @@ interface IClientes_has_ventasDao {
   public function select($clientes_has_ventas);
     /**
      * Lista todos los objetos Clientes_has_ventas en la base de datos.
-     * @return Array<Clientes_has_ventas> Puede contener los objetos consultados o estar vacío
+     * @return Array<Clientes_has_ventas> Puede contener los objetos consultados o estar vac�o
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function listAll();
     /**
      * Lista todos los objetos Clientes_has_ventas en la base de datos que coincidan con la llave primaria.
      * @param clientes_has_ventas objeto con la(s) llave(s) primaria(s) para consultar
-     * @return Array<Clientes_has_ventas> Puede contener los objetos consultados o estar vacío
+     * @return Array<Clientes_has_ventas> Puede contener los objetos consultados o estar vac�o
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function listByCLIENTES_idCLIENTES($clientes_has_ventas);
     /**
      * Lista todos los objetos Clientes_has_ventas en la base de datos que coincidan con la llave primaria.
      * @param clientes_has_ventas objeto con la(s) llave(s) primaria(s) para consultar
-     * @return Array<Clientes_has_ventas> Puede contener los objetos consultados o estar vacío
+     * @return Array<Clientes_has_ventas> Puede contener los objetos consultados o estar vac�o
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function listByCLIENTES_TIENDA_idTIENDA($clientes_has_ventas);
     /**
      * Lista todos los objetos Clientes_has_ventas en la base de datos que coincidan con la llave primaria.
      * @param clientes_has_ventas objeto con la(s) llave(s) primaria(s) para consultar
-     * @return Array<Clientes_has_ventas> Puede contener los objetos consultados o estar vacío
+     * @return Array<Clientes_has_ventas> Puede contener los objetos consultados o estar vac�o
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function listByVENTAS_idVENTAS($clientes_has_ventas);
     /**
-     * Cierra la conexión actual a la base de datos
+     * Cierra la conexi�n actual a la base de datos
      */
   public function close();
 }
-//That´s all folks!
+//That�s all folks!

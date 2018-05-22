@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(°u° )/ Anarchy \( °u°)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    ¡¡Bienvenido al mundo del mañana!!  \\
+//    Vine a Comala porque me dijeron que ac� viv�a mi padre, un tal Pedro P�ramo.  \\
 include_once realpath('../../innerController/CategoriaController.php');
 
 $list=CategoriaController::listAll();
@@ -18,4 +18,4 @@ foreach ($list as $obj => $Categoria) {
 }
 echo $rta;
 
-//That´s all folks!
+//That�s all folks!

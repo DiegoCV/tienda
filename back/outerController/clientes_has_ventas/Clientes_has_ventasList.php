@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(°u° )/ Anarchy \( °u°)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    Antes que me hubiera apasionado por mujer alguna, jugué mi corazón al azar y me lo ganó la Violencia.  \\
+//    A vote for Bart is a vote for Anarchy!  \\
 include_once realpath('../../innerController/Clientes_has_ventasController.php');
 
 $list=Clientes_has_ventasController::listAll();
@@ -23,4 +23,4 @@ foreach ($list as $obj => $Clientes_has_ventas) {
 }
 echo $rta;
 
-//That´s all folks!
+//That�s all folks!

@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(Â°uÂ° )/ Anarchy \( Â°uÂ°)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    Ya no la quiero, es cierto, pero tal vez la quiero. Es tan corto el amor, y es tan largo el olvido.  \\
+//    Por desgracia, mi epitafio será una frase insulsa y vacía  \\
 
 
 class Productos {
@@ -227,4 +227,4 @@ class Productos {
 
 
 }
-//ThatÂ´s all folks!
+//That´s all folks!

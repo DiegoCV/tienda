@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(¬∞u¬∞ )/ Anarchy \( ¬∞u¬∞)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    ¬øEres capaz de hackear mi Facebook?  \\
+//    No hay de quÈ so no m·s de papa  \\
 
 include_once realpath('../..').'\dao\interfaz\IVentasDao.php';
 include_once realpath('../..').'\dto\Ventas.php';
@@ -17,7 +17,7 @@ class VentasDao implements IVentasDao{
 private $cn;
 
     /**
-     * Inicializa una √∫nica conexi√≥n a la base de datos, que se usar√° para cada consulta.
+     * Inicializa una ˙nica conexiÛn a la base de datos, que se usar· para cada consulta.
      */
     function __construct($conexion) {
             $this->cn =$conexion;
@@ -89,7 +89,7 @@ $vENDEDOR_TIENDA_idTIENDA=$ventas->getVENDEDOR_TIENDA_idTIENDA()->getTIENDA_idTI
 
     /**
      * Modifica un objeto Ventas en la base de datos.
-     * @param ventas objeto con la informaci√≥n a modificar
+     * @param ventas objeto con la informaciÛn a modificar
      * @return  Valor de la llave primaria 
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
@@ -134,7 +134,7 @@ $vENDEDOR_TIENDA_idTIENDA=$ventas->getVENDEDOR_TIENDA_idTIENDA()->getTIENDA_idTI
 
     /**
      * Busca un objeto Ventas en la base de datos.
-     * @return ArrayList<Ventas> Puede contener los objetos consultados o estar vac√≠o
+     * @return ArrayList<Ventas> Puede contener los objetos consultados o estar vacÌo
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function listAll(){
@@ -171,7 +171,7 @@ $vENDEDOR_TIENDA_idTIENDA=$ventas->getVENDEDOR_TIENDA_idTIENDA()->getTIENDA_idTI
     /**
      * Busca un objeto Ventas en la base de datos.
      * @param ventas objeto con la(s) llave(s) primaria(s) para consultar
-     * @return ArrayList<Ventas> Puede contener los objetos consultados o estar vac√≠o
+     * @return ArrayList<Ventas> Puede contener los objetos consultados o estar vacÌo
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function listByIdVENTAS($ventas){
@@ -209,7 +209,7 @@ $vENDEDOR_TIENDA_idTIENDA=$ventas->getVENDEDOR_TIENDA_idTIENDA()->getTIENDA_idTI
     /**
      * Busca un objeto Ventas en la base de datos.
      * @param ventas objeto con la(s) llave(s) primaria(s) para consultar
-     * @return ArrayList<Ventas> Puede contener los objetos consultados o estar vac√≠o
+     * @return ArrayList<Ventas> Puede contener los objetos consultados o estar vacÌo
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function listByVENDEDOR_idVENDEDOR($ventas){
@@ -248,7 +248,7 @@ $vENDEDOR_idVENDEDOR=$ventas->getVENDEDOR_idVENDEDOR()->getTIENDA_idTIENDA();
     /**
      * Busca un objeto Ventas en la base de datos.
      * @param ventas objeto con la(s) llave(s) primaria(s) para consultar
-     * @return ArrayList<Ventas> Puede contener los objetos consultados o estar vac√≠o
+     * @return ArrayList<Ventas> Puede contener los objetos consultados o estar vacÌo
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function listByVENDEDOR_TIENDA_idTIENDA($ventas){
@@ -300,10 +300,10 @@ $vENDEDOR_TIENDA_idTIENDA=$ventas->getVENDEDOR_TIENDA_idTIENDA()->getTIENDA_idTI
           return $data;
     }
     /**
-     * Cierra la conexi√≥n actual a la base de datos
+     * Cierra la conexiÛn actual a la base de datos
      */
   public function close(){
       $cn=null;
   }
 }
-//That¬¥s all folks!
+//That¥s all folks!

@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(Â°uÂ° )/ Anarchy \( Â°uÂ°)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    Para entender la recursividad, primero debes entender la recursividad  \\
+//    ¿Has escuchado hablar del grandioso señor Arciniegas?  \\
 
 
 class Ventas {
@@ -115,4 +115,4 @@ class Ventas {
 
 
 }
-//ThatÂ´s all folks!
+//That´s all folks!

@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(¬∞u¬∞ )/ Anarchy \( ¬∞u¬∞)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    Vine a Comala porque me dijeron que ac√° viv√≠a mi padre, un tal Pedro P√°ramo.  \\
+//    Para entender la recursividad, primero debes entender la recursividad  \\
 
 include_once realpath('../..').'\dao\interfaz\IClientes_has_ventasDao.php';
 include_once realpath('../..').'\dto\Clientes_has_ventas.php';
@@ -18,7 +18,7 @@ class Clientes_has_ventasDao implements IClientes_has_ventasDao{
 private $cn;
 
     /**
-     * Inicializa una √∫nica conexi√≥n a la base de datos, que se usar√° para cada consulta.
+     * Inicializa una ˙nica conexiÛn a la base de datos, que se usar· para cada consulta.
      */
     function __construct($conexion) {
             $this->cn =$conexion;
@@ -92,7 +92,7 @@ $vENTAS_idVENTAS=$clientes_has_ventas->getVENTAS_idVENTAS()->getVENDEDOR_TIENDA_
 
     /**
      * Modifica un objeto Clientes_has_ventas en la base de datos.
-     * @param clientes_has_ventas objeto con la informaci√≥n a modificar
+     * @param clientes_has_ventas objeto con la informaciÛn a modificar
      * @return  Valor de la llave primaria 
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
@@ -138,7 +138,7 @@ $vENTAS_idVENTAS=$clientes_has_ventas->getVENTAS_idVENTAS()->getVENDEDOR_TIENDA_
 
     /**
      * Busca un objeto Clientes_has_ventas en la base de datos.
-     * @return ArrayList<Clientes_has_ventas> Puede contener los objetos consultados o estar vac√≠o
+     * @return ArrayList<Clientes_has_ventas> Puede contener los objetos consultados o estar vacÌo
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function listAll(){
@@ -176,7 +176,7 @@ $vENTAS_idVENTAS=$clientes_has_ventas->getVENTAS_idVENTAS()->getVENDEDOR_TIENDA_
     /**
      * Busca un objeto Clientes_has_ventas en la base de datos.
      * @param clientes_has_ventas objeto con la(s) llave(s) primaria(s) para consultar
-     * @return ArrayList<Clientes_has_ventas> Puede contener los objetos consultados o estar vac√≠o
+     * @return ArrayList<Clientes_has_ventas> Puede contener los objetos consultados o estar vacÌo
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function listByCLIENTES_idCLIENTES($clientes_has_ventas){
@@ -216,7 +216,7 @@ $cLIENTES_idCLIENTES=$clientes_has_ventas->getCLIENTES_idCLIENTES()->getTIENDA_i
     /**
      * Busca un objeto Clientes_has_ventas en la base de datos.
      * @param clientes_has_ventas objeto con la(s) llave(s) primaria(s) para consultar
-     * @return ArrayList<Clientes_has_ventas> Puede contener los objetos consultados o estar vac√≠o
+     * @return ArrayList<Clientes_has_ventas> Puede contener los objetos consultados o estar vacÌo
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function listByCLIENTES_TIENDA_idTIENDA($clientes_has_ventas){
@@ -256,7 +256,7 @@ $cLIENTES_TIENDA_idTIENDA=$clientes_has_ventas->getCLIENTES_TIENDA_idTIENDA()->g
     /**
      * Busca un objeto Clientes_has_ventas en la base de datos.
      * @param clientes_has_ventas objeto con la(s) llave(s) primaria(s) para consultar
-     * @return ArrayList<Clientes_has_ventas> Puede contener los objetos consultados o estar vac√≠o
+     * @return ArrayList<Clientes_has_ventas> Puede contener los objetos consultados o estar vacÌo
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function listByVENTAS_idVENTAS($clientes_has_ventas){
@@ -310,10 +310,10 @@ $vENTAS_idVENTAS=$clientes_has_ventas->getVENTAS_idVENTAS()->getVENDEDOR_TIENDA_
           return $data;
     }
     /**
-     * Cierra la conexi√≥n actual a la base de datos
+     * Cierra la conexiÛn actual a la base de datos
      */
   public function close(){
       $cn=null;
   }
 }
-//That¬¥s all folks!
+//That¥s all folks!

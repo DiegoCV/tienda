@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(°u° )/ Anarchy \( °u°)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    ¡Vaya! ¡Al fin harás algo mejor que una calculadora!  \\
+//    ...con el mayor de los disgustos, el ben�volo se�or Arciniegas.  \\
 include_once realpath('../../innerController/TiendaController.php');
 
 $list=TiendaController::listAll();
@@ -21,4 +21,4 @@ foreach ($list as $obj => $Tienda) {
 }
 echo $rta;
 
-//That´s all folks!
+//That�s all folks!

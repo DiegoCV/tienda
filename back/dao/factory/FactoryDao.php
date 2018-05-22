@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(掳u掳 )/ Anarchy \( 掳u掳)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    隆隆Bienvenido al mundo del ma帽ana!!  \\
+//    縈e arreglas mi impresora?  \\
 
 include_once realpath('../..').'\dao\Conexion\Conexion.php';
 include_once realpath('../..').'\dao\interfaz\IFactoryDao.php';
@@ -23,7 +23,7 @@ class FactoryDao implements IFactoryDao{
         $this->conn=new Conexion($gestor);
      }
      /**
-     * Devuelve una instancia de AdminDao con una conexi贸n que depende del gestor de base de datos
+     * Devuelve una instancia de AdminDao con una conexi髇 que depende del gestor de base de datos
      * @param dbName Nombre o identificador de la base de datos a conectar
      * @return instancia de AdminDao
      */
@@ -31,7 +31,7 @@ class FactoryDao implements IFactoryDao{
         return new AdminDao($this->conn->obtener($dbName));
     }
      /**
-     * Devuelve una instancia de CategoriaDao con una conexi贸n que depende del gestor de base de datos
+     * Devuelve una instancia de CategoriaDao con una conexi髇 que depende del gestor de base de datos
      * @param dbName Nombre o identificador de la base de datos a conectar
      * @return instancia de CategoriaDao
      */
@@ -39,7 +39,7 @@ class FactoryDao implements IFactoryDao{
         return new CategoriaDao($this->conn->obtener($dbName));
     }
      /**
-     * Devuelve una instancia de ClientesDao con una conexi贸n que depende del gestor de base de datos
+     * Devuelve una instancia de ClientesDao con una conexi髇 que depende del gestor de base de datos
      * @param dbName Nombre o identificador de la base de datos a conectar
      * @return instancia de ClientesDao
      */
@@ -47,7 +47,7 @@ class FactoryDao implements IFactoryDao{
         return new ClientesDao($this->conn->obtener($dbName));
     }
      /**
-     * Devuelve una instancia de Clientes_has_ventasDao con una conexi贸n que depende del gestor de base de datos
+     * Devuelve una instancia de Clientes_has_ventasDao con una conexi髇 que depende del gestor de base de datos
      * @param dbName Nombre o identificador de la base de datos a conectar
      * @return instancia de Clientes_has_ventasDao
      */
@@ -55,7 +55,7 @@ class FactoryDao implements IFactoryDao{
         return new Clientes_has_ventasDao($this->conn->obtener($dbName));
     }
      /**
-     * Devuelve una instancia de ProductosDao con una conexi贸n que depende del gestor de base de datos
+     * Devuelve una instancia de ProductosDao con una conexi髇 que depende del gestor de base de datos
      * @param dbName Nombre o identificador de la base de datos a conectar
      * @return instancia de ProductosDao
      */
@@ -63,7 +63,7 @@ class FactoryDao implements IFactoryDao{
         return new ProductosDao($this->conn->obtener($dbName));
     }
      /**
-     * Devuelve una instancia de ProveedoresDao con una conexi贸n que depende del gestor de base de datos
+     * Devuelve una instancia de ProveedoresDao con una conexi髇 que depende del gestor de base de datos
      * @param dbName Nombre o identificador de la base de datos a conectar
      * @return instancia de ProveedoresDao
      */
@@ -71,7 +71,7 @@ class FactoryDao implements IFactoryDao{
         return new ProveedoresDao($this->conn->obtener($dbName));
     }
      /**
-     * Devuelve una instancia de TiendaDao con una conexi贸n que depende del gestor de base de datos
+     * Devuelve una instancia de TiendaDao con una conexi髇 que depende del gestor de base de datos
      * @param dbName Nombre o identificador de la base de datos a conectar
      * @return instancia de TiendaDao
      */
@@ -79,7 +79,7 @@ class FactoryDao implements IFactoryDao{
         return new TiendaDao($this->conn->obtener($dbName));
     }
      /**
-     * Devuelve una instancia de VendedorDao con una conexi贸n que depende del gestor de base de datos
+     * Devuelve una instancia de VendedorDao con una conexi髇 que depende del gestor de base de datos
      * @param dbName Nombre o identificador de la base de datos a conectar
      * @return instancia de VendedorDao
      */
@@ -87,7 +87,7 @@ class FactoryDao implements IFactoryDao{
         return new VendedorDao($this->conn->obtener($dbName));
     }
      /**
-     * Devuelve una instancia de VentasDao con una conexi贸n que depende del gestor de base de datos
+     * Devuelve una instancia de VentasDao con una conexi髇 que depende del gestor de base de datos
      * @param dbName Nombre o identificador de la base de datos a conectar
      * @return instancia de VentasDao
      */
@@ -96,4 +96,4 @@ class FactoryDao implements IFactoryDao{
     }
 
 }
-//That麓s all folks!
+//That磗 all folks!

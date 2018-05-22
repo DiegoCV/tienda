@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(°u° )/ Anarchy \( °u°)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    ¿Has escuchado hablar del grandioso señor Arciniegas?  \\
+//    Don�t call me gringo you f%&ing beanner  \\
 
 
 interface IProductosDao {
@@ -18,7 +18,7 @@ interface IProductosDao {
   public function insert($productos);
     /**
      * Modifica un objeto Productos en la base de datos.
-     * @param productos objeto con la información a modificar
+     * @param productos objeto con la informaci�n a modificar
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function update($productos);
@@ -37,48 +37,48 @@ interface IProductosDao {
   public function select($productos);
     /**
      * Lista todos los objetos Productos en la base de datos.
-     * @return Array<Productos> Puede contener los objetos consultados o estar vacío
+     * @return Array<Productos> Puede contener los objetos consultados o estar vac�o
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function listAll();
     /**
      * Lista todos los objetos Productos en la base de datos que coincidan con la llave primaria.
      * @param productos objeto con la(s) llave(s) primaria(s) para consultar
-     * @return Array<Productos> Puede contener los objetos consultados o estar vacío
+     * @return Array<Productos> Puede contener los objetos consultados o estar vac�o
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function listByIdPRODUCTOS($productos);
     /**
      * Lista todos los objetos Productos en la base de datos que coincidan con la llave primaria.
      * @param productos objeto con la(s) llave(s) primaria(s) para consultar
-     * @return Array<Productos> Puede contener los objetos consultados o estar vacío
+     * @return Array<Productos> Puede contener los objetos consultados o estar vac�o
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function listByTIENDA_idTIENDA($productos);
     /**
      * Lista todos los objetos Productos en la base de datos que coincidan con la llave primaria.
      * @param productos objeto con la(s) llave(s) primaria(s) para consultar
-     * @return Array<Productos> Puede contener los objetos consultados o estar vacío
+     * @return Array<Productos> Puede contener los objetos consultados o estar vac�o
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function listByCATEGORIA_idCATEGORIA($productos);
     /**
      * Lista todos los objetos Productos en la base de datos que coincidan con la llave primaria.
      * @param productos objeto con la(s) llave(s) primaria(s) para consultar
-     * @return Array<Productos> Puede contener los objetos consultados o estar vacío
+     * @return Array<Productos> Puede contener los objetos consultados o estar vac�o
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function listByPROVEEDORES_idPROVEEDORES($productos);
     /**
      * Lista todos los objetos Productos en la base de datos que coincidan con la llave primaria.
      * @param productos objeto con la(s) llave(s) primaria(s) para consultar
-     * @return Array<Productos> Puede contener los objetos consultados o estar vacío
+     * @return Array<Productos> Puede contener los objetos consultados o estar vac�o
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function listByPROVEEDORES_TIENDA_idTIENDA($productos);
     /**
-     * Cierra la conexión actual a la base de datos
+     * Cierra la conexi�n actual a la base de datos
      */
   public function close();
 }
-//That´s all folks!
+//That�s all folks!

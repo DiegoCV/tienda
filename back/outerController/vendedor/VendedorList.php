@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(°u° )/ Anarchy \( °u°)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    Era más fácil crear un framework que aprender a usar uno existente  \\
+//    Tranquilo, yo tampoco entiendo c�mo funciona mi c�digo  \\
 include_once realpath('../../innerController/VendedorController.php');
 
 $list=VendedorController::listAll();
@@ -18,4 +18,4 @@ foreach ($list as $obj => $Vendedor) {
 }
 echo $rta;
 
-//That´s all folks!
+//That�s all folks!

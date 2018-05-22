@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(째u째 )/ Anarchy \( 째u째)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    In Anarchy we trust  \\
+//    -좺NO! -　 +4 !!  \\
 
 
 class Clientes_has_ventas {
@@ -67,4 +67,4 @@ class Clientes_has_ventas {
 
 
 }
-//That쨈s all folks!
+//That큦 all folks!

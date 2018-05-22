@@ -1,12 +1,12 @@
 /*
               -------Creado por-------
-             \(¬∞u¬∞ )/ Anarchy \( ¬∞u¬∞)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    Estadistas informan que una linea de c√≥digo equivale a un sorbo de caf√©  \\
+//    They call me Mr. Espagueti  \\
 /** Valida los campos requeridos en un formulario
- * Returns flag Devuelve true si el form cuenta con los datos m√≠nimos requeridos
+ * Returns flag Devuelve true si el form cuenta con los datos mÌnimos requeridos
  */
 function validarForm(idForm){
 	var form=$('#'+idForm)[0];
@@ -21,7 +21,7 @@ function validarForm(idForm){
 
 ////////// ADMIN \\\\\\\\\\
 function preAdminInsert(idForm){
-     //Haga aqu√≠ las validaciones necesarias antes de enviar el formulario.
+     //Haga aquÌ las validaciones necesarias antes de enviar el formulario.
 	if(validarForm(idForm)){
  	var formData=$('#'+idForm).serialize();
  	enviar(formData,'../back/outerController/admin/AdminInsert.php',postAdminInsert);
@@ -31,23 +31,23 @@ function preAdminInsert(idForm){
 }
 
  function postAdminInsert(result,state){
-     //Maneje aqu√≠ la respuesta del servidor.
-     //Consideramos buena pr√°ctica no manejar c√≥digo HTML antes de este punto.
+     //Maneje aquÌ la respuesta del servidor.
+     //Consideramos buena pr·ctica no manejar cÛdigo HTML antes de este punto.
  		if(state=="success"){
- 			alert("Admin registrado con √©xito");
+ 			alert("Admin registrado con Èxito");
  		}else{
  			alert("Hubo un errror interno ( u.u)\n"+result);
  		}
 }
 
 function preAdminList(container){
-     //Solicite informaci√≥n del servidor
+     //Solicite informaciÛn del servidor
      cargaContenido(container,'AdminList.html'); 
  	enviar("",'../back/outerController/admin/AdminList.php',postAdminList); 
 }
 
  function postAdminList(result,state){
-     //Maneje aqu√≠ la respuesta del servidor.
+     //Maneje aquÌ la respuesta del servidor.
      if(state=="success"){
         document.getElementById("AdminList").innerHTML=result;
      }else{
@@ -57,7 +57,7 @@ function preAdminList(container){
 
 ////////// CATEGORIA \\\\\\\\\\
 function preCategoriaInsert(idForm){
-     //Haga aqu√≠ las validaciones necesarias antes de enviar el formulario.
+     //Haga aquÌ las validaciones necesarias antes de enviar el formulario.
 	if(validarForm(idForm)){
  	var formData=$('#'+idForm).serialize();
  	enviar(formData,'../back/outerController/categoria/CategoriaInsert.php',postCategoriaInsert);
@@ -67,23 +67,23 @@ function preCategoriaInsert(idForm){
 }
 
  function postCategoriaInsert(result,state){
-     //Maneje aqu√≠ la respuesta del servidor.
-     //Consideramos buena pr√°ctica no manejar c√≥digo HTML antes de este punto.
+     //Maneje aquÌ la respuesta del servidor.
+     //Consideramos buena pr·ctica no manejar cÛdigo HTML antes de este punto.
  		if(state=="success"){
- 			alert("Categoria registrado con √©xito");
+ 			alert("Categoria registrado con Èxito");
  		}else{
  			alert("Hubo un errror interno ( u.u)\n"+result);
  		}
 }
 
 function preCategoriaList(container){
-     //Solicite informaci√≥n del servidor
+     //Solicite informaciÛn del servidor
      cargaContenido(container,'CategoriaList.html'); 
  	enviar("",'../back/outerController/categoria/CategoriaList.php',postCategoriaList); 
 }
 
  function postCategoriaList(result,state){
-     //Maneje aqu√≠ la respuesta del servidor.
+     //Maneje aquÌ la respuesta del servidor.
      if(state=="success"){
         document.getElementById("CategoriaList").innerHTML=result;
      }else{
@@ -93,7 +93,7 @@ function preCategoriaList(container){
 
 ////////// CLIENTES \\\\\\\\\\
 function preClientesInsert(idForm){
-     //Haga aqu√≠ las validaciones necesarias antes de enviar el formulario.
+     //Haga aquÌ las validaciones necesarias antes de enviar el formulario.
 	if(validarForm(idForm)){
  	var formData=$('#'+idForm).serialize();
  	enviar(formData,'../back/outerController/clientes/ClientesInsert.php',postClientesInsert);
@@ -103,23 +103,23 @@ function preClientesInsert(idForm){
 }
 
  function postClientesInsert(result,state){
-     //Maneje aqu√≠ la respuesta del servidor.
-     //Consideramos buena pr√°ctica no manejar c√≥digo HTML antes de este punto.
+     //Maneje aquÌ la respuesta del servidor.
+     //Consideramos buena pr·ctica no manejar cÛdigo HTML antes de este punto.
  		if(state=="success"){
- 			alert("Clientes registrado con √©xito");
+ 			alert("Clientes registrado con Èxito");
  		}else{
  			alert("Hubo un errror interno ( u.u)\n"+result);
  		}
 }
 
 function preClientesList(container){
-     //Solicite informaci√≥n del servidor
+     //Solicite informaciÛn del servidor
      cargaContenido(container,'ClientesList.html'); 
  	enviar("",'../back/outerController/clientes/ClientesList.php',postClientesList); 
 }
 
  function postClientesList(result,state){
-     //Maneje aqu√≠ la respuesta del servidor.
+     //Maneje aquÌ la respuesta del servidor.
      if(state=="success"){
         document.getElementById("ClientesList").innerHTML=result;
      }else{
@@ -129,7 +129,7 @@ function preClientesList(container){
 
 ////////// CLIENTES_HAS_VENTAS \\\\\\\\\\
 function preClientes_has_ventasInsert(idForm){
-     //Haga aqu√≠ las validaciones necesarias antes de enviar el formulario.
+     //Haga aquÌ las validaciones necesarias antes de enviar el formulario.
 	if(validarForm(idForm)){
  	var formData=$('#'+idForm).serialize();
  	enviar(formData,'../back/outerController/clientes_has_ventas/Clientes_has_ventasInsert.php',postClientes_has_ventasInsert);
@@ -139,23 +139,23 @@ function preClientes_has_ventasInsert(idForm){
 }
 
  function postClientes_has_ventasInsert(result,state){
-     //Maneje aqu√≠ la respuesta del servidor.
-     //Consideramos buena pr√°ctica no manejar c√≥digo HTML antes de este punto.
+     //Maneje aquÌ la respuesta del servidor.
+     //Consideramos buena pr·ctica no manejar cÛdigo HTML antes de este punto.
  		if(state=="success"){
- 			alert("Clientes_has_ventas registrado con √©xito");
+ 			alert("Clientes_has_ventas registrado con Èxito");
  		}else{
  			alert("Hubo un errror interno ( u.u)\n"+result);
  		}
 }
 
 function preClientes_has_ventasList(container){
-     //Solicite informaci√≥n del servidor
+     //Solicite informaciÛn del servidor
      cargaContenido(container,'Clientes_has_ventasList.html'); 
  	enviar("",'../back/outerController/clientes_has_ventas/Clientes_has_ventasList.php',postClientes_has_ventasList); 
 }
 
  function postClientes_has_ventasList(result,state){
-     //Maneje aqu√≠ la respuesta del servidor.
+     //Maneje aquÌ la respuesta del servidor.
      if(state=="success"){
         document.getElementById("Clientes_has_ventasList").innerHTML=result;
      }else{
@@ -165,7 +165,7 @@ function preClientes_has_ventasList(container){
 
 ////////// PRODUCTOS \\\\\\\\\\
 function preProductosInsert(idForm){
-     //Haga aqu√≠ las validaciones necesarias antes de enviar el formulario.
+     //Haga aquÌ las validaciones necesarias antes de enviar el formulario.
 	if(validarForm(idForm)){
  	var formData=$('#'+idForm).serialize();
  	enviar(formData,'../back/outerController/productos/ProductosInsert.php',postProductosInsert);
@@ -175,23 +175,23 @@ function preProductosInsert(idForm){
 }
 
  function postProductosInsert(result,state){
-     //Maneje aqu√≠ la respuesta del servidor.
-     //Consideramos buena pr√°ctica no manejar c√≥digo HTML antes de este punto.
+     //Maneje aquÌ la respuesta del servidor.
+     //Consideramos buena pr·ctica no manejar cÛdigo HTML antes de este punto.
  		if(state=="success"){
- 			alert("Productos registrado con √©xito");
+ 			alert("Productos registrado con Èxito");
  		}else{
  			alert("Hubo un errror interno ( u.u)\n"+result);
  		}
 }
 
 function preProductosList(container){
-     //Solicite informaci√≥n del servidor
+     //Solicite informaciÛn del servidor
      cargaContenido(container,'ProductosList.html'); 
  	enviar("",'../back/outerController/productos/ProductosList.php',postProductosList); 
 }
 
  function postProductosList(result,state){
-     //Maneje aqu√≠ la respuesta del servidor.
+     //Maneje aquÌ la respuesta del servidor.
      if(state=="success"){
         document.getElementById("ProductosList").innerHTML=result;
      }else{
@@ -201,7 +201,7 @@ function preProductosList(container){
 
 ////////// PROVEEDORES \\\\\\\\\\
 function preProveedoresInsert(idForm){
-     //Haga aqu√≠ las validaciones necesarias antes de enviar el formulario.
+     //Haga aquÌ las validaciones necesarias antes de enviar el formulario.
 	if(validarForm(idForm)){
  	var formData=$('#'+idForm).serialize();
  	enviar(formData,'../back/outerController/proveedores/ProveedoresInsert.php',postProveedoresInsert);
@@ -211,23 +211,23 @@ function preProveedoresInsert(idForm){
 }
 
  function postProveedoresInsert(result,state){
-     //Maneje aqu√≠ la respuesta del servidor.
-     //Consideramos buena pr√°ctica no manejar c√≥digo HTML antes de este punto.
+     //Maneje aquÌ la respuesta del servidor.
+     //Consideramos buena pr·ctica no manejar cÛdigo HTML antes de este punto.
  		if(state=="success"){
- 			alert("Proveedores registrado con √©xito");
+ 			alert("Proveedores registrado con Èxito");
  		}else{
  			alert("Hubo un errror interno ( u.u)\n"+result);
  		}
 }
 
 function preProveedoresList(container){
-     //Solicite informaci√≥n del servidor
+     //Solicite informaciÛn del servidor
      cargaContenido(container,'ProveedoresList.html'); 
  	enviar("",'../back/outerController/proveedores/ProveedoresList.php',postProveedoresList); 
 }
 
  function postProveedoresList(result,state){
-     //Maneje aqu√≠ la respuesta del servidor.
+     //Maneje aquÌ la respuesta del servidor.
      if(state=="success"){
         document.getElementById("ProveedoresList").innerHTML=result;
      }else{
@@ -237,7 +237,7 @@ function preProveedoresList(container){
 
 ////////// TIENDA \\\\\\\\\\
 function preTiendaInsert(idForm){
-     //Haga aqu√≠ las validaciones necesarias antes de enviar el formulario.
+     //Haga aquÌ las validaciones necesarias antes de enviar el formulario.
 	if(validarForm(idForm)){
  	var formData=$('#'+idForm).serialize();
  	enviar(formData,'../back/outerController/tienda/TiendaInsert.php',postTiendaInsert);
@@ -247,23 +247,23 @@ function preTiendaInsert(idForm){
 }
 
  function postTiendaInsert(result,state){
-     //Maneje aqu√≠ la respuesta del servidor.
-     //Consideramos buena pr√°ctica no manejar c√≥digo HTML antes de este punto.
+     //Maneje aquÌ la respuesta del servidor.
+     //Consideramos buena pr·ctica no manejar cÛdigo HTML antes de este punto.
  		if(state=="success"){
- 			alert("Tienda registrado con √©xito");
+ 			alert("Tienda registrado con Èxito");
  		}else{
  			alert("Hubo un errror interno ( u.u)\n"+result);
  		}
 }
 
 function preTiendaList(container){
-     //Solicite informaci√≥n del servidor
+     //Solicite informaciÛn del servidor
      cargaContenido(container,'TiendaList.html'); 
  	enviar("",'../back/outerController/tienda/TiendaList.php',postTiendaList); 
 }
 
  function postTiendaList(result,state){
-     //Maneje aqu√≠ la respuesta del servidor.
+     //Maneje aquÌ la respuesta del servidor.
      if(state=="success"){
         document.getElementById("TiendaList").innerHTML=result;
      }else{
@@ -273,7 +273,7 @@ function preTiendaList(container){
 
 ////////// VENDEDOR \\\\\\\\\\
 function preVendedorInsert(idForm){
-     //Haga aqu√≠ las validaciones necesarias antes de enviar el formulario.
+     //Haga aquÌ las validaciones necesarias antes de enviar el formulario.
 	if(validarForm(idForm)){
  	var formData=$('#'+idForm).serialize();
  	enviar(formData,'../back/outerController/vendedor/VendedorInsert.php',postVendedorInsert);
@@ -283,23 +283,23 @@ function preVendedorInsert(idForm){
 }
 
  function postVendedorInsert(result,state){
-     //Maneje aqu√≠ la respuesta del servidor.
-     //Consideramos buena pr√°ctica no manejar c√≥digo HTML antes de este punto.
+     //Maneje aquÌ la respuesta del servidor.
+     //Consideramos buena pr·ctica no manejar cÛdigo HTML antes de este punto.
  		if(state=="success"){
- 			alert("Vendedor registrado con √©xito");
+ 			alert("Vendedor registrado con Èxito");
  		}else{
  			alert("Hubo un errror interno ( u.u)\n"+result);
  		}
 }
 
 function preVendedorList(container){
-     //Solicite informaci√≥n del servidor
+     //Solicite informaciÛn del servidor
      cargaContenido(container,'VendedorList.html'); 
  	enviar("",'../back/outerController/vendedor/VendedorList.php',postVendedorList); 
 }
 
  function postVendedorList(result,state){
-     //Maneje aqu√≠ la respuesta del servidor.
+     //Maneje aquÌ la respuesta del servidor.
      if(state=="success"){
         document.getElementById("VendedorList").innerHTML=result;
      }else{
@@ -309,7 +309,7 @@ function preVendedorList(container){
 
 ////////// VENTAS \\\\\\\\\\
 function preVentasInsert(idForm){
-     //Haga aqu√≠ las validaciones necesarias antes de enviar el formulario.
+     //Haga aquÌ las validaciones necesarias antes de enviar el formulario.
 	if(validarForm(idForm)){
  	var formData=$('#'+idForm).serialize();
  	enviar(formData,'../back/outerController/ventas/VentasInsert.php',postVentasInsert);
@@ -319,23 +319,23 @@ function preVentasInsert(idForm){
 }
 
  function postVentasInsert(result,state){
-     //Maneje aqu√≠ la respuesta del servidor.
-     //Consideramos buena pr√°ctica no manejar c√≥digo HTML antes de este punto.
+     //Maneje aquÌ la respuesta del servidor.
+     //Consideramos buena pr·ctica no manejar cÛdigo HTML antes de este punto.
  		if(state=="success"){
- 			alert("Ventas registrado con √©xito");
+ 			alert("Ventas registrado con Èxito");
  		}else{
  			alert("Hubo un errror interno ( u.u)\n"+result);
  		}
 }
 
 function preVentasList(container){
-     //Solicite informaci√≥n del servidor
+     //Solicite informaciÛn del servidor
      cargaContenido(container,'VentasList.html'); 
  	enviar("",'../back/outerController/ventas/VentasList.php',postVentasList); 
 }
 
  function postVentasList(result,state){
-     //Maneje aqu√≠ la respuesta del servidor.
+     //Maneje aquÌ la respuesta del servidor.
      if(state=="success"){
         document.getElementById("VentasList").innerHTML=result;
      }else{
@@ -343,4 +343,4 @@ function preVentasList(container){
      }
 }
 
-//That¬¥s all folks!
+//That¥s all folks!

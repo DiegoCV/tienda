@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(¬∞u¬∞ )/ Anarchy \( ¬∞u¬∞)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    Ella existi√≥ s√≥lo en un sue√±o. √âl es un poema que el poeta nunca escribi√≥.  \\
+//    El cÛdigo es tuyo, modifÌcalo como quieras  \\
 
 include_once realpath('../..').'\dao\interfaz\IClientesDao.php';
 include_once realpath('../..').'\dto\Clientes.php';
@@ -16,7 +16,7 @@ class ClientesDao implements IClientesDao{
 private $cn;
 
     /**
-     * Inicializa una √∫nica conexi√≥n a la base de datos, que se usar√° para cada consulta.
+     * Inicializa una ˙nica conexiÛn a la base de datos, que se usar· para cada consulta.
      */
     function __construct($conexion) {
             $this->cn =$conexion;
@@ -79,7 +79,7 @@ $tIENDA_idTIENDA=$clientes->getTIENDA_idTIENDA()->getIdTIENDA();
 
     /**
      * Modifica un objeto Clientes en la base de datos.
-     * @param clientes objeto con la informaci√≥n a modificar
+     * @param clientes objeto con la informaciÛn a modificar
      * @return  Valor de la llave primaria 
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
@@ -119,7 +119,7 @@ $tIENDA_idTIENDA=$clientes->getTIENDA_idTIENDA()->getIdTIENDA();
 
     /**
      * Busca un objeto Clientes en la base de datos.
-     * @return ArrayList<Clientes> Puede contener los objetos consultados o estar vac√≠o
+     * @return ArrayList<Clientes> Puede contener los objetos consultados o estar vacÌo
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function listAll(){
@@ -152,7 +152,7 @@ $tIENDA_idTIENDA=$clientes->getTIENDA_idTIENDA()->getIdTIENDA();
     /**
      * Busca un objeto Clientes en la base de datos.
      * @param clientes objeto con la(s) llave(s) primaria(s) para consultar
-     * @return ArrayList<Clientes> Puede contener los objetos consultados o estar vac√≠o
+     * @return ArrayList<Clientes> Puede contener los objetos consultados o estar vacÌo
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function listByIdCLIENTES($clientes){
@@ -186,7 +186,7 @@ $tIENDA_idTIENDA=$clientes->getTIENDA_idTIENDA()->getIdTIENDA();
     /**
      * Busca un objeto Clientes en la base de datos.
      * @param clientes objeto con la(s) llave(s) primaria(s) para consultar
-     * @return ArrayList<Clientes> Puede contener los objetos consultados o estar vac√≠o
+     * @return ArrayList<Clientes> Puede contener los objetos consultados o estar vacÌo
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function listByTIENDA_idTIENDA($clientes){
@@ -233,10 +233,10 @@ $tIENDA_idTIENDA=$clientes->getTIENDA_idTIENDA()->getIdTIENDA();
           return $data;
     }
     /**
-     * Cierra la conexi√≥n actual a la base de datos
+     * Cierra la conexiÛn actual a la base de datos
      */
   public function close(){
       $cn=null;
   }
 }
-//That¬¥s all folks!
+//That¥s all folks!

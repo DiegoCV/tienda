@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(Â°uÂ° )/ Anarchy \( Â°uÂ°)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    gravitaban alrededor del astro de la noche, y por primera vez podÃ­a la vista penetrar todos sus misterios.  \\
+//    Le he dedicado más tiempo a las frases que al software interno  \\
 
 include_once realpath('../..').'\dao\interfaz\ITiendaDao.php';
 include_once realpath('../..').'\dto\Tienda.php';
@@ -15,7 +15,7 @@ class TiendaDao implements ITiendaDao{
 private $cn;
 
     /**
-     * Inicializa una Ãºnica conexiÃ³n a la base de datos, que se usarÃ¡ para cada consulta.
+     * Inicializa una única conexión a la base de datos, que se usará para cada consulta.
      */
     function __construct($conexion) {
             $this->cn =$conexion;
@@ -73,7 +73,7 @@ $rEPRESENTATE_TIENDA=$tienda->getREPRESENTATE_TIENDA();
 
     /**
      * Modifica un objeto Tienda en la base de datos.
-     * @param tienda objeto con la informaciÃ³n a modificar
+     * @param tienda objeto con la información a modificar
      * @return  Valor de la llave primaria 
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
@@ -111,7 +111,7 @@ $rEPRESENTATE_TIENDA=$tienda->getREPRESENTATE_TIENDA();
 
     /**
      * Busca un objeto Tienda en la base de datos.
-     * @return ArrayList<Tienda> Puede contener los objetos consultados o estar vacÃ­o
+     * @return ArrayList<Tienda> Puede contener los objetos consultados o estar vacío
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function listAll(){
@@ -154,10 +154,10 @@ $rEPRESENTATE_TIENDA=$tienda->getREPRESENTATE_TIENDA();
           return $data;
     }
     /**
-     * Cierra la conexiÃ³n actual a la base de datos
+     * Cierra la conexión actual a la base de datos
      */
   public function close(){
       $cn=null;
   }
 }
-//ThatÂ´s all folks!
+//That´s all folks!

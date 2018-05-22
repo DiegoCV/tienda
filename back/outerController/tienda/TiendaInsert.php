@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(Â°uÂ° )/ Anarchy \( Â°uÂ°)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    Â¿Eres capaz de hackear mi Facebook?  \\
+//    Ella existió sólo en un sueño. Él es un poema que el poeta nunca escribió.  \\
 include_once realpath('../../innerController/TiendaController.php');
 
 $idTIENDA = $_POST['idTIENDA'];
@@ -16,4 +16,4 @@ $REPRESENTATE_TIENDA = $_POST['REPRESENTATE_TIENDA'];
 TiendaController::insert($idTIENDA, $NOMBRE_TIENDA, $DIERECCION_TIENDA, $NIT_TIENDA, $REPRESENTATE_TIENDA);
 echo "true";
 
-//ThatÂ´s all folks!
+//That´s all folks!

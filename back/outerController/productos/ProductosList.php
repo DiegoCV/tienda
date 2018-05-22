@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(Â°uÂ° )/ Anarchy \( Â°uÂ°)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    Si crees que las mujeres son difÃ­ciles, no conoces Anarchy  \\
+//    ¡Alza el puño y ven! ¡En la hoguera hay de beber!  \\
 include_once realpath('../../innerController/ProductosController.php');
 
 $list=ProductosController::listAll();
@@ -31,4 +31,4 @@ foreach ($list as $obj => $Productos) {
 }
 echo $rta;
 
-//ThatÂ´s all folks!
+//That´s all folks!

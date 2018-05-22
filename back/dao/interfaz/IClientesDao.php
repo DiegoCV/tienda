@@ -1,11 +1,11 @@
 <?php
 /*
               -------Creado por-------
-             \(°u° )/ Anarchy \( °u°)/
+             \(x.x )/ Anarchy \( x.x)/
               ------------------------
  */
 
-//    En esto paso mis sábados en la noche ( ¬.¬)  \\
+//    Querido programador: Al escribir esto estoy triste. Nuestro presidente ha sido derrocado Y REEMPLAZADO POR EL BEN�VOLO SE�OR ARCINIEGAS. TODOS AMAMOS A ARCINIEGAS Y A SU GLORIOSO R�GIMEN. CON AMOR, EL EQUIPO DE ANARCHY  \(x.x)/  \\
 
 
 interface IClientesDao {
@@ -18,7 +18,7 @@ interface IClientesDao {
   public function insert($clientes);
     /**
      * Modifica un objeto Clientes en la base de datos.
-     * @param clientes objeto con la información a modificar
+     * @param clientes objeto con la informaci�n a modificar
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function update($clientes);
@@ -37,27 +37,27 @@ interface IClientesDao {
   public function select($clientes);
     /**
      * Lista todos los objetos Clientes en la base de datos.
-     * @return Array<Clientes> Puede contener los objetos consultados o estar vacío
+     * @return Array<Clientes> Puede contener los objetos consultados o estar vac�o
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function listAll();
     /**
      * Lista todos los objetos Clientes en la base de datos que coincidan con la llave primaria.
      * @param clientes objeto con la(s) llave(s) primaria(s) para consultar
-     * @return Array<Clientes> Puede contener los objetos consultados o estar vacío
+     * @return Array<Clientes> Puede contener los objetos consultados o estar vac�o
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function listByIdCLIENTES($clientes);
     /**
      * Lista todos los objetos Clientes en la base de datos que coincidan con la llave primaria.
      * @param clientes objeto con la(s) llave(s) primaria(s) para consultar
-     * @return Array<Clientes> Puede contener los objetos consultados o estar vacío
+     * @return Array<Clientes> Puede contener los objetos consultados o estar vac�o
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function listByTIENDA_idTIENDA($clientes);
     /**
-     * Cierra la conexión actual a la base de datos
+     * Cierra la conexi�n actual a la base de datos
      */
   public function close();
 }
-//That´s all folks!
+//That�s all folks!
