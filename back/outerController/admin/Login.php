@@ -17,7 +17,7 @@ $idADMIN=$admin->getIdADMIN();
 $TIENDA_idTIENDA=$admin->getTIENDA_idTIENDA()->getIdTIENDA();
 setcookie("idADMIN","$idADMIN");
 setcookie("TIENDA_idTIENDA","$TIENDA_idTIENDA");
-echo '<script language="javascript">window.location="../../../front/Main.html"</script>';
+echo '<script language="javascript">window.location="../../../front/home.html"</script>';
 }else{
 echo '<script language="javascript">window.location="../../../index.html"</script>';
 }
