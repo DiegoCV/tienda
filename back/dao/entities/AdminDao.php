@@ -236,14 +236,14 @@ $tIENDA_idTIENDA=$admin->getTIENDA_idTIENDA()->getIdTIENDA();
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function login($admin){
-      $idADMIN=$admin->getIdADMIN();
+      $idADMIN=$admin->getNOMBRE();
 $pASS_ADMIN=$admin->getPASS_ADMIN();
 
       $admin = new Admin();
       try {
           $sql= "SELECT `idADMIN`, `NOMBRE`, `APELLIDO`, `PASS_ADMIN`, `DIRECCION`, `FECHANACIMIENTO`, `FECHAINGRESO`, `TIENDA_idTIENDA`"
           ."FROM `admin`"
-          ."WHERE `idADMIN`='$idADMIN' AND`PASS_ADMIN`='$pASS_ADMIN'";
+          ."WHERE `NOMBRE`='$idADMIN' AND`PASS_ADMIN`='$pASS_ADMIN'";
           $data = $this->ejecutarConsulta($sql);
           for ($i=0; $i < count($data) ; $i++) {
           $admin->setIdADMIN($data[$i]['idADMIN']);

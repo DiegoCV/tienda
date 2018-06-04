@@ -323,183 +323,59 @@
 				<a href="#tabNewProduct" class="mdl-tabs__tab is-active">NEW</a>
 				<a href="#tabListProducts" class="mdl-tabs__tab">LIST</a>
 			</div>
-			<div class="mdl-tabs__panel is-active" id="tabNewProduct">
-				<div class="mdl-grid">
-					<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--12-col-desktop">
-						<div class="full-width panel mdl-shadow--2dp">
-							<div class="full-width panel-tittle bg-primary text-center tittles">
-								New Product
-							</div>
-							<div class="full-width panel-content">
-								<form>
-									<div class="mdl-grid">
-										<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
-											<h5 class="text-condensedLight">Basic Information</h5>
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="number" pattern="-?[0-9- ]*(\.[0-9]+)?" id="BarCode">
-												<label class="mdl-textfield__label" for="BarCode">Barcode</label>
-												<span class="mdl-textfield__error">Invalid barcode</span>
-											</div>
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="NameProduct">
-												<label class="mdl-textfield__label" for="NameProduct">Name</label>
-												<span class="mdl-textfield__error">Invalid name</span>
-											</div>
-											<div class="mdl-textfield mdl-js-textfield">
-												<select class="mdl-textfield__input">
-													<option value="" disabled="" selected="">Select category</option>
-													<option value="">Category 1</option>
-													<option value="">Category 2</option>
-												</select>
-											</div>
-											<h5 class="text-condensedLight">Units and Price</h5>
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="StrockProduct">
-												<label class="mdl-textfield__label" for="StrockProduct">Units</label>
-												<span class="mdl-textfield__error">Invalid number</span>
-											</div>
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" pattern="-?[0-9.]*(\.[0-9]+)?" id="PriceProduct">
-												<label class="mdl-textfield__label" for="PriceProduct">Price</label>
-												<span class="mdl-textfield__error">Invalid price</span>
-											</div>
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="discountProduct">
-												<label class="mdl-textfield__label" for="discountProduct">% Discount</label>
-												<span class="mdl-textfield__error">Invalid discount</span>
-											</div>	
-										</div>
-										<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--6-col-desktop">
-											<h5 class="text-condensedLight">Supplier data and model</h5>
-											<div class="mdl-textfield mdl-js-textfield">
-												<select class="mdl-textfield__input">
-													<option value="" disabled="" selected="">Select provider</option>
-													<option value="">Provider 1</option>
-													<option value="">Provider 2</option>
-												</select>
-											</div>
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text"  id="modelProduct">
-												<label class="mdl-textfield__label" for="modelProduct">Model</label>
-												<span class="mdl-textfield__error">Invalid model</span>
-											</div>
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" id="markProduct">
-												<label class="mdl-textfield__label" for="markProduct">Mark</label>
-												<span class="mdl-textfield__error">Invalid Mark</span>
-											</div>
-											<h5 class="text-condensedLight">Other Data</h5>
-											<div class="mdl-textfield mdl-js-textfield">
-												<input type="date" class="mdl-textfield__input">
-											</div>
-											<div class="mdl-textfield mdl-js-textfield">
-												<select class="mdl-textfield__input">
-													<option value="" disabled="" selected="">Select status</option>
-													<option value="">Active</option>
-													<option value="">deactivated</option>
-												</select>
-											</div>
-											<div class="mdl-textfield mdl-js-textfield">
-												<input type="file">
-											</div>
-										</div>
-									</div>
-									<p class="text-center">
-										<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addProduct">
-											<i class="zmdi zmdi-plus"></i>
-										</button>
-										<div class="mdl-tooltip" for="btn-addProduct">Add Product</div>
-									</p>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+			<form role="form" method="post" id="ProductosInsert" action="../back/outerController/productos/ProductosInsert.php">
+                      
+                      <div class="form-group">
+                          <label for="InputNOMBRE_PRODUCTO">NOMBRE_PRODUCTO</label>
+                          <input type="text" name="NOMBRE_PRODUCTO" class="form-control" id="InputNOMBRE_PRODUCTO" placeholder="NOMBRE_PRODUCTO">
+                       </div>
+                      <div class="form-group">
+                          <label for="InputUNIDAD_PRODUCTO">UNIDAD_PRODUCTO</label>
+                          <input type="text" name="UNIDAD_PRODUCTO" class="form-control" id="InputUNIDAD_PRODUCTO" placeholder="UNIDAD_PRODUCTO">
+                       </div>
+                      <div class="form-group">
+                          <label for="InputCOSTO_PRODUCTO">COSTO_PRODUCTO</label>
+                          <input type="text" name="COSTO_PRODUCTO" class="form-control" id="InputCOSTO_PRODUCTO" placeholder="COSTO_PRODUCTO">
+                       </div>
+                      <div class="form-group">
+                          <label for="InputPRECIOVENTA_PRODUCTO">PRECIOVENTA_PRODUCTO</label>
+                          <input type="text" name="PRECIOVENTA_PRODUCTO" class="form-control" id="InputPRECIOVENTA_PRODUCTO" placeholder="PRECIOVENTA_PRODUCTO">
+                       </div>
+                      <div class="form-group">
+                          <label for="InputVALORMINIMO_PRODUCTO">VALORMINIMO_PRODUCTO</label>
+                          <input type="text" name="VALORMINIMO_PRODUCTO" class="form-control" id="InputVALORMINIMO_PRODUCTO" placeholder="VALORMINIMO_PRODUCTO">
+                       </div>
+                      <div class="form-group">
+                          <label for="InputFECHAINGRESO_PRODUCTO">FECHAINGRESO_PRODUCTO</label>
+                          <input type="date" name="FECHAINGRESO_PRODUCTO" class="form-control" id="InputFECHAINGRESO_PRODUCTO" placeholder="FECHAINGRESO_PRODUCTO">
+                       </div>
+                      <div class="form-group">
+                          <label for="InputFECHAVENCIMIENTO_PRODUCTO">FECHAVENCIMIENTO_PRODUCTO</label>
+                          <input type="date" name="FECHAVENCIMIENTO_PRODUCTO" class="form-control" id="InputFECHAVENCIMIENTO_PRODUCTO" placeholder="FECHAVENCIMIENTO_PRODUCTO">
+                       </div>
+                      <div class="form-group">
+                          <label for="InputTIENDA_idTIENDA">TIENDA_idTIENDA</label>
+                          <input type="text" name="TIENDA_idTIENDA" class="form-control" id="InputTIENDA_idTIENDA" placeholder="TIENDA_idTIENDA" required>
+                       </div>
+                      <div class="form-group">
+                          <label for="InputCATEGORIA_idCATEGORIA">CATEGORIA_idCATEGORIA</label>
+                          <input type="text" name="CATEGORIA_idCATEGORIA" class="form-control" id="InputCATEGORIA_idCATEGORIA" placeholder="CATEGORIA_idCATEGORIA" required>
+                       </div>
+                      <div class="form-group">
+                          <label for="InputPROVEEDORES_idPROVEEDORES">PROVEEDORES_idPROVEEDORES</label>
+                          <input type="text" name="PROVEEDORES_idPROVEEDORES" class="form-control" id="InputPROVEEDORES_idPROVEEDORES" placeholder="PROVEEDORES_idPROVEEDORES" required>
+                       </div>
+                      <div class="form-group">
+                          <label for="InputPROVEEDORES_TIENDA_idTIENDA">PROVEEDORES_TIENDA_idTIENDA</label>
+                          <input type="text" name="PROVEEDORES_TIENDA_idTIENDA" class="form-control" id="InputPROVEEDORES_TIENDA_idTIENDA" placeholder="PROVEEDORES_TIENDA_idTIENDA" required>
+                       </div> 
+                       <input type="submit" name="" value="Registrar" />
+                   </form>
 			<div class="mdl-tabs__panel" id="tabListProducts">
 				<div class="mdl-grid">
 					<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--12-col-desktop">
-						<form action="#">
-							<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-								<label class="mdl-button mdl-js-button mdl-button--icon" for="searchProduct">
-									<i class="zmdi zmdi-search"></i>
-								</label>
-								<div class="mdl-textfield__expandable-holder">
-									<input class="mdl-textfield__input" type="text" id="searchProduct">
-									<label class="mdl-textfield__label"></label>
-								</div>
-							</div>
-						</form>
-						<nav class="full-width menu-categories">
-							<ul class="list-unstyle text-center">
-								<li><a href="#!">Category 1</a></li>
-								<li><a href="#!">Category 2</a></li>
-								<li><a href="#!">Category 3</a></li>
-								<li><a href="#!">Category 4</a></li>
-							</ul>
-						</nav>
-						<div class="full-width text-center" style="padding: 30px 0;">
-							<div class="mdl-card mdl-shadow--2dp full-width product-card">
-								<div class="mdl-card__title">
-									<img src="assets/img/fontLogin.jpg" alt="product" class="img-responsive">
-								</div>
-								<div class="mdl-card__supporting-text">
-									<small>Stock</small><br>
-									<small>Category</small>
-								</div>
-								<div class="mdl-card__actions mdl-card--border">
-									Product name
-									<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-										<i class="zmdi zmdi-more"></i>
-									</button>
-								</div>
-							</div>
-							<div class="mdl-card mdl-shadow--2dp full-width product-card">
-								<div class="mdl-card__title">
-									<img src="assets/img/fontLogin.jpg" alt="product" class="img-responsive">
-								</div>
-								<div class="mdl-card__supporting-text">
-									<small>Stock</small><br>
-									<small>Category</small>
-								</div>
-								<div class="mdl-card__actions mdl-card--border">
-									Product name
-									<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-										<i class="zmdi zmdi-more"></i>
-									</button>
-								</div>
-							</div>
-							<div class="mdl-card mdl-shadow--2dp full-width product-card">
-								<div class="mdl-card__title">
-									<img src="assets/img/fontLogin.jpg" alt="product" class="img-responsive">
-								</div>
-								<div class="mdl-card__supporting-text">
-									<small>Stock</small><br>
-									<small>Category</small>
-								</div>
-								<div class="mdl-card__actions mdl-card--border">
-									Product name
-									<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-										<i class="zmdi zmdi-more"></i>
-									</button>
-								</div>
-							</div>
-							<div class="mdl-card mdl-shadow--2dp full-width product-card">
-								<div class="mdl-card__title">
-									<img src="assets/img/fontLogin.jpg" alt="product" class="img-responsive">
-								</div>
-								<div class="mdl-card__supporting-text">
-									<small>Stock</small><br>
-									<small>Category</small>
-								</div>
-								<div class="mdl-card__actions mdl-card--border">
-									Product name
-									<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-										<i class="zmdi zmdi-more"></i>
-									</button>
-								</div>
-							</div>
-						</div>
+					
+						
 					</div>
 				</div>
 			</div>

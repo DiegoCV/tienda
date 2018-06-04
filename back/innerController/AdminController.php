@@ -178,7 +178,7 @@ class AdminController {
    */
   public static function login($idADMIN, $pASS_ADMIN){
       $admin = new Admin();
-      $admin->setIdADMIN($idADMIN); 
+      $admin->setNOMBRE($idADMIN); 
       $admin->setPASS_ADMIN($pASS_ADMIN); 
 
      $FactoryDao=new FactoryDao(self::getGestorDefault());
