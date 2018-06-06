@@ -5,12 +5,13 @@
               ------------------------
  */
 
-//    Antes que me hubiera apasionado por mujer alguna, jugué mi corazón al azar y me lo ganó la Violencia.  \\
+//    Bueno ¿y ahora qué?  \\
 
 require_once realpath("../..").'\innerController\GlobalController.php';
 require_once realpath("../..").'\dao\interfaz\IFactoryDao.php';
 require_once realpath("../..").'\dto\Tienda.php';
 require_once realpath("../..").'\dao\interfaz\ITiendaDao.php';
+require_once realpath("../..").'\dto\Administrador.php';
 
 class TiendaController {
 
@@ -35,15 +36,17 @@ class TiendaController {
    * @param nOMBRE_TIENDA
    * @param dIERECCION_TIENDA
    * @param nIT_TIENDA
-   * @param rEPRESENTATE_TIENDA
+   * @param dIRECCION_TIENDA
+   * @param aDMINISTRADOR_idADMINISTRADOR
    */
-  public static function insert( $idTIENDA,  $nOMBRE_TIENDA,  $dIERECCION_TIENDA,  $nIT_TIENDA,  $rEPRESENTATE_TIENDA){
+  public static function insert( $idTIENDA,  $nOMBRE_TIENDA,  $dIERECCION_TIENDA,  $nIT_TIENDA,  $dIRECCION_TIENDA,  $aDMINISTRADOR_idADMINISTRADOR){
       $tienda = new Tienda();
       $tienda->setIdTIENDA($idTIENDA); 
       $tienda->setNOMBRE_TIENDA($nOMBRE_TIENDA); 
       $tienda->setDIERECCION_TIENDA($dIERECCION_TIENDA); 
       $tienda->setNIT_TIENDA($nIT_TIENDA); 
-      $tienda->setREPRESENTATE_TIENDA($rEPRESENTATE_TIENDA); 
+      $tienda->setDIRECCION_TIENDA($dIRECCION_TIENDA); 
+      $tienda->setADMINISTRADOR_idADMINISTRADOR($aDMINISTRADOR_idADMINISTRADOR); 
 
      $FactoryDao=new FactoryDao(self::getGestorDefault());
      $tiendaDao =$FactoryDao->gettiendaDao(self::getDataBaseDefault());
@@ -76,14 +79,16 @@ class TiendaController {
    * @param nOMBRE_TIENDA
    * @param dIERECCION_TIENDA
    * @param nIT_TIENDA
-   * @param rEPRESENTATE_TIENDA
+   * @param dIRECCION_TIENDA
+   * @param aDMINISTRADOR_idADMINISTRADOR
    */
-  public static function update($idTIENDA, $nOMBRE_TIENDA, $dIERECCION_TIENDA, $nIT_TIENDA, $rEPRESENTATE_TIENDA){
+  public static function update($idTIENDA, $nOMBRE_TIENDA, $dIERECCION_TIENDA, $nIT_TIENDA, $dIRECCION_TIENDA, $aDMINISTRADOR_idADMINISTRADOR){
       $tienda = self::select($idTIENDA);
       $tienda->setNOMBRE_TIENDA($nOMBRE_TIENDA); 
       $tienda->setDIERECCION_TIENDA($dIERECCION_TIENDA); 
       $tienda->setNIT_TIENDA($nIT_TIENDA); 
-      $tienda->setREPRESENTATE_TIENDA($rEPRESENTATE_TIENDA); 
+      $tienda->setDIRECCION_TIENDA($dIRECCION_TIENDA); 
+      $tienda->setADMINISTRADOR_idADMINISTRADOR($aDMINISTRADOR_idADMINISTRADOR); 
 
      $FactoryDao=new FactoryDao(self::getGestorDefault());
      $tiendaDao =$FactoryDao->gettiendaDao(self::getDataBaseDefault());
@@ -119,6 +124,12 @@ class TiendaController {
      return $result;
   }
 
-
+  public static function listByUsuario($usuario){
+     $FactoryDao=new FactoryDao(self::getGestorDefault());
+     $tiendaDao =$FactoryDao->gettiendaDao(self::getDataBaseDefault());
+     $result = $tiendaDao->listByUsuario($usuario);
+     $tiendaDao->close();
+     return $result;
+  }
 }
 //That´s all folks!

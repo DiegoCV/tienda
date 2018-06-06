@@ -5,7 +5,7 @@
               ------------------------
  */
 
-//    ¡Vaya! ¡Al fin harás algo mejor que una calculadora!  \\
+//    Si mi madre entendiera mi código, estaría orgullosa  \\
 
 
 class Tienda {
@@ -14,7 +14,8 @@ class Tienda {
   private $NOMBRE_TIENDA;
   private $DIERECCION_TIENDA;
   private $NIT_TIENDA;
-  private $REPRESENTATE_TIENDA;
+  private $DIRECCION_TIENDA;
+  private $ADMINISTRADOR_idADMINISTRADOR;
 
     /**
      * Constructor de Tienda
@@ -82,19 +83,34 @@ class Tienda {
       $this->NIT_TIENDA = $nIT_TIENDA;
   }
     /**
-     * Devuelve el valor correspondiente a REPRESENTATE_TIENDA
-     * @return REPRESENTATE_TIENDA
+     * Devuelve el valor correspondiente a DIRECCION_TIENDA
+     * @return DIRECCION_TIENDA
      */
-  public function getREPRESENTATE_TIENDA(){
-      return $this->REPRESENTATE_TIENDA;
+  public function getDIRECCION_TIENDA(){
+      return $this->DIRECCION_TIENDA;
   }
 
     /**
-     * Modifica el valor correspondiente a REPRESENTATE_TIENDA
-     * @param REPRESENTATE_TIENDA
+     * Modifica el valor correspondiente a DIRECCION_TIENDA
+     * @param DIRECCION_TIENDA
      */
-  public function setREPRESENTATE_TIENDA($rEPRESENTATE_TIENDA){
-      $this->REPRESENTATE_TIENDA = $rEPRESENTATE_TIENDA;
+  public function setDIRECCION_TIENDA($dIRECCION_TIENDA){
+      $this->DIRECCION_TIENDA = $dIRECCION_TIENDA;
+  }
+    /**
+     * Devuelve el valor correspondiente a ADMINISTRADOR_idADMINISTRADOR
+     * @return ADMINISTRADOR_idADMINISTRADOR
+     */
+  public function getADMINISTRADOR_idADMINISTRADOR(){
+      return $this->ADMINISTRADOR_idADMINISTRADOR;
+  }
+
+    /**
+     * Modifica el valor correspondiente a ADMINISTRADOR_idADMINISTRADOR
+     * @param ADMINISTRADOR_idADMINISTRADOR
+     */
+  public function setADMINISTRADOR_idADMINISTRADOR($aDMINISTRADOR_idADMINISTRADOR){
+      $this->ADMINISTRADOR_idADMINISTRADOR = $aDMINISTRADOR_idADMINISTRADOR;
   }
 
 

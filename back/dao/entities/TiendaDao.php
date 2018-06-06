@@ -5,10 +5,11 @@
               ------------------------
  */
 
-//    Le he dedicado más tiempo a las frases que al software interno  \\
+//    Ella existió sólo en un sueño. Él es un poema que el poeta nunca escribió.  \\
 
 include_once realpath('../..').'\dao\interfaz\ITiendaDao.php';
 include_once realpath('../..').'\dto\Tienda.php';
+include_once realpath('../..').'\dto\Administrador.php';
 
 class TiendaDao implements ITiendaDao{
 
@@ -32,11 +33,12 @@ private $cn;
 $nOMBRE_TIENDA=$tienda->getNOMBRE_TIENDA();
 $dIERECCION_TIENDA=$tienda->getDIERECCION_TIENDA();
 $nIT_TIENDA=$tienda->getNIT_TIENDA();
-$rEPRESENTATE_TIENDA=$tienda->getREPRESENTATE_TIENDA();
+$dIRECCION_TIENDA=$tienda->getDIRECCION_TIENDA();
+$aDMINISTRADOR_idADMINISTRADOR=$tienda->getADMINISTRADOR_idADMINISTRADOR()->getIdADMINISTRADOR();
 
       try {
-          $sql= "INSERT INTO `tienda`( `idTIENDA`, `NOMBRE_TIENDA`, `DIERECCION_TIENDA`, `NIT_TIENDA`, `REPRESENTATE_TIENDA`)"
-          ."VALUES ('$idTIENDA','$nOMBRE_TIENDA','$dIERECCION_TIENDA','$nIT_TIENDA','$rEPRESENTATE_TIENDA')";
+          $sql= "INSERT INTO `tienda`( `idTIENDA`, `NOMBRE_TIENDA`, `DIERECCION_TIENDA`, `NIT_TIENDA`, `DIRECCION_TIENDA`, `ADMINISTRADOR_idADMINISTRADOR`)"
+          ."VALUES ('$idTIENDA','$nOMBRE_TIENDA','$dIERECCION_TIENDA','$nIT_TIENDA','$dIRECCION_TIENDA','$aDMINISTRADOR_idADMINISTRADOR')";
           return $this->insertarConsulta($sql);
       } catch (SQLException $e) {
           throw new Exception('Primary key is null');
@@ -53,7 +55,7 @@ $rEPRESENTATE_TIENDA=$tienda->getREPRESENTATE_TIENDA();
       $idTIENDA=$tienda->getIdTIENDA();
 
       try {
-          $sql= "SELECT `idTIENDA`, `NOMBRE_TIENDA`, `DIERECCION_TIENDA`, `NIT_TIENDA`, `REPRESENTATE_TIENDA`"
+          $sql= "SELECT `idTIENDA`, `NOMBRE_TIENDA`, `DIERECCION_TIENDA`, `NIT_TIENDA`, `DIRECCION_TIENDA`, `ADMINISTRADOR_idADMINISTRADOR`"
           ."FROM `tienda`"
           ."WHERE `idTIENDA`='$idTIENDA'";
           $data = $this->ejecutarConsulta($sql);
@@ -62,7 +64,10 @@ $rEPRESENTATE_TIENDA=$tienda->getREPRESENTATE_TIENDA();
           $tienda->setNOMBRE_TIENDA($data[$i]['NOMBRE_TIENDA']);
           $tienda->setDIERECCION_TIENDA($data[$i]['DIERECCION_TIENDA']);
           $tienda->setNIT_TIENDA($data[$i]['NIT_TIENDA']);
-          $tienda->setREPRESENTATE_TIENDA($data[$i]['REPRESENTATE_TIENDA']);
+          $tienda->setDIRECCION_TIENDA($data[$i]['DIRECCION_TIENDA']);
+           $administrador = new Administrador();
+           $administrador->setIdADMINISTRADOR($data[$i]['ADMINISTRADOR_idADMINISTRADOR']);
+           $tienda->setADMINISTRADOR_idADMINISTRADOR($administrador);
 
           }
       return $tienda;      } catch (SQLException $e) {
@@ -82,10 +87,11 @@ $rEPRESENTATE_TIENDA=$tienda->getREPRESENTATE_TIENDA();
 $nOMBRE_TIENDA=$tienda->getNOMBRE_TIENDA();
 $dIERECCION_TIENDA=$tienda->getDIERECCION_TIENDA();
 $nIT_TIENDA=$tienda->getNIT_TIENDA();
-$rEPRESENTATE_TIENDA=$tienda->getREPRESENTATE_TIENDA();
+$dIRECCION_TIENDA=$tienda->getDIRECCION_TIENDA();
+$aDMINISTRADOR_idADMINISTRADOR=$tienda->getADMINISTRADOR_idADMINISTRADOR()->getIdADMINISTRADOR();
 
       try {
-          $sql= "UPDATE `tienda` SET`idTIENDA`='$idTIENDA' ,`NOMBRE_TIENDA`='$nOMBRE_TIENDA' ,`DIERECCION_TIENDA`='$dIERECCION_TIENDA' ,`NIT_TIENDA`='$nIT_TIENDA' ,`REPRESENTATE_TIENDA`='$rEPRESENTATE_TIENDA' WHERE `idTIENDA`='$idTIENDA'";
+          $sql= "UPDATE `tienda` SET`idTIENDA`='$idTIENDA' ,`NOMBRE_TIENDA`='$nOMBRE_TIENDA' ,`DIERECCION_TIENDA`='$dIERECCION_TIENDA' ,`NIT_TIENDA`='$nIT_TIENDA' ,`DIRECCION_TIENDA`='$dIRECCION_TIENDA' ,`ADMINISTRADOR_idADMINISTRADOR`='$aDMINISTRADOR_idADMINISTRADOR' WHERE `idTIENDA`='$idTIENDA'";
          return $this->insertarConsulta($sql);
       } catch (SQLException $e) {
           throw new Exception('Primary key is null');
@@ -117,7 +123,7 @@ $rEPRESENTATE_TIENDA=$tienda->getREPRESENTATE_TIENDA();
   public function listAll(){
       $lista = array();
       try {
-          $sql ="SELECT `idTIENDA`, `NOMBRE_TIENDA`, `DIERECCION_TIENDA`, `NIT_TIENDA`, `REPRESENTATE_TIENDA`"
+          $sql ="SELECT `idTIENDA`, `NOMBRE_TIENDA`, `DIERECCION_TIENDA`, `NIT_TIENDA`, `DIRECCION_TIENDA`, `ADMINISTRADOR_idADMINISTRADOR`"
           ."FROM `tienda`"
           ."WHERE 1";
           $data = $this->ejecutarConsulta($sql);
@@ -127,7 +133,36 @@ $rEPRESENTATE_TIENDA=$tienda->getREPRESENTATE_TIENDA();
           $tienda->setNOMBRE_TIENDA($data[$i]['NOMBRE_TIENDA']);
           $tienda->setDIERECCION_TIENDA($data[$i]['DIERECCION_TIENDA']);
           $tienda->setNIT_TIENDA($data[$i]['NIT_TIENDA']);
-          $tienda->setREPRESENTATE_TIENDA($data[$i]['REPRESENTATE_TIENDA']);
+          $tienda->setDIRECCION_TIENDA($data[$i]['DIRECCION_TIENDA']);
+           $administrador = new Administrador();
+           $administrador->setIdADMINISTRADOR($data[$i]['ADMINISTRADOR_idADMINISTRADOR']);
+           $tienda->setADMINISTRADOR_idADMINISTRADOR($administrador);
+
+          array_push($lista,$tienda);
+          }
+      return $lista;
+      } catch (SQLException $e) {
+          throw new Exception('Primary key is null');
+      return null;
+      }
+  }
+   public function listByUsuario($usuario){
+      $lista = array();
+      try {
+          $sql ="SELECT `idTIENDA`, `NOMBRE_TIENDA`, `DIERECCION_TIENDA`, `NIT_TIENDA`, `DIRECCION_TIENDA`, `ADMINISTRADOR_idADMINISTRADOR`"
+          ."FROM `tienda`"
+          ."WHERE `ADMINISTRADOR_idADMINISTRADOR` = $usuario";
+          $data = $this->ejecutarConsulta($sql);
+          for ($i=0; $i < count($data) ; $i++) {
+              $tienda= new Tienda();
+          $tienda->setIdTIENDA($data[$i]['idTIENDA']);
+          $tienda->setNOMBRE_TIENDA($data[$i]['NOMBRE_TIENDA']);
+          $tienda->setDIERECCION_TIENDA($data[$i]['DIERECCION_TIENDA']);
+          $tienda->setNIT_TIENDA($data[$i]['NIT_TIENDA']);
+          $tienda->setDIRECCION_TIENDA($data[$i]['DIRECCION_TIENDA']);
+           $administrador = new Administrador();
+           $administrador->setIdADMINISTRADOR($data[$i]['ADMINISTRADOR_idADMINISTRADOR']);
+           $tienda->setADMINISTRADOR_idADMINISTRADOR($administrador);
 
           array_push($lista,$tienda);
           }

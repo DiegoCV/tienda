@@ -5,7 +5,7 @@
               ------------------------
  */
 
-//    La noche está estrellada, y tiritan, azules, los astros, a lo lejos  \\
+//    Mi satisfacción es hacerte un poco más vago  \\
     require_once realpath("../..").'\dao\factory\FactoryDao.php';
 
 /**

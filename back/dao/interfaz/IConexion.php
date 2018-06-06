@@ -5,7 +5,7 @@
               ------------------------
  */
 
-//    En esto paso mis sábados en la noche ( ¬.¬)  \\
+//    No se fije en el corte de cabello, soy mucho muy rico  \\
 
 interface IConexion {
 

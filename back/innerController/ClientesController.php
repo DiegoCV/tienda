@@ -5,13 +5,12 @@
               ------------------------
  */
 
-//    La noche está estrellada, y tiritan, azules, los astros, a lo lejos  \\
+//    Bueno ¿y ahora qué?  \\
 
 require_once realpath("../..").'\innerController\GlobalController.php';
 require_once realpath("../..").'\dao\interfaz\IFactoryDao.php';
 require_once realpath("../..").'\dto\Clientes.php';
 require_once realpath("../..").'\dao\interfaz\IClientesDao.php';
-require_once realpath("../..").'\dto\Tienda.php';
 
 class ClientesController {
 
@@ -37,16 +36,14 @@ class ClientesController {
    * @param dIRECCION_CLIENTES
    * @param fECHANACIMIENTO_CLIENTES
    * @param eMAIL_CLIENTES
-   * @param tIENDA_idTIENDA
    */
-  public static function insert( $idCLIENTES,  $nOMBRE_CLIENTES,  $dIRECCION_CLIENTES,  $fECHANACIMIENTO_CLIENTES,  $eMAIL_CLIENTES,  $tIENDA_idTIENDA){
+  public static function insert( $idCLIENTES,  $nOMBRE_CLIENTES,  $dIRECCION_CLIENTES,  $fECHANACIMIENTO_CLIENTES,  $eMAIL_CLIENTES){
       $clientes = new Clientes();
       $clientes->setIdCLIENTES($idCLIENTES); 
       $clientes->setNOMBRE_CLIENTES($nOMBRE_CLIENTES); 
       $clientes->setDIRECCION_CLIENTES($dIRECCION_CLIENTES); 
       $clientes->setFECHANACIMIENTO_CLIENTES($fECHANACIMIENTO_CLIENTES); 
       $clientes->setEMAIL_CLIENTES($eMAIL_CLIENTES); 
-      $clientes->setTIENDA_idTIENDA($tIENDA_idTIENDA); 
 
      $FactoryDao=new FactoryDao(self::getGestorDefault());
      $clientesDao =$FactoryDao->getclientesDao(self::getDataBaseDefault());
@@ -59,13 +56,11 @@ class ClientesController {
    * Selecciona un objeto Clientes de la base de datos a partir de su(s) llave(s) primaria(s).
    * Puede recibir NullPointerException desde los métodos del Dao
    * @param idCLIENTES
-   * @param tIENDA_idTIENDA
    * @return El objeto en base de datos o Null
    */
-  public static function select($idCLIENTES, $tIENDA_idTIENDA){
+  public static function select($idCLIENTES){
       $clientes = new Clientes();
       $clientes->setIdCLIENTES($idCLIENTES); 
-      $clientes->setTIENDA_idTIENDA($tIENDA_idTIENDA); 
 
      $FactoryDao=new FactoryDao(self::getGestorDefault());
      $clientesDao =$FactoryDao->getclientesDao(self::getDataBaseDefault());
@@ -82,10 +77,9 @@ class ClientesController {
    * @param dIRECCION_CLIENTES
    * @param fECHANACIMIENTO_CLIENTES
    * @param eMAIL_CLIENTES
-   * @param tIENDA_idTIENDA
    */
-  public static function update($idCLIENTES, $nOMBRE_CLIENTES, $dIRECCION_CLIENTES, $fECHANACIMIENTO_CLIENTES, $eMAIL_CLIENTES, $tIENDA_idTIENDA){
-      $clientes = self::select($idCLIENTES, $tIENDA_idTIENDA);
+  public static function update($idCLIENTES, $nOMBRE_CLIENTES, $dIRECCION_CLIENTES, $fECHANACIMIENTO_CLIENTES, $eMAIL_CLIENTES){
+      $clientes = self::select($idCLIENTES);
       $clientes->setNOMBRE_CLIENTES($nOMBRE_CLIENTES); 
       $clientes->setDIRECCION_CLIENTES($dIRECCION_CLIENTES); 
       $clientes->setFECHANACIMIENTO_CLIENTES($fECHANACIMIENTO_CLIENTES); 
@@ -101,12 +95,10 @@ class ClientesController {
    * Elimina un objeto Clientes de la base de datos a partir de su(s) llave(s) primaria(s).
    * Puede recibir NullPointerException desde los métodos del Dao
    * @param idCLIENTES
-   * @param tIENDA_idTIENDA
    */
-  public static function delete($idCLIENTES, $tIENDA_idTIENDA){
+  public static function delete($idCLIENTES){
       $clientes = new Clientes();
       $clientes->setIdCLIENTES($idCLIENTES); 
-      $clientes->setTIENDA_idTIENDA($tIENDA_idTIENDA); 
 
      $FactoryDao=new FactoryDao(self::getGestorDefault());
      $clientesDao =$FactoryDao->getclientesDao(self::getDataBaseDefault());
@@ -123,40 +115,6 @@ class ClientesController {
      $FactoryDao=new FactoryDao(self::getGestorDefault());
      $clientesDao =$FactoryDao->getclientesDao(self::getDataBaseDefault());
      $result = $clientesDao->listAll();
-     $clientesDao->close();
-     return $result;
-  }
-
-  /**
-   * Lista todos los objetos Clientes de la base de datos a partir de idCLIENTES.
-   * Puede recibir NullPointerException desde los métodos del Dao
-   * @param idCLIENTES
-   * @return $result Array con los objetos en base de datos o Null
-   */
-  public static function listByIdCLIENTES($idCLIENTES){
-      $clientes = new Clientes();
-      $clientes->setIdCLIENTES($idCLIENTES); 
-
-     $FactoryDao=new FactoryDao(self::getGestorDefault());
-     $clientesDao =$FactoryDao->getclientesDao(self::getDataBaseDefault());
-     $result = $clientesDao->listByIdCLIENTES($clientes);
-     $clientesDao->close();
-     return $result;
-  }
-
-  /**
-   * Lista todos los objetos Clientes de la base de datos a partir de TIENDA_idTIENDA.
-   * Puede recibir NullPointerException desde los métodos del Dao
-   * @param tIENDA_idTIENDA
-   * @return $result Array con los objetos en base de datos o Null
-   */
-  public static function listByTIENDA_idTIENDA($tIENDA_idTIENDA){
-      $clientes = new Clientes();
-      $clientes->setTIENDA_idTIENDA($tIENDA_idTIENDA); 
-
-     $FactoryDao=new FactoryDao(self::getGestorDefault());
-     $clientesDao =$FactoryDao->getclientesDao(self::getDataBaseDefault());
-     $result = $clientesDao->listByTIENDA_idTIENDA($clientes);
      $clientesDao->close();
      return $result;
   }

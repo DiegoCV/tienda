@@ -5,7 +5,7 @@
               ------------------------
  */
 
-//    ¿Me arreglas mi impresora?  \\
+//    Hecho en sólo 6 días  \\
 
 include_once realpath('../..').'\dao\Conexion\Conexion.php';
 include_once realpath('../..').'\dao\interfaz\IFactoryDao.php';
@@ -23,12 +23,12 @@ class FactoryDao implements IFactoryDao{
         $this->conn=new Conexion($gestor);
      }
      /**
-     * Devuelve una instancia de AdminDao con una conexión que depende del gestor de base de datos
+     * Devuelve una instancia de AdministradorDao con una conexión que depende del gestor de base de datos
      * @param dbName Nombre o identificador de la base de datos a conectar
-     * @return instancia de AdminDao
+     * @return instancia de AdministradorDao
      */
-     public function getAdminDao($dbName){
-        return new AdminDao($this->conn->obtener($dbName));
+     public function getAdministradorDao($dbName){
+        return new AdministradorDao($this->conn->obtener($dbName));
     }
      /**
      * Devuelve una instancia de CategoriaDao con una conexión que depende del gestor de base de datos
@@ -45,14 +45,6 @@ class FactoryDao implements IFactoryDao{
      */
      public function getClientesDao($dbName){
         return new ClientesDao($this->conn->obtener($dbName));
-    }
-     /**
-     * Devuelve una instancia de Clientes_has_ventasDao con una conexión que depende del gestor de base de datos
-     * @param dbName Nombre o identificador de la base de datos a conectar
-     * @return instancia de Clientes_has_ventasDao
-     */
-     public function getClientes_has_ventasDao($dbName){
-        return new Clientes_has_ventasDao($this->conn->obtener($dbName));
     }
      /**
      * Devuelve una instancia de ProductosDao con una conexión que depende del gestor de base de datos
@@ -93,6 +85,14 @@ class FactoryDao implements IFactoryDao{
      */
      public function getVentasDao($dbName){
         return new VentasDao($this->conn->obtener($dbName));
+    }
+     /**
+     * Devuelve una instancia de Ventas_has_productosDao con una conexión que depende del gestor de base de datos
+     * @param dbName Nombre o identificador de la base de datos a conectar
+     * @return instancia de Ventas_has_productosDao
+     */
+     public function getVentas_has_productosDao($dbName){
+        return new Ventas_has_productosDao($this->conn->obtener($dbName));
     }
 
 }

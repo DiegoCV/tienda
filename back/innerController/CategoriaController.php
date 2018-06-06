@@ -5,7 +5,7 @@
               ------------------------
  */
 
-//    ¿Has escuchado hablar del grandioso señor Arciniegas?  \\
+//    Damos paso a la anarquía...  \\
 
 require_once realpath("../..").'\innerController\GlobalController.php';
 require_once realpath("../..").'\dao\interfaz\IFactoryDao.php';
@@ -32,12 +32,12 @@ class CategoriaController {
    * Crea un objeto Categoria a partir de sus parámetros y lo guarda en base de datos.
    * Puede recibir NullPointerException desde los métodos del Dao
    * @param idCATEGORIA
-   * @param dESCRIPCION
+   * @param nOMBRE_CATEGORIA
    */
-  public static function insert( $idCATEGORIA,  $dESCRIPCION){
+  public static function insert( $idCATEGORIA,  $nOMBRE_CATEGORIA){
       $categoria = new Categoria();
       $categoria->setIdCATEGORIA($idCATEGORIA); 
-      $categoria->setDESCRIPCION($dESCRIPCION); 
+      $categoria->setNOMBRE_CATEGORIA($nOMBRE_CATEGORIA); 
 
      $FactoryDao=new FactoryDao(self::getGestorDefault());
      $categoriaDao =$FactoryDao->getcategoriaDao(self::getDataBaseDefault());
@@ -67,11 +67,11 @@ class CategoriaController {
    * Modifica los atributos de un objeto Categoria  ya existente en base de datos.
    * Puede recibir NullPointerException desde los métodos del Dao
    * @param idCATEGORIA
-   * @param dESCRIPCION
+   * @param nOMBRE_CATEGORIA
    */
-  public static function update($idCATEGORIA, $dESCRIPCION){
+  public static function update($idCATEGORIA, $nOMBRE_CATEGORIA){
       $categoria = self::select($idCATEGORIA);
-      $categoria->setDESCRIPCION($dESCRIPCION); 
+      $categoria->setNOMBRE_CATEGORIA($nOMBRE_CATEGORIA); 
 
      $FactoryDao=new FactoryDao(self::getGestorDefault());
      $categoriaDao =$FactoryDao->getcategoriaDao(self::getDataBaseDefault());

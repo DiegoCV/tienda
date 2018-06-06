@@ -5,7 +5,7 @@
               ------------------------
  */
 
-//    Alguna vez Anarchy se llamó Molotov ( u.u) *Nostalgia  \\
+//    ¿Generar buen código o poner frases graciosas? ¡La frase! ¡La frase!  \\
 
 
 interface IVendedorDao {
@@ -41,20 +41,6 @@ interface IVendedorDao {
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function listAll();
-    /**
-     * Lista todos los objetos Vendedor en la base de datos que coincidan con la llave primaria.
-     * @param vendedor objeto con la(s) llave(s) primaria(s) para consultar
-     * @return Array<Vendedor> Puede contener los objetos consultados o estar vacío
-     * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
-     */
-  public function listByIdVENDEDOR($vendedor);
-    /**
-     * Lista todos los objetos Vendedor en la base de datos que coincidan con la llave primaria.
-     * @param vendedor objeto con la(s) llave(s) primaria(s) para consultar
-     * @return Array<Vendedor> Puede contener los objetos consultados o estar vacío
-     * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
-     */
-  public function listByTIENDA_idTIENDA($vendedor);
     /**
      * Cierra la conexión actual a la base de datos
      */

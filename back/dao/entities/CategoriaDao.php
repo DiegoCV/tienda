@@ -5,7 +5,7 @@
               ------------------------
  */
 
-//    Los animales, asombrados, pasaron su mirada del cerdo al hombre, y del hombre al cerdo; y, nuevamente, del cerdo al hombre; pero ya era imposible distinguir quién era uno y quién era otro.  \\
+//    ...y esta no es la única frase que encontrarás...  \\
 
 include_once realpath('../..').'\dao\interfaz\ICategoriaDao.php';
 include_once realpath('../..').'\dto\Categoria.php';
@@ -29,11 +29,11 @@ private $cn;
      */
   public function insert($categoria){
       $idCATEGORIA=$categoria->getIdCATEGORIA();
-$dESCRIPCION=$categoria->getDESCRIPCION();
+$nOMBRE_CATEGORIA=$categoria->getNOMBRE_CATEGORIA();
 
       try {
-          $sql= "INSERT INTO `categoria`( `idCATEGORIA`, `DESCRIPCION`)"
-          ."VALUES ('$idCATEGORIA','$dESCRIPCION')";
+          $sql= "INSERT INTO `categoria`( `idCATEGORIA`, `NOMBRE_CATEGORIA`)"
+          ."VALUES ('$idCATEGORIA','$nOMBRE_CATEGORIA')";
           return $this->insertarConsulta($sql);
       } catch (SQLException $e) {
           throw new Exception('Primary key is null');
@@ -50,13 +50,13 @@ $dESCRIPCION=$categoria->getDESCRIPCION();
       $idCATEGORIA=$categoria->getIdCATEGORIA();
 
       try {
-          $sql= "SELECT `idCATEGORIA`, `DESCRIPCION`"
+          $sql= "SELECT `idCATEGORIA`, `NOMBRE_CATEGORIA`"
           ."FROM `categoria`"
           ."WHERE `idCATEGORIA`='$idCATEGORIA'";
           $data = $this->ejecutarConsulta($sql);
           for ($i=0; $i < count($data) ; $i++) {
           $categoria->setIdCATEGORIA($data[$i]['idCATEGORIA']);
-          $categoria->setDESCRIPCION($data[$i]['DESCRIPCION']);
+          $categoria->setNOMBRE_CATEGORIA($data[$i]['NOMBRE_CATEGORIA']);
 
           }
       return $categoria;      } catch (SQLException $e) {
@@ -73,10 +73,10 @@ $dESCRIPCION=$categoria->getDESCRIPCION();
      */
   public function update($categoria){
       $idCATEGORIA=$categoria->getIdCATEGORIA();
-$dESCRIPCION=$categoria->getDESCRIPCION();
+$nOMBRE_CATEGORIA=$categoria->getNOMBRE_CATEGORIA();
 
       try {
-          $sql= "UPDATE `categoria` SET`idCATEGORIA`='$idCATEGORIA' ,`DESCRIPCION`='$dESCRIPCION' WHERE `idCATEGORIA`='$idCATEGORIA'";
+          $sql= "UPDATE `categoria` SET`idCATEGORIA`='$idCATEGORIA' ,`NOMBRE_CATEGORIA`='$nOMBRE_CATEGORIA' WHERE `idCATEGORIA`='$idCATEGORIA'";
          return $this->insertarConsulta($sql);
       } catch (SQLException $e) {
           throw new Exception('Primary key is null');
@@ -108,14 +108,14 @@ $dESCRIPCION=$categoria->getDESCRIPCION();
   public function listAll(){
       $lista = array();
       try {
-          $sql ="SELECT `idCATEGORIA`, `DESCRIPCION`"
+          $sql ="SELECT `idCATEGORIA`, `NOMBRE_CATEGORIA`"
           ."FROM `categoria`"
           ."WHERE 1";
           $data = $this->ejecutarConsulta($sql);
           for ($i=0; $i < count($data) ; $i++) {
               $categoria= new Categoria();
           $categoria->setIdCATEGORIA($data[$i]['idCATEGORIA']);
-          $categoria->setDESCRIPCION($data[$i]['DESCRIPCION']);
+          $categoria->setNOMBRE_CATEGORIA($data[$i]['NOMBRE_CATEGORIA']);
 
           array_push($lista,$categoria);
           }

@@ -5,7 +5,7 @@
               ------------------------
  */
 
-//    Don´t call me gringo you f%&ing beanner  \\
+//    Traigo una pizza para ¿y se la creyó?  \\
 
 
 interface IProductosDao {
@@ -41,41 +41,6 @@ interface IProductosDao {
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function listAll();
-    /**
-     * Lista todos los objetos Productos en la base de datos que coincidan con la llave primaria.
-     * @param productos objeto con la(s) llave(s) primaria(s) para consultar
-     * @return Array<Productos> Puede contener los objetos consultados o estar vacío
-     * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
-     */
-  public function listByIdPRODUCTOS($productos);
-    /**
-     * Lista todos los objetos Productos en la base de datos que coincidan con la llave primaria.
-     * @param productos objeto con la(s) llave(s) primaria(s) para consultar
-     * @return Array<Productos> Puede contener los objetos consultados o estar vacío
-     * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
-     */
-  public function listByTIENDA_idTIENDA($productos);
-    /**
-     * Lista todos los objetos Productos en la base de datos que coincidan con la llave primaria.
-     * @param productos objeto con la(s) llave(s) primaria(s) para consultar
-     * @return Array<Productos> Puede contener los objetos consultados o estar vacío
-     * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
-     */
-  public function listByCATEGORIA_idCATEGORIA($productos);
-    /**
-     * Lista todos los objetos Productos en la base de datos que coincidan con la llave primaria.
-     * @param productos objeto con la(s) llave(s) primaria(s) para consultar
-     * @return Array<Productos> Puede contener los objetos consultados o estar vacío
-     * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
-     */
-  public function listByPROVEEDORES_idPROVEEDORES($productos);
-    /**
-     * Lista todos los objetos Productos en la base de datos que coincidan con la llave primaria.
-     * @param productos objeto con la(s) llave(s) primaria(s) para consultar
-     * @return Array<Productos> Puede contener los objetos consultados o estar vacío
-     * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
-     */
-  public function listByPROVEEDORES_TIENDA_idTIENDA($productos);
     /**
      * Cierra la conexión actual a la base de datos
      */

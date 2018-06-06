@@ -325,7 +325,7 @@
 				<a id="newP" class="mdl-tabs__tab is-active">NEW</a>
 				<a id="listP" class="mdl-tabs__tab">LIST</a>
 			</div>
-			<div id="ProductosList">
+			<div id="cont">
 				
 			</div>
 		</div>
@@ -343,11 +343,12 @@
 		});
 
 		function cargarProductoForm(){
-			$('#ProductosList').load("productoForm.html");
+			$('#cont').load("productoForm.html");
 		}
 
 		function cargarProductoList(){
-			preProductosList('ProductosList');
+			
+			preProductosList('cont');
 		}
 		
 	</script>

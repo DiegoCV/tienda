@@ -5,17 +5,16 @@
               ------------------------
  */
 
-//    ¿Has escuchado hablar del grandioso señor Arciniegas?  \\
+//    Muchos años después, frente al pelotón de fusilamiento, el coronel Aureliano Buendía había de recordar aquella tarde remota en que su padre lo llevó a conocer el hielo.   \\
 
 
 class Ventas {
 
   private $idVENTAS;
   private $IVA_VENTAS;
-  private $IMPUESTOCONSUMO_VENTAS;
   private $FECHACOMPRA_VENTAS;
+  private $CLIENTES_idCLIENTES;
   private $VENDEDOR_idVENDEDOR;
-  private $VENDEDOR_TIENDA_idTIENDA;
 
     /**
      * Constructor de Ventas
@@ -53,21 +52,6 @@ class Ventas {
       $this->IVA_VENTAS = $iVA_VENTAS;
   }
     /**
-     * Devuelve el valor correspondiente a IMPUESTOCONSUMO_VENTAS
-     * @return IMPUESTOCONSUMO_VENTAS
-     */
-  public function getIMPUESTOCONSUMO_VENTAS(){
-      return $this->IMPUESTOCONSUMO_VENTAS;
-  }
-
-    /**
-     * Modifica el valor correspondiente a IMPUESTOCONSUMO_VENTAS
-     * @param IMPUESTOCONSUMO_VENTAS
-     */
-  public function setIMPUESTOCONSUMO_VENTAS($iMPUESTOCONSUMO_VENTAS){
-      $this->IMPUESTOCONSUMO_VENTAS = $iMPUESTOCONSUMO_VENTAS;
-  }
-    /**
      * Devuelve el valor correspondiente a FECHACOMPRA_VENTAS
      * @return FECHACOMPRA_VENTAS
      */
@@ -83,6 +67,21 @@ class Ventas {
       $this->FECHACOMPRA_VENTAS = $fECHACOMPRA_VENTAS;
   }
     /**
+     * Devuelve el valor correspondiente a CLIENTES_idCLIENTES
+     * @return CLIENTES_idCLIENTES
+     */
+  public function getCLIENTES_idCLIENTES(){
+      return $this->CLIENTES_idCLIENTES;
+  }
+
+    /**
+     * Modifica el valor correspondiente a CLIENTES_idCLIENTES
+     * @param CLIENTES_idCLIENTES
+     */
+  public function setCLIENTES_idCLIENTES($cLIENTES_idCLIENTES){
+      $this->CLIENTES_idCLIENTES = $cLIENTES_idCLIENTES;
+  }
+    /**
      * Devuelve el valor correspondiente a VENDEDOR_idVENDEDOR
      * @return VENDEDOR_idVENDEDOR
      */
@@ -96,21 +95,6 @@ class Ventas {
      */
   public function setVENDEDOR_idVENDEDOR($vENDEDOR_idVENDEDOR){
       $this->VENDEDOR_idVENDEDOR = $vENDEDOR_idVENDEDOR;
-  }
-    /**
-     * Devuelve el valor correspondiente a VENDEDOR_TIENDA_idTIENDA
-     * @return VENDEDOR_TIENDA_idTIENDA
-     */
-  public function getVENDEDOR_TIENDA_idTIENDA(){
-      return $this->VENDEDOR_TIENDA_idTIENDA;
-  }
-
-    /**
-     * Modifica el valor correspondiente a VENDEDOR_TIENDA_idTIENDA
-     * @param VENDEDOR_TIENDA_idTIENDA
-     */
-  public function setVENDEDOR_TIENDA_idTIENDA($vENDEDOR_TIENDA_idTIENDA){
-      $this->VENDEDOR_TIENDA_idTIENDA = $vENDEDOR_TIENDA_idTIENDA;
   }
 
 

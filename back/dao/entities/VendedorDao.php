@@ -5,7 +5,7 @@
               ------------------------
  */
 
-//    Cuando Gregorio Samsa se despertó una mañana después de un sueño intranquilo, se encontró sobre su cama convertido en un monstruoso insecto.  \\
+//    Ya no la quiero, es cierto, pero tal vez la quiero. Es tan corto el amor, y es tan largo el olvido.  \\
 
 include_once realpath('../..').'\dao\interfaz\IVendedorDao.php';
 include_once realpath('../..').'\dto\Vendedor.php';
@@ -30,11 +30,14 @@ private $cn;
      */
   public function insert($vendedor){
       $idVENDEDOR=$vendedor->getIdVENDEDOR();
+$nOMBRE_VENDEDOR=$vendedor->getNOMBRE_VENDEDOR();
+$uSUARIO_VENDEDOR=$vendedor->getUSUARIO_VENDEDOR();
+$pASS_VENDEDOR=$vendedor->getPASS_VENDEDOR();
 $tIENDA_idTIENDA=$vendedor->getTIENDA_idTIENDA()->getIdTIENDA();
 
       try {
-          $sql= "INSERT INTO `vendedor`( `idVENDEDOR`, `TIENDA_idTIENDA`)"
-          ."VALUES ('$idVENDEDOR','$tIENDA_idTIENDA')";
+          $sql= "INSERT INTO `vendedor`( `idVENDEDOR`, `NOMBRE_VENDEDOR`, `USUARIO_VENDEDOR`, `PASS_VENDEDOR`, `TIENDA_idTIENDA`)"
+          ."VALUES ('$idVENDEDOR','$nOMBRE_VENDEDOR','$uSUARIO_VENDEDOR','$pASS_VENDEDOR','$tIENDA_idTIENDA')";
           return $this->insertarConsulta($sql);
       } catch (SQLException $e) {
           throw new Exception('Primary key is null');
@@ -49,15 +52,17 @@ $tIENDA_idTIENDA=$vendedor->getTIENDA_idTIENDA()->getIdTIENDA();
      */
   public function select($vendedor){
       $idVENDEDOR=$vendedor->getIdVENDEDOR();
-$tIENDA_idTIENDA=$vendedor->getTIENDA_idTIENDA()->getIdTIENDA();
 
       try {
-          $sql= "SELECT `idVENDEDOR`, `TIENDA_idTIENDA`"
+          $sql= "SELECT `idVENDEDOR`, `NOMBRE_VENDEDOR`, `USUARIO_VENDEDOR`, `PASS_VENDEDOR`, `TIENDA_idTIENDA`"
           ."FROM `vendedor`"
-          ."WHERE `idVENDEDOR`='$idVENDEDOR' AND`TIENDA_idTIENDA`='$tIENDA_idTIENDA'";
+          ."WHERE `idVENDEDOR`='$idVENDEDOR'";
           $data = $this->ejecutarConsulta($sql);
           for ($i=0; $i < count($data) ; $i++) {
           $vendedor->setIdVENDEDOR($data[$i]['idVENDEDOR']);
+          $vendedor->setNOMBRE_VENDEDOR($data[$i]['NOMBRE_VENDEDOR']);
+          $vendedor->setUSUARIO_VENDEDOR($data[$i]['USUARIO_VENDEDOR']);
+          $vendedor->setPASS_VENDEDOR($data[$i]['PASS_VENDEDOR']);
            $tienda = new Tienda();
            $tienda->setIdTIENDA($data[$i]['TIENDA_idTIENDA']);
            $vendedor->setTIENDA_idTIENDA($tienda);
@@ -77,10 +82,13 @@ $tIENDA_idTIENDA=$vendedor->getTIENDA_idTIENDA()->getIdTIENDA();
      */
   public function update($vendedor){
       $idVENDEDOR=$vendedor->getIdVENDEDOR();
+$nOMBRE_VENDEDOR=$vendedor->getNOMBRE_VENDEDOR();
+$uSUARIO_VENDEDOR=$vendedor->getUSUARIO_VENDEDOR();
+$pASS_VENDEDOR=$vendedor->getPASS_VENDEDOR();
 $tIENDA_idTIENDA=$vendedor->getTIENDA_idTIENDA()->getIdTIENDA();
 
       try {
-          $sql= "UPDATE `vendedor` SET`idVENDEDOR`='$idVENDEDOR' ,`TIENDA_idTIENDA`='$tIENDA_idTIENDA' WHERE `idVENDEDOR`='$idVENDEDOR' ,`TIENDA_idTIENDA`='$tIENDA_idTIENDA'";
+          $sql= "UPDATE `vendedor` SET`idVENDEDOR`='$idVENDEDOR' ,`NOMBRE_VENDEDOR`='$nOMBRE_VENDEDOR' ,`USUARIO_VENDEDOR`='$uSUARIO_VENDEDOR' ,`PASS_VENDEDOR`='$pASS_VENDEDOR' ,`TIENDA_idTIENDA`='$tIENDA_idTIENDA' WHERE `idVENDEDOR`='$idVENDEDOR'";
          return $this->insertarConsulta($sql);
       } catch (SQLException $e) {
           throw new Exception('Primary key is null');
@@ -95,10 +103,9 @@ $tIENDA_idTIENDA=$vendedor->getTIENDA_idTIENDA()->getIdTIENDA();
      */
   public function delete($vendedor){
       $idVENDEDOR=$vendedor->getIdVENDEDOR();
-$tIENDA_idTIENDA=$vendedor->getTIENDA_idTIENDA()->getIdTIENDA();
 
       try {
-          $sql ="DELETE FROM `vendedor` WHERE `idVENDEDOR`='$idVENDEDOR' AND`TIENDA_idTIENDA`='$tIENDA_idTIENDA'";
+          $sql ="DELETE FROM `vendedor` WHERE `idVENDEDOR`='$idVENDEDOR'";
           return $this->insertarConsulta($sql);
       } catch (SQLException $e) {
           throw new Exception('Primary key is null');
@@ -113,73 +120,16 @@ $tIENDA_idTIENDA=$vendedor->getTIENDA_idTIENDA()->getIdTIENDA();
   public function listAll(){
       $lista = array();
       try {
-          $sql ="SELECT `idVENDEDOR`, `TIENDA_idTIENDA`"
+          $sql ="SELECT `idVENDEDOR`, `NOMBRE_VENDEDOR`, `USUARIO_VENDEDOR`, `PASS_VENDEDOR`, `TIENDA_idTIENDA`"
           ."FROM `vendedor`"
           ."WHERE 1";
           $data = $this->ejecutarConsulta($sql);
           for ($i=0; $i < count($data) ; $i++) {
               $vendedor= new Vendedor();
           $vendedor->setIdVENDEDOR($data[$i]['idVENDEDOR']);
-           $tienda = new Tienda();
-           $tienda->setIdTIENDA($data[$i]['TIENDA_idTIENDA']);
-           $vendedor->setTIENDA_idTIENDA($tienda);
-
-          array_push($lista,$vendedor);
-          }
-      return $lista;
-      } catch (SQLException $e) {
-          throw new Exception('Primary key is null');
-      return null;
-      }
-  }
-
-    /**
-     * Busca un objeto Vendedor en la base de datos.
-     * @param vendedor objeto con la(s) llave(s) primaria(s) para consultar
-     * @return ArrayList<Vendedor> Puede contener los objetos consultados o estar vacío
-     * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
-     */
-  public function listByIdVENDEDOR($vendedor){
-      $lista = array();
-      $idVENDEDOR=$vendedor->getIdVENDEDOR();
-
-      try {
-          $sql ="SELECT `idVENDEDOR`, `TIENDA_idTIENDA`"
-          ."FROM `vendedor`"
-          ."WHERE `idVENDEDOR`='$idVENDEDOR'";
-          $data = $this->ejecutarConsulta($sql);
-          for ($i=0; $i < count($data) ; $i++) {
-          $vendedor->setIdVENDEDOR($data[$i]['idVENDEDOR']);
-           $tienda = new Tienda();
-           $tienda->setIdTIENDA($data[$i]['TIENDA_idTIENDA']);
-           $vendedor->setTIENDA_idTIENDA($tienda);
-
-          array_push($lista,$vendedor);
-          }
-      return $lista;
-      } catch (SQLException $e) {
-          throw new Exception('Primary key is null');
-      return null;
-      }
-  }
-
-    /**
-     * Busca un objeto Vendedor en la base de datos.
-     * @param vendedor objeto con la(s) llave(s) primaria(s) para consultar
-     * @return ArrayList<Vendedor> Puede contener los objetos consultados o estar vacío
-     * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
-     */
-  public function listByTIENDA_idTIENDA($vendedor){
-      $lista = array();
-      $tIENDA_idTIENDA=$vendedor->getTIENDA_idTIENDA()->getIdTIENDA();
-
-      try {
-          $sql ="SELECT `idVENDEDOR`, `TIENDA_idTIENDA`"
-          ."FROM `vendedor`"
-          ."WHERE `TIENDA_idTIENDA`='$tIENDA_idTIENDA'";
-          $data = $this->ejecutarConsulta($sql);
-          for ($i=0; $i < count($data) ; $i++) {
-          $vendedor->setIdVENDEDOR($data[$i]['idVENDEDOR']);
+          $vendedor->setNOMBRE_VENDEDOR($data[$i]['NOMBRE_VENDEDOR']);
+          $vendedor->setUSUARIO_VENDEDOR($data[$i]['USUARIO_VENDEDOR']);
+          $vendedor->setPASS_VENDEDOR($data[$i]['PASS_VENDEDOR']);
            $tienda = new Tienda();
            $tienda->setIdTIENDA($data[$i]['TIENDA_idTIENDA']);
            $vendedor->setTIENDA_idTIENDA($tienda);

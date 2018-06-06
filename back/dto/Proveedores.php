@@ -5,7 +5,7 @@
               ------------------------
  */
 
-//    ¿Cuantas frases como esta crees que puedo escribir?  \\
+//    Cuando uses Anarchy, Georgie, tú también flotarás  \\
 
 
 class Proveedores {
@@ -15,7 +15,6 @@ class Proveedores {
   private $NOMBREEMPLEADO_PROVEEDORES;
   private $DESCUENTO_PROVEEDOR;
   private $FECHAINGRESO_PROVEEDORES;
-  private $TIENDA_idTIENDA;
 
     /**
      * Constructor de Proveedores
@@ -96,21 +95,6 @@ class Proveedores {
      */
   public function setFECHAINGRESO_PROVEEDORES($fECHAINGRESO_PROVEEDORES){
       $this->FECHAINGRESO_PROVEEDORES = $fECHAINGRESO_PROVEEDORES;
-  }
-    /**
-     * Devuelve el valor correspondiente a TIENDA_idTIENDA
-     * @return TIENDA_idTIENDA
-     */
-  public function getTIENDA_idTIENDA(){
-      return $this->TIENDA_idTIENDA;
-  }
-
-    /**
-     * Modifica el valor correspondiente a TIENDA_idTIENDA
-     * @param TIENDA_idTIENDA
-     */
-  public function setTIENDA_idTIENDA($tIENDA_idTIENDA){
-      $this->TIENDA_idTIENDA = $tIENDA_idTIENDA;
   }
 
 

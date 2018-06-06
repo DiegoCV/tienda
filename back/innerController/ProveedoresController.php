@@ -5,13 +5,12 @@
               ------------------------
  */
 
-//    La vie est composé de combien de fois nous rions avant de mourir  \\
+//    Para entender la recursividad, primero debes entender la recursividad  \\
 
 require_once realpath("../..").'\innerController\GlobalController.php';
 require_once realpath("../..").'\dao\interfaz\IFactoryDao.php';
 require_once realpath("../..").'\dto\Proveedores.php';
 require_once realpath("../..").'\dao\interfaz\IProveedoresDao.php';
-require_once realpath("../..").'\dto\Tienda.php';
 
 class ProveedoresController {
 
@@ -37,16 +36,14 @@ class ProveedoresController {
    * @param nOMBREEMPLEADO_PROVEEDORES
    * @param dESCUENTO_PROVEEDOR
    * @param fECHAINGRESO_PROVEEDORES
-   * @param tIENDA_idTIENDA
    */
-  public static function insert( $idPROVEEDORES,  $nOMBREEMPRESA_PROVEEDORES,  $nOMBREEMPLEADO_PROVEEDORES,  $dESCUENTO_PROVEEDOR,  $fECHAINGRESO_PROVEEDORES,  $tIENDA_idTIENDA){
+  public static function insert( $idPROVEEDORES,  $nOMBREEMPRESA_PROVEEDORES,  $nOMBREEMPLEADO_PROVEEDORES,  $dESCUENTO_PROVEEDOR,  $fECHAINGRESO_PROVEEDORES){
       $proveedores = new Proveedores();
       $proveedores->setIdPROVEEDORES($idPROVEEDORES); 
       $proveedores->setNOMBREEMPRESA_PROVEEDORES($nOMBREEMPRESA_PROVEEDORES); 
       $proveedores->setNOMBREEMPLEADO_PROVEEDORES($nOMBREEMPLEADO_PROVEEDORES); 
       $proveedores->setDESCUENTO_PROVEEDOR($dESCUENTO_PROVEEDOR); 
       $proveedores->setFECHAINGRESO_PROVEEDORES($fECHAINGRESO_PROVEEDORES); 
-      $proveedores->setTIENDA_idTIENDA($tIENDA_idTIENDA); 
 
      $FactoryDao=new FactoryDao(self::getGestorDefault());
      $proveedoresDao =$FactoryDao->getproveedoresDao(self::getDataBaseDefault());
@@ -59,13 +56,11 @@ class ProveedoresController {
    * Selecciona un objeto Proveedores de la base de datos a partir de su(s) llave(s) primaria(s).
    * Puede recibir NullPointerException desde los métodos del Dao
    * @param idPROVEEDORES
-   * @param tIENDA_idTIENDA
    * @return El objeto en base de datos o Null
    */
-  public static function select($idPROVEEDORES, $tIENDA_idTIENDA){
+  public static function select($idPROVEEDORES){
       $proveedores = new Proveedores();
       $proveedores->setIdPROVEEDORES($idPROVEEDORES); 
-      $proveedores->setTIENDA_idTIENDA($tIENDA_idTIENDA); 
 
      $FactoryDao=new FactoryDao(self::getGestorDefault());
      $proveedoresDao =$FactoryDao->getproveedoresDao(self::getDataBaseDefault());
@@ -82,10 +77,9 @@ class ProveedoresController {
    * @param nOMBREEMPLEADO_PROVEEDORES
    * @param dESCUENTO_PROVEEDOR
    * @param fECHAINGRESO_PROVEEDORES
-   * @param tIENDA_idTIENDA
    */
-  public static function update($idPROVEEDORES, $nOMBREEMPRESA_PROVEEDORES, $nOMBREEMPLEADO_PROVEEDORES, $dESCUENTO_PROVEEDOR, $fECHAINGRESO_PROVEEDORES, $tIENDA_idTIENDA){
-      $proveedores = self::select($idPROVEEDORES, $tIENDA_idTIENDA);
+  public static function update($idPROVEEDORES, $nOMBREEMPRESA_PROVEEDORES, $nOMBREEMPLEADO_PROVEEDORES, $dESCUENTO_PROVEEDOR, $fECHAINGRESO_PROVEEDORES){
+      $proveedores = self::select($idPROVEEDORES);
       $proveedores->setNOMBREEMPRESA_PROVEEDORES($nOMBREEMPRESA_PROVEEDORES); 
       $proveedores->setNOMBREEMPLEADO_PROVEEDORES($nOMBREEMPLEADO_PROVEEDORES); 
       $proveedores->setDESCUENTO_PROVEEDOR($dESCUENTO_PROVEEDOR); 
@@ -101,12 +95,10 @@ class ProveedoresController {
    * Elimina un objeto Proveedores de la base de datos a partir de su(s) llave(s) primaria(s).
    * Puede recibir NullPointerException desde los métodos del Dao
    * @param idPROVEEDORES
-   * @param tIENDA_idTIENDA
    */
-  public static function delete($idPROVEEDORES, $tIENDA_idTIENDA){
+  public static function delete($idPROVEEDORES){
       $proveedores = new Proveedores();
       $proveedores->setIdPROVEEDORES($idPROVEEDORES); 
-      $proveedores->setTIENDA_idTIENDA($tIENDA_idTIENDA); 
 
      $FactoryDao=new FactoryDao(self::getGestorDefault());
      $proveedoresDao =$FactoryDao->getproveedoresDao(self::getDataBaseDefault());
@@ -123,40 +115,6 @@ class ProveedoresController {
      $FactoryDao=new FactoryDao(self::getGestorDefault());
      $proveedoresDao =$FactoryDao->getproveedoresDao(self::getDataBaseDefault());
      $result = $proveedoresDao->listAll();
-     $proveedoresDao->close();
-     return $result;
-  }
-
-  /**
-   * Lista todos los objetos Proveedores de la base de datos a partir de idPROVEEDORES.
-   * Puede recibir NullPointerException desde los métodos del Dao
-   * @param idPROVEEDORES
-   * @return $result Array con los objetos en base de datos o Null
-   */
-  public static function listByIdPROVEEDORES($idPROVEEDORES){
-      $proveedores = new Proveedores();
-      $proveedores->setIdPROVEEDORES($idPROVEEDORES); 
-
-     $FactoryDao=new FactoryDao(self::getGestorDefault());
-     $proveedoresDao =$FactoryDao->getproveedoresDao(self::getDataBaseDefault());
-     $result = $proveedoresDao->listByIdPROVEEDORES($proveedores);
-     $proveedoresDao->close();
-     return $result;
-  }
-
-  /**
-   * Lista todos los objetos Proveedores de la base de datos a partir de TIENDA_idTIENDA.
-   * Puede recibir NullPointerException desde los métodos del Dao
-   * @param tIENDA_idTIENDA
-   * @return $result Array con los objetos en base de datos o Null
-   */
-  public static function listByTIENDA_idTIENDA($tIENDA_idTIENDA){
-      $proveedores = new Proveedores();
-      $proveedores->setTIENDA_idTIENDA($tIENDA_idTIENDA); 
-
-     $FactoryDao=new FactoryDao(self::getGestorDefault());
-     $proveedoresDao =$FactoryDao->getproveedoresDao(self::getDataBaseDefault());
-     $result = $proveedoresDao->listByTIENDA_idTIENDA($proveedores);
      $proveedoresDao->close();
      return $result;
   }

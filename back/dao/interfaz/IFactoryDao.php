@@ -5,27 +5,27 @@
               ------------------------
  */
 
-//    Vine a Comala porque me dijeron que acá vivía mi padre, un tal Pedro Páramo.  \\
+//    Alguna vez Anarchy se llamó Molotov ( u.u) *Nostalgia  \\
 
-include_once realpath('../..').'\dao\entities\AdminDao.php';
+include_once realpath('../..').'\dao\entities\AdministradorDao.php';
 include_once realpath('../..').'\dao\entities\CategoriaDao.php';
 include_once realpath('../..').'\dao\entities\ClientesDao.php';
-include_once realpath('../..').'\dao\entities\Clientes_has_ventasDao.php';
 include_once realpath('../..').'\dao\entities\ProductosDao.php';
 include_once realpath('../..').'\dao\entities\ProveedoresDao.php';
 include_once realpath('../..').'\dao\entities\TiendaDao.php';
 include_once realpath('../..').'\dao\entities\VendedorDao.php';
 include_once realpath('../..').'\dao\entities\VentasDao.php';
+include_once realpath('../..').'\dao\entities\Ventas_has_productosDao.php';
 
 
 interface IFactoryDao {
 	
      /**
-     * Devuelve una instancia de AdminDao con una conexión que depende del gestor de base de datos
+     * Devuelve una instancia de AdministradorDao con una conexión que depende del gestor de base de datos
      * @param dbName Nombre o identificador de la base de datos a conectar
-     * @return instancia de AdminDao
+     * @return instancia de AdministradorDao
      */
-     public function getAdminDao($dbName);
+     public function getAdministradorDao($dbName);
      /**
      * Devuelve una instancia de CategoriaDao con una conexión que depende del gestor de base de datos
      * @param dbName Nombre o identificador de la base de datos a conectar
@@ -38,12 +38,6 @@ interface IFactoryDao {
      * @return instancia de ClientesDao
      */
      public function getClientesDao($dbName);
-     /**
-     * Devuelve una instancia de Clientes_has_ventasDao con una conexión que depende del gestor de base de datos
-     * @param dbName Nombre o identificador de la base de datos a conectar
-     * @return instancia de Clientes_has_ventasDao
-     */
-     public function getClientes_has_ventasDao($dbName);
      /**
      * Devuelve una instancia de ProductosDao con una conexión que depende del gestor de base de datos
      * @param dbName Nombre o identificador de la base de datos a conectar
@@ -74,6 +68,12 @@ interface IFactoryDao {
      * @return instancia de VentasDao
      */
      public function getVentasDao($dbName);
+     /**
+     * Devuelve una instancia de Ventas_has_productosDao con una conexión que depende del gestor de base de datos
+     * @param dbName Nombre o identificador de la base de datos a conectar
+     * @return instancia de Ventas_has_productosDao
+     */
+     public function getVentas_has_productosDao($dbName);
 
 }
 //That´s all folks!

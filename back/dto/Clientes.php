@@ -5,7 +5,7 @@
               ------------------------
  */
 
-//    They call me Mr. Espagueti  \\
+//    ¡Santos frameworks Batman!  \\
 
 
 class Clientes {
@@ -15,7 +15,6 @@ class Clientes {
   private $DIRECCION_CLIENTES;
   private $FECHANACIMIENTO_CLIENTES;
   private $EMAIL_CLIENTES;
-  private $TIENDA_idTIENDA;
 
     /**
      * Constructor de Clientes
@@ -96,21 +95,6 @@ class Clientes {
      */
   public function setEMAIL_CLIENTES($eMAIL_CLIENTES){
       $this->EMAIL_CLIENTES = $eMAIL_CLIENTES;
-  }
-    /**
-     * Devuelve el valor correspondiente a TIENDA_idTIENDA
-     * @return TIENDA_idTIENDA
-     */
-  public function getTIENDA_idTIENDA(){
-      return $this->TIENDA_idTIENDA;
-  }
-
-    /**
-     * Modifica el valor correspondiente a TIENDA_idTIENDA
-     * @param TIENDA_idTIENDA
-     */
-  public function setTIENDA_idTIENDA($tIENDA_idTIENDA){
-      $this->TIENDA_idTIENDA = $tIENDA_idTIENDA;
   }
 
 

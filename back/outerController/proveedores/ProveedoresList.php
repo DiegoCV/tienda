@@ -5,7 +5,7 @@
               ------------------------
  */
 
-//    Ojos de perro azul  \\
+//    Don´t call me gringo you f%&ing beanner  \\
 include_once realpath('../../innerController/ProveedoresController.php');
 
 $list=ProveedoresController::listAll();
@@ -17,7 +17,6 @@ foreach ($list as $obj => $Proveedores) {
 	$rta.="<td>".$Proveedores->getNOMBREEMPLEADO_PROVEEDORES()."</td>\n";
 	$rta.="<td>".$Proveedores->getDESCUENTO_PROVEEDOR()."</td>\n";
 	$rta.="<td>".$Proveedores->getFECHAINGRESO_PROVEEDORES()."</td>\n";
-	$rta.="<td>".$Proveedores->getTIENDA_idTIENDA()->getidTIENDA()."</td>\n";
 	$rta.="</tr>\n";
 }
 echo $rta;

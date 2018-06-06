@@ -5,13 +5,13 @@
               ------------------------
  */
 
-//    ¿No es más sencillo hacer todo en el Main?  \\
+//    No hay de qué so no más de papa  \\
 
 
 class Categoria {
 
   private $idCATEGORIA;
-  private $DESCRIPCION;
+  private $NOMBRE_CATEGORIA;
 
     /**
      * Constructor de Categoria
@@ -34,19 +34,19 @@ class Categoria {
       $this->idCATEGORIA = $idCATEGORIA;
   }
     /**
-     * Devuelve el valor correspondiente a DESCRIPCION
-     * @return DESCRIPCION
+     * Devuelve el valor correspondiente a NOMBRE_CATEGORIA
+     * @return NOMBRE_CATEGORIA
      */
-  public function getDESCRIPCION(){
-      return $this->DESCRIPCION;
+  public function getNOMBRE_CATEGORIA(){
+      return $this->NOMBRE_CATEGORIA;
   }
 
     /**
-     * Modifica el valor correspondiente a DESCRIPCION
-     * @param DESCRIPCION
+     * Modifica el valor correspondiente a NOMBRE_CATEGORIA
+     * @param NOMBRE_CATEGORIA
      */
-  public function setDESCRIPCION($dESCRIPCION){
-      $this->DESCRIPCION = $dESCRIPCION;
+  public function setNOMBRE_CATEGORIA($nOMBRE_CATEGORIA){
+      $this->NOMBRE_CATEGORIA = $nOMBRE_CATEGORIA;
   }
 
 

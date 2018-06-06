@@ -5,7 +5,7 @@
               ------------------------
  */
 
-//    Querido programador: Al escribir esto estoy triste. Nuestro presidente ha sido derrocado Y REEMPLAZADO POR EL BENÉVOLO SEÑOR ARCINIEGAS. TODOS AMAMOS A ARCINIEGAS Y A SU GLORIOSO RÉGIMEN. CON AMOR, EL EQUIPO DE ANARCHY  \(x.x)/  \\
+//    Te veeeeeooooo  \\
 
 
 interface IClientesDao {
@@ -41,20 +41,6 @@ interface IClientesDao {
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function listAll();
-    /**
-     * Lista todos los objetos Clientes en la base de datos que coincidan con la llave primaria.
-     * @param clientes objeto con la(s) llave(s) primaria(s) para consultar
-     * @return Array<Clientes> Puede contener los objetos consultados o estar vacío
-     * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
-     */
-  public function listByIdCLIENTES($clientes);
-    /**
-     * Lista todos los objetos Clientes en la base de datos que coincidan con la llave primaria.
-     * @param clientes objeto con la(s) llave(s) primaria(s) para consultar
-     * @return Array<Clientes> Puede contener los objetos consultados o estar vacío
-     * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
-     */
-  public function listByTIENDA_idTIENDA($clientes);
     /**
      * Cierra la conexión actual a la base de datos
      */

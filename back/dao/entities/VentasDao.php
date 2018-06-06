@@ -5,11 +5,11 @@
               ------------------------
  */
 
-//    No hay de qué so no más de papa  \\
+//    Bastará decir que soy Juan Pablo Castel, el pintor que mató a María Iribarne...  \\
 
 include_once realpath('../..').'\dao\interfaz\IVentasDao.php';
 include_once realpath('../..').'\dto\Ventas.php';
-include_once realpath('../..').'\dto\Vendedor.php';
+include_once realpath('../..').'\dto\Clientes.php';
 include_once realpath('../..').'\dto\Vendedor.php';
 
 class VentasDao implements IVentasDao{
@@ -32,16 +32,13 @@ private $cn;
   public function insert($ventas){
       $idVENTAS=$ventas->getIdVENTAS();
 $iVA_VENTAS=$ventas->getIVA_VENTAS();
-$iMPUESTOCONSUMO_VENTAS=$ventas->getIMPUESTOCONSUMO_VENTAS();
 $fECHACOMPRA_VENTAS=$ventas->getFECHACOMPRA_VENTAS();
+$cLIENTES_idCLIENTES=$ventas->getCLIENTES_idCLIENTES()->getIdCLIENTES();
 $vENDEDOR_idVENDEDOR=$ventas->getVENDEDOR_idVENDEDOR()->getIdVENDEDOR();
-$vENDEDOR_idVENDEDOR=$ventas->getVENDEDOR_idVENDEDOR()->getTIENDA_idTIENDA();
-$vENDEDOR_TIENDA_idTIENDA=$ventas->getVENDEDOR_TIENDA_idTIENDA()->getIdVENDEDOR();
-$vENDEDOR_TIENDA_idTIENDA=$ventas->getVENDEDOR_TIENDA_idTIENDA()->getTIENDA_idTIENDA();
 
       try {
-          $sql= "INSERT INTO `ventas`( `idVENTAS`, `IVA_VENTAS`, `IMPUESTOCONSUMO_VENTAS`, `FECHACOMPRA_VENTAS`, `VENDEDOR_idVENDEDOR`, `VENDEDOR_TIENDA_idTIENDA`)"
-          ."VALUES ('$idVENTAS','$iVA_VENTAS','$iMPUESTOCONSUMO_VENTAS','$fECHACOMPRA_VENTAS','$vENDEDOR_idVENDEDOR','$vENDEDOR_idVENDEDOR','$vENDEDOR_TIENDA_idTIENDA','$vENDEDOR_TIENDA_idTIENDA')";
+          $sql= "INSERT INTO `ventas`( `idVENTAS`, `IVA_VENTAS`, `FECHACOMPRA_VENTAS`, `CLIENTES_idCLIENTES`, `VENDEDOR_idVENDEDOR`)"
+          ."VALUES ('$idVENTAS','$iVA_VENTAS','$fECHACOMPRA_VENTAS','$cLIENTES_idCLIENTES','$vENDEDOR_idVENDEDOR')";
           return $this->insertarConsulta($sql);
       } catch (SQLException $e) {
           throw new Exception('Primary key is null');
@@ -56,29 +53,22 @@ $vENDEDOR_TIENDA_idTIENDA=$ventas->getVENDEDOR_TIENDA_idTIENDA()->getTIENDA_idTI
      */
   public function select($ventas){
       $idVENTAS=$ventas->getIdVENTAS();
-$vENDEDOR_idVENDEDOR=$ventas->getVENDEDOR_idVENDEDOR()->getIdVENDEDOR();
-$vENDEDOR_idVENDEDOR=$ventas->getVENDEDOR_idVENDEDOR()->getTIENDA_idTIENDA();
-$vENDEDOR_TIENDA_idTIENDA=$ventas->getVENDEDOR_TIENDA_idTIENDA()->getIdVENDEDOR();
-$vENDEDOR_TIENDA_idTIENDA=$ventas->getVENDEDOR_TIENDA_idTIENDA()->getTIENDA_idTIENDA();
 
       try {
-          $sql= "SELECT `idVENTAS`, `IVA_VENTAS`, `IMPUESTOCONSUMO_VENTAS`, `FECHACOMPRA_VENTAS`, `VENDEDOR_idVENDEDOR`, `VENDEDOR_TIENDA_idTIENDA`"
+          $sql= "SELECT `idVENTAS`, `IVA_VENTAS`, `FECHACOMPRA_VENTAS`, `CLIENTES_idCLIENTES`, `VENDEDOR_idVENDEDOR`"
           ."FROM `ventas`"
-          ."WHERE `idVENTAS`='$idVENTAS' AND`VENDEDOR_idVENDEDOR`='$vENDEDOR_idVENDEDOR' AND`VENDEDOR_idVENDEDOR`='$vENDEDOR_idVENDEDOR' AND`VENDEDOR_TIENDA_idTIENDA`='$vENDEDOR_TIENDA_idTIENDA' AND`VENDEDOR_TIENDA_idTIENDA`='$vENDEDOR_TIENDA_idTIENDA'";
+          ."WHERE `idVENTAS`='$idVENTAS'";
           $data = $this->ejecutarConsulta($sql);
           for ($i=0; $i < count($data) ; $i++) {
           $ventas->setIdVENTAS($data[$i]['idVENTAS']);
           $ventas->setIVA_VENTAS($data[$i]['IVA_VENTAS']);
-          $ventas->setIMPUESTOCONSUMO_VENTAS($data[$i]['IMPUESTOCONSUMO_VENTAS']);
           $ventas->setFECHACOMPRA_VENTAS($data[$i]['FECHACOMPRA_VENTAS']);
+           $clientes = new Clientes();
+           $clientes->setIdCLIENTES($data[$i]['CLIENTES_idCLIENTES']);
+           $ventas->setCLIENTES_idCLIENTES($clientes);
            $vendedor = new Vendedor();
            $vendedor->setIdVENDEDOR($data[$i]['VENDEDOR_idVENDEDOR']);
-           $vendedor->setTIENDA_idTIENDA($data[$i]['VENDEDOR_idVENDEDOR']);
            $ventas->setVENDEDOR_idVENDEDOR($vendedor);
-           $vendedor = new Vendedor();
-           $vendedor->setIdVENDEDOR($data[$i]['VENDEDOR_TIENDA_idTIENDA']);
-           $vendedor->setTIENDA_idTIENDA($data[$i]['VENDEDOR_TIENDA_idTIENDA']);
-           $ventas->setVENDEDOR_TIENDA_idTIENDA($vendedor);
 
           }
       return $ventas;      } catch (SQLException $e) {
@@ -96,15 +86,12 @@ $vENDEDOR_TIENDA_idTIENDA=$ventas->getVENDEDOR_TIENDA_idTIENDA()->getTIENDA_idTI
   public function update($ventas){
       $idVENTAS=$ventas->getIdVENTAS();
 $iVA_VENTAS=$ventas->getIVA_VENTAS();
-$iMPUESTOCONSUMO_VENTAS=$ventas->getIMPUESTOCONSUMO_VENTAS();
 $fECHACOMPRA_VENTAS=$ventas->getFECHACOMPRA_VENTAS();
+$cLIENTES_idCLIENTES=$ventas->getCLIENTES_idCLIENTES()->getIdCLIENTES();
 $vENDEDOR_idVENDEDOR=$ventas->getVENDEDOR_idVENDEDOR()->getIdVENDEDOR();
-$vENDEDOR_idVENDEDOR=$ventas->getVENDEDOR_idVENDEDOR()->getTIENDA_idTIENDA();
-$vENDEDOR_TIENDA_idTIENDA=$ventas->getVENDEDOR_TIENDA_idTIENDA()->getIdVENDEDOR();
-$vENDEDOR_TIENDA_idTIENDA=$ventas->getVENDEDOR_TIENDA_idTIENDA()->getTIENDA_idTIENDA();
 
       try {
-          $sql= "UPDATE `ventas` SET`idVENTAS`='$idVENTAS' ,`IVA_VENTAS`='$iVA_VENTAS' ,`IMPUESTOCONSUMO_VENTAS`='$iMPUESTOCONSUMO_VENTAS' ,`FECHACOMPRA_VENTAS`='$fECHACOMPRA_VENTAS' ,`VENDEDOR_idVENDEDOR`='$vENDEDOR_idVENDEDOR' ,`VENDEDOR_idVENDEDOR`='$vENDEDOR_idVENDEDOR' ,`VENDEDOR_TIENDA_idTIENDA`='$vENDEDOR_TIENDA_idTIENDA' ,`VENDEDOR_TIENDA_idTIENDA`='$vENDEDOR_TIENDA_idTIENDA' WHERE `idVENTAS`='$idVENTAS' ,`VENDEDOR_idVENDEDOR`='$vENDEDOR_idVENDEDOR' ,`VENDEDOR_idVENDEDOR`='$vENDEDOR_idVENDEDOR' ,`VENDEDOR_TIENDA_idTIENDA`='$vENDEDOR_TIENDA_idTIENDA' ,`VENDEDOR_TIENDA_idTIENDA`='$vENDEDOR_TIENDA_idTIENDA'";
+          $sql= "UPDATE `ventas` SET`idVENTAS`='$idVENTAS' ,`IVA_VENTAS`='$iVA_VENTAS' ,`FECHACOMPRA_VENTAS`='$fECHACOMPRA_VENTAS' ,`CLIENTES_idCLIENTES`='$cLIENTES_idCLIENTES' ,`VENDEDOR_idVENDEDOR`='$vENDEDOR_idVENDEDOR' WHERE `idVENTAS`='$idVENTAS'";
          return $this->insertarConsulta($sql);
       } catch (SQLException $e) {
           throw new Exception('Primary key is null');
@@ -119,13 +106,9 @@ $vENDEDOR_TIENDA_idTIENDA=$ventas->getVENDEDOR_TIENDA_idTIENDA()->getTIENDA_idTI
      */
   public function delete($ventas){
       $idVENTAS=$ventas->getIdVENTAS();
-$vENDEDOR_idVENDEDOR=$ventas->getVENDEDOR_idVENDEDOR()->getIdVENDEDOR();
-$vENDEDOR_idVENDEDOR=$ventas->getVENDEDOR_idVENDEDOR()->getTIENDA_idTIENDA();
-$vENDEDOR_TIENDA_idTIENDA=$ventas->getVENDEDOR_TIENDA_idTIENDA()->getIdVENDEDOR();
-$vENDEDOR_TIENDA_idTIENDA=$ventas->getVENDEDOR_TIENDA_idTIENDA()->getTIENDA_idTIENDA();
 
       try {
-          $sql ="DELETE FROM `ventas` WHERE `idVENTAS`='$idVENTAS' AND`VENDEDOR_idVENDEDOR`='$vENDEDOR_idVENDEDOR' AND`VENDEDOR_idVENDEDOR`='$vENDEDOR_idVENDEDOR' AND`VENDEDOR_TIENDA_idTIENDA`='$vENDEDOR_TIENDA_idTIENDA' AND`VENDEDOR_TIENDA_idTIENDA`='$vENDEDOR_TIENDA_idTIENDA'";
+          $sql ="DELETE FROM `ventas` WHERE `idVENTAS`='$idVENTAS'";
           return $this->insertarConsulta($sql);
       } catch (SQLException $e) {
           throw new Exception('Primary key is null');
@@ -140,7 +123,7 @@ $vENDEDOR_TIENDA_idTIENDA=$ventas->getVENDEDOR_TIENDA_idTIENDA()->getTIENDA_idTI
   public function listAll(){
       $lista = array();
       try {
-          $sql ="SELECT `idVENTAS`, `IVA_VENTAS`, `IMPUESTOCONSUMO_VENTAS`, `FECHACOMPRA_VENTAS`, `VENDEDOR_idVENDEDOR`, `VENDEDOR_TIENDA_idTIENDA`"
+          $sql ="SELECT `idVENTAS`, `IVA_VENTAS`, `FECHACOMPRA_VENTAS`, `CLIENTES_idCLIENTES`, `VENDEDOR_idVENDEDOR`"
           ."FROM `ventas`"
           ."WHERE 1";
           $data = $this->ejecutarConsulta($sql);
@@ -148,132 +131,13 @@ $vENDEDOR_TIENDA_idTIENDA=$ventas->getVENDEDOR_TIENDA_idTIENDA()->getTIENDA_idTI
               $ventas= new Ventas();
           $ventas->setIdVENTAS($data[$i]['idVENTAS']);
           $ventas->setIVA_VENTAS($data[$i]['IVA_VENTAS']);
-          $ventas->setIMPUESTOCONSUMO_VENTAS($data[$i]['IMPUESTOCONSUMO_VENTAS']);
           $ventas->setFECHACOMPRA_VENTAS($data[$i]['FECHACOMPRA_VENTAS']);
+           $clientes = new Clientes();
+           $clientes->setIdCLIENTES($data[$i]['CLIENTES_idCLIENTES']);
+           $ventas->setCLIENTES_idCLIENTES($clientes);
            $vendedor = new Vendedor();
            $vendedor->setIdVENDEDOR($data[$i]['VENDEDOR_idVENDEDOR']);
-           $vendedor->setTIENDA_idTIENDA($data[$i]['VENDEDOR_idVENDEDOR']);
            $ventas->setVENDEDOR_idVENDEDOR($vendedor);
-           $vendedor = new Vendedor();
-           $vendedor->setIdVENDEDOR($data[$i]['VENDEDOR_TIENDA_idTIENDA']);
-           $vendedor->setTIENDA_idTIENDA($data[$i]['VENDEDOR_TIENDA_idTIENDA']);
-           $ventas->setVENDEDOR_TIENDA_idTIENDA($vendedor);
-
-          array_push($lista,$ventas);
-          }
-      return $lista;
-      } catch (SQLException $e) {
-          throw new Exception('Primary key is null');
-      return null;
-      }
-  }
-
-    /**
-     * Busca un objeto Ventas en la base de datos.
-     * @param ventas objeto con la(s) llave(s) primaria(s) para consultar
-     * @return ArrayList<Ventas> Puede contener los objetos consultados o estar vacío
-     * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
-     */
-  public function listByIdVENTAS($ventas){
-      $lista = array();
-      $idVENTAS=$ventas->getIdVENTAS();
-
-      try {
-          $sql ="SELECT `idVENTAS`, `IVA_VENTAS`, `IMPUESTOCONSUMO_VENTAS`, `FECHACOMPRA_VENTAS`, `VENDEDOR_idVENDEDOR`, `VENDEDOR_TIENDA_idTIENDA`"
-          ."FROM `ventas`"
-          ."WHERE `idVENTAS`='$idVENTAS'";
-          $data = $this->ejecutarConsulta($sql);
-          for ($i=0; $i < count($data) ; $i++) {
-          $ventas->setIdVENTAS($data[$i]['idVENTAS']);
-          $ventas->setIVA_VENTAS($data[$i]['IVA_VENTAS']);
-          $ventas->setIMPUESTOCONSUMO_VENTAS($data[$i]['IMPUESTOCONSUMO_VENTAS']);
-          $ventas->setFECHACOMPRA_VENTAS($data[$i]['FECHACOMPRA_VENTAS']);
-           $vendedor = new Vendedor();
-           $vendedor->setIdVENDEDOR($data[$i]['VENDEDOR_idVENDEDOR']);
-           $vendedor->setTIENDA_idTIENDA($data[$i]['VENDEDOR_idVENDEDOR']);
-           $ventas->setVENDEDOR_idVENDEDOR($vendedor);
-           $vendedor = new Vendedor();
-           $vendedor->setIdVENDEDOR($data[$i]['VENDEDOR_TIENDA_idTIENDA']);
-           $vendedor->setTIENDA_idTIENDA($data[$i]['VENDEDOR_TIENDA_idTIENDA']);
-           $ventas->setVENDEDOR_TIENDA_idTIENDA($vendedor);
-
-          array_push($lista,$ventas);
-          }
-      return $lista;
-      } catch (SQLException $e) {
-          throw new Exception('Primary key is null');
-      return null;
-      }
-  }
-
-    /**
-     * Busca un objeto Ventas en la base de datos.
-     * @param ventas objeto con la(s) llave(s) primaria(s) para consultar
-     * @return ArrayList<Ventas> Puede contener los objetos consultados o estar vacío
-     * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
-     */
-  public function listByVENDEDOR_idVENDEDOR($ventas){
-      $lista = array();
-      $vENDEDOR_idVENDEDOR=$ventas->getVENDEDOR_idVENDEDOR()->getIdVENDEDOR();
-$vENDEDOR_idVENDEDOR=$ventas->getVENDEDOR_idVENDEDOR()->getTIENDA_idTIENDA();
-
-      try {
-          $sql ="SELECT `idVENTAS`, `IVA_VENTAS`, `IMPUESTOCONSUMO_VENTAS`, `FECHACOMPRA_VENTAS`, `VENDEDOR_idVENDEDOR`, `VENDEDOR_TIENDA_idTIENDA`"
-          ."FROM `ventas`"
-          ."WHERE `VENDEDOR_idVENDEDOR`='$vENDEDOR_idVENDEDOR' AND`VENDEDOR_idVENDEDOR`='$vENDEDOR_idVENDEDOR'";
-          $data = $this->ejecutarConsulta($sql);
-          for ($i=0; $i < count($data) ; $i++) {
-          $ventas->setIdVENTAS($data[$i]['idVENTAS']);
-          $ventas->setIVA_VENTAS($data[$i]['IVA_VENTAS']);
-          $ventas->setIMPUESTOCONSUMO_VENTAS($data[$i]['IMPUESTOCONSUMO_VENTAS']);
-          $ventas->setFECHACOMPRA_VENTAS($data[$i]['FECHACOMPRA_VENTAS']);
-           $vendedor = new Vendedor();
-           $vendedor->setIdVENDEDOR($data[$i]['VENDEDOR_idVENDEDOR']);
-           $vendedor->setTIENDA_idTIENDA($data[$i]['VENDEDOR_idVENDEDOR']);
-           $ventas->setVENDEDOR_idVENDEDOR($vendedor);
-           $vendedor = new Vendedor();
-           $vendedor->setIdVENDEDOR($data[$i]['VENDEDOR_TIENDA_idTIENDA']);
-           $vendedor->setTIENDA_idTIENDA($data[$i]['VENDEDOR_TIENDA_idTIENDA']);
-           $ventas->setVENDEDOR_TIENDA_idTIENDA($vendedor);
-
-          array_push($lista,$ventas);
-          }
-      return $lista;
-      } catch (SQLException $e) {
-          throw new Exception('Primary key is null');
-      return null;
-      }
-  }
-
-    /**
-     * Busca un objeto Ventas en la base de datos.
-     * @param ventas objeto con la(s) llave(s) primaria(s) para consultar
-     * @return ArrayList<Ventas> Puede contener los objetos consultados o estar vacío
-     * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
-     */
-  public function listByVENDEDOR_TIENDA_idTIENDA($ventas){
-      $lista = array();
-      $vENDEDOR_TIENDA_idTIENDA=$ventas->getVENDEDOR_TIENDA_idTIENDA()->getIdVENDEDOR();
-$vENDEDOR_TIENDA_idTIENDA=$ventas->getVENDEDOR_TIENDA_idTIENDA()->getTIENDA_idTIENDA();
-
-      try {
-          $sql ="SELECT `idVENTAS`, `IVA_VENTAS`, `IMPUESTOCONSUMO_VENTAS`, `FECHACOMPRA_VENTAS`, `VENDEDOR_idVENDEDOR`, `VENDEDOR_TIENDA_idTIENDA`"
-          ."FROM `ventas`"
-          ."WHERE `VENDEDOR_TIENDA_idTIENDA`='$vENDEDOR_TIENDA_idTIENDA' AND`VENDEDOR_TIENDA_idTIENDA`='$vENDEDOR_TIENDA_idTIENDA'";
-          $data = $this->ejecutarConsulta($sql);
-          for ($i=0; $i < count($data) ; $i++) {
-          $ventas->setIdVENTAS($data[$i]['idVENTAS']);
-          $ventas->setIVA_VENTAS($data[$i]['IVA_VENTAS']);
-          $ventas->setIMPUESTOCONSUMO_VENTAS($data[$i]['IMPUESTOCONSUMO_VENTAS']);
-          $ventas->setFECHACOMPRA_VENTAS($data[$i]['FECHACOMPRA_VENTAS']);
-           $vendedor = new Vendedor();
-           $vendedor->setIdVENDEDOR($data[$i]['VENDEDOR_idVENDEDOR']);
-           $vendedor->setTIENDA_idTIENDA($data[$i]['VENDEDOR_idVENDEDOR']);
-           $ventas->setVENDEDOR_idVENDEDOR($vendedor);
-           $vendedor = new Vendedor();
-           $vendedor->setIdVENDEDOR($data[$i]['VENDEDOR_TIENDA_idTIENDA']);
-           $vendedor->setTIENDA_idTIENDA($data[$i]['VENDEDOR_TIENDA_idTIENDA']);
-           $ventas->setVENDEDOR_TIENDA_idTIENDA($vendedor);
 
           array_push($lista,$ventas);
           }

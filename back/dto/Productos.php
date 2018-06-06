@@ -5,24 +5,23 @@
               ------------------------
  */
 
-//    Por desgracia, mi epitafio será una frase insulsa y vacía  \\
+//    ¿Me ayudas con la tesis?  \\
 
 
 class Productos {
 
   private $idPRODUCTOS;
+  private $PROVEEDORES_idPROVEEDORES;
   private $NOMBRE_PRODUCTO;
   private $UNIDAD_PRODUCTO;
   private $COSTO_PRODUCTO;
+  private $CANTIDAD_PRODUCTO;
   private $PRECIOVENTA_PRODUCTO;
   private $VALORMINIMO_PRODUCTO;
   private $FECHAINGRESO_PRODUCTO;
-  private $CATEGORIA_PRODUCTO;
   private $FECHAVENCIMIENTO_PRODUCTO;
-  private $TIENDA_idTIENDA;
   private $CATEGORIA_idCATEGORIA;
-  private $PROVEEDORES_idPROVEEDORES;
-  private $PROVEEDORES_TIENDA_idTIENDA;
+  private $TIENDA_idTIENDA;
 
     /**
      * Constructor de Productos
@@ -43,6 +42,21 @@ class Productos {
      */
   public function setIdPRODUCTOS($idPRODUCTOS){
       $this->idPRODUCTOS = $idPRODUCTOS;
+  }
+    /**
+     * Devuelve el valor correspondiente a PROVEEDORES_idPROVEEDORES
+     * @return PROVEEDORES_idPROVEEDORES
+     */
+  public function getPROVEEDORES_idPROVEEDORES(){
+      return $this->PROVEEDORES_idPROVEEDORES;
+  }
+
+    /**
+     * Modifica el valor correspondiente a PROVEEDORES_idPROVEEDORES
+     * @param PROVEEDORES_idPROVEEDORES
+     */
+  public function setPROVEEDORES_idPROVEEDORES($pROVEEDORES_idPROVEEDORES){
+      $this->PROVEEDORES_idPROVEEDORES = $pROVEEDORES_idPROVEEDORES;
   }
     /**
      * Devuelve el valor correspondiente a NOMBRE_PRODUCTO
@@ -90,6 +104,21 @@ class Productos {
       $this->COSTO_PRODUCTO = $cOSTO_PRODUCTO;
   }
     /**
+     * Devuelve el valor correspondiente a CANTIDAD_PRODUCTO
+     * @return CANTIDAD_PRODUCTO
+     */
+  public function getCANTIDAD_PRODUCTO(){
+      return $this->CANTIDAD_PRODUCTO;
+  }
+
+    /**
+     * Modifica el valor correspondiente a CANTIDAD_PRODUCTO
+     * @param CANTIDAD_PRODUCTO
+     */
+  public function setCANTIDAD_PRODUCTO($cANTIDAD_PRODUCTO){
+      $this->CANTIDAD_PRODUCTO = $cANTIDAD_PRODUCTO;
+  }
+    /**
      * Devuelve el valor correspondiente a PRECIOVENTA_PRODUCTO
      * @return PRECIOVENTA_PRODUCTO
      */
@@ -135,21 +164,6 @@ class Productos {
       $this->FECHAINGRESO_PRODUCTO = $fECHAINGRESO_PRODUCTO;
   }
     /**
-     * Devuelve el valor correspondiente a CATEGORIA_PRODUCTO
-     * @return CATEGORIA_PRODUCTO
-     */
-  public function getCATEGORIA_PRODUCTO(){
-      return $this->CATEGORIA_PRODUCTO;
-  }
-
-    /**
-     * Modifica el valor correspondiente a CATEGORIA_PRODUCTO
-     * @param CATEGORIA_PRODUCTO
-     */
-  public function setCATEGORIA_PRODUCTO($cATEGORIA_PRODUCTO){
-      $this->CATEGORIA_PRODUCTO = $cATEGORIA_PRODUCTO;
-  }
-    /**
      * Devuelve el valor correspondiente a FECHAVENCIMIENTO_PRODUCTO
      * @return FECHAVENCIMIENTO_PRODUCTO
      */
@@ -163,21 +177,6 @@ class Productos {
      */
   public function setFECHAVENCIMIENTO_PRODUCTO($fECHAVENCIMIENTO_PRODUCTO){
       $this->FECHAVENCIMIENTO_PRODUCTO = $fECHAVENCIMIENTO_PRODUCTO;
-  }
-    /**
-     * Devuelve el valor correspondiente a TIENDA_idTIENDA
-     * @return TIENDA_idTIENDA
-     */
-  public function getTIENDA_idTIENDA(){
-      return $this->TIENDA_idTIENDA;
-  }
-
-    /**
-     * Modifica el valor correspondiente a TIENDA_idTIENDA
-     * @param TIENDA_idTIENDA
-     */
-  public function setTIENDA_idTIENDA($tIENDA_idTIENDA){
-      $this->TIENDA_idTIENDA = $tIENDA_idTIENDA;
   }
     /**
      * Devuelve el valor correspondiente a CATEGORIA_idCATEGORIA
@@ -195,34 +194,19 @@ class Productos {
       $this->CATEGORIA_idCATEGORIA = $cATEGORIA_idCATEGORIA;
   }
     /**
-     * Devuelve el valor correspondiente a PROVEEDORES_idPROVEEDORES
-     * @return PROVEEDORES_idPROVEEDORES
+     * Devuelve el valor correspondiente a TIENDA_idTIENDA
+     * @return TIENDA_idTIENDA
      */
-  public function getPROVEEDORES_idPROVEEDORES(){
-      return $this->PROVEEDORES_idPROVEEDORES;
+  public function getTIENDA_idTIENDA(){
+      return $this->TIENDA_idTIENDA;
   }
 
     /**
-     * Modifica el valor correspondiente a PROVEEDORES_idPROVEEDORES
-     * @param PROVEEDORES_idPROVEEDORES
+     * Modifica el valor correspondiente a TIENDA_idTIENDA
+     * @param TIENDA_idTIENDA
      */
-  public function setPROVEEDORES_idPROVEEDORES($pROVEEDORES_idPROVEEDORES){
-      $this->PROVEEDORES_idPROVEEDORES = $pROVEEDORES_idPROVEEDORES;
-  }
-    /**
-     * Devuelve el valor correspondiente a PROVEEDORES_TIENDA_idTIENDA
-     * @return PROVEEDORES_TIENDA_idTIENDA
-     */
-  public function getPROVEEDORES_TIENDA_idTIENDA(){
-      return $this->PROVEEDORES_TIENDA_idTIENDA;
-  }
-
-    /**
-     * Modifica el valor correspondiente a PROVEEDORES_TIENDA_idTIENDA
-     * @param PROVEEDORES_TIENDA_idTIENDA
-     */
-  public function setPROVEEDORES_TIENDA_idTIENDA($pROVEEDORES_TIENDA_idTIENDA){
-      $this->PROVEEDORES_TIENDA_idTIENDA = $pROVEEDORES_TIENDA_idTIENDA;
+  public function setTIENDA_idTIENDA($tIENDA_idTIENDA){
+      $this->TIENDA_idTIENDA = $tIENDA_idTIENDA;
   }
 
 

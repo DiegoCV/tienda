@@ -5,16 +5,15 @@
               ------------------------
  */
 
-//    Cuenta la leyenda que si gritas 'Soy programador' las nenas caerán a tus pies  \\
+//    Esta es una frase no referenciada  \\
 
 require_once realpath("../..").'\innerController\GlobalController.php';
 require_once realpath("../..").'\dao\interfaz\IFactoryDao.php';
 require_once realpath("../..").'\dto\Productos.php';
 require_once realpath("../..").'\dao\interfaz\IProductosDao.php';
-require_once realpath("../..").'\dto\Tienda.php';
+require_once realpath("../..").'\dto\Proveedores.php';
 require_once realpath("../..").'\dto\Categoria.php';
-require_once realpath("../..").'\dto\Proveedores.php';
-require_once realpath("../..").'\dto\Proveedores.php';
+require_once realpath("../..").'\dto\Tienda.php';
 
 class ProductosController {
 
@@ -36,34 +35,32 @@ class ProductosController {
    * Crea un objeto Productos a partir de sus parámetros y lo guarda en base de datos.
    * Puede recibir NullPointerException desde los métodos del Dao
    * @param idPRODUCTOS
+   * @param pROVEEDORES_idPROVEEDORES
    * @param nOMBRE_PRODUCTO
    * @param uNIDAD_PRODUCTO
    * @param cOSTO_PRODUCTO
+   * @param cANTIDAD_PRODUCTO
    * @param pRECIOVENTA_PRODUCTO
    * @param vALORMINIMO_PRODUCTO
    * @param fECHAINGRESO_PRODUCTO
-   * @param cATEGORIA_PRODUCTO
    * @param fECHAVENCIMIENTO_PRODUCTO
-   * @param tIENDA_idTIENDA
    * @param cATEGORIA_idCATEGORIA
-   * @param pROVEEDORES_idPROVEEDORES
-   * @param pROVEEDORES_TIENDA_idTIENDA
+   * @param tIENDA_idTIENDA
    */
-  public static function insert( $nOMBRE_PRODUCTO,  $uNIDAD_PRODUCTO,  $cOSTO_PRODUCTO,  $pRECIOVENTA_PRODUCTO,  $vALORMINIMO_PRODUCTO,  $fECHAINGRESO_PRODUCTO,  $cATEGORIA_PRODUCTO,  $fECHAVENCIMIENTO_PRODUCTO,  $tIENDA_idTIENDA,  $cATEGORIA_idCATEGORIA,  $pROVEEDORES_idPROVEEDORES,  $pROVEEDORES_TIENDA_idTIENDA){
+  public static function insert( $idPRODUCTOS,  $pROVEEDORES_idPROVEEDORES,  $nOMBRE_PRODUCTO,  $uNIDAD_PRODUCTO,  $cOSTO_PRODUCTO,  $cANTIDAD_PRODUCTO,  $pRECIOVENTA_PRODUCTO,  $vALORMINIMO_PRODUCTO,  $fECHAINGRESO_PRODUCTO,  $fECHAVENCIMIENTO_PRODUCTO,  $cATEGORIA_idCATEGORIA,  $tIENDA_idTIENDA){
       $productos = new Productos();
-   
+      $productos->setIdPRODUCTOS($idPRODUCTOS); 
+      $productos->setPROVEEDORES_idPROVEEDORES($pROVEEDORES_idPROVEEDORES); 
       $productos->setNOMBRE_PRODUCTO($nOMBRE_PRODUCTO); 
       $productos->setUNIDAD_PRODUCTO($uNIDAD_PRODUCTO); 
       $productos->setCOSTO_PRODUCTO($cOSTO_PRODUCTO); 
+      $productos->setCANTIDAD_PRODUCTO($cANTIDAD_PRODUCTO); 
       $productos->setPRECIOVENTA_PRODUCTO($pRECIOVENTA_PRODUCTO); 
       $productos->setVALORMINIMO_PRODUCTO($vALORMINIMO_PRODUCTO); 
       $productos->setFECHAINGRESO_PRODUCTO($fECHAINGRESO_PRODUCTO); 
-      $productos->setCATEGORIA_PRODUCTO($cATEGORIA_PRODUCTO); 
       $productos->setFECHAVENCIMIENTO_PRODUCTO($fECHAVENCIMIENTO_PRODUCTO); 
-      $productos->setTIENDA_idTIENDA($tIENDA_idTIENDA); 
       $productos->setCATEGORIA_idCATEGORIA($cATEGORIA_idCATEGORIA); 
-      $productos->setPROVEEDORES_idPROVEEDORES($pROVEEDORES_idPROVEEDORES); 
-      $productos->setPROVEEDORES_TIENDA_idTIENDA($pROVEEDORES_TIENDA_idTIENDA); 
+      $productos->setTIENDA_idTIENDA($tIENDA_idTIENDA); 
 
      $FactoryDao=new FactoryDao(self::getGestorDefault());
      $productosDao =$FactoryDao->getproductosDao(self::getDataBaseDefault());
@@ -76,19 +73,11 @@ class ProductosController {
    * Selecciona un objeto Productos de la base de datos a partir de su(s) llave(s) primaria(s).
    * Puede recibir NullPointerException desde los métodos del Dao
    * @param idPRODUCTOS
-   * @param tIENDA_idTIENDA
-   * @param cATEGORIA_idCATEGORIA
-   * @param pROVEEDORES_idPROVEEDORES
-   * @param pROVEEDORES_TIENDA_idTIENDA
    * @return El objeto en base de datos o Null
    */
-  public static function select($idPRODUCTOS, $tIENDA_idTIENDA, $cATEGORIA_idCATEGORIA, $pROVEEDORES_idPROVEEDORES, $pROVEEDORES_TIENDA_idTIENDA){
+  public static function select($idPRODUCTOS){
       $productos = new Productos();
       $productos->setIdPRODUCTOS($idPRODUCTOS); 
-      $productos->setTIENDA_idTIENDA($tIENDA_idTIENDA); 
-      $productos->setCATEGORIA_idCATEGORIA($cATEGORIA_idCATEGORIA); 
-      $productos->setPROVEEDORES_idPROVEEDORES($pROVEEDORES_idPROVEEDORES); 
-      $productos->setPROVEEDORES_TIENDA_idTIENDA($pROVEEDORES_TIENDA_idTIENDA); 
 
      $FactoryDao=new FactoryDao(self::getGestorDefault());
      $productosDao =$FactoryDao->getproductosDao(self::getDataBaseDefault());
@@ -101,29 +90,31 @@ class ProductosController {
    * Modifica los atributos de un objeto Productos  ya existente en base de datos.
    * Puede recibir NullPointerException desde los métodos del Dao
    * @param idPRODUCTOS
+   * @param pROVEEDORES_idPROVEEDORES
    * @param nOMBRE_PRODUCTO
    * @param uNIDAD_PRODUCTO
    * @param cOSTO_PRODUCTO
+   * @param cANTIDAD_PRODUCTO
    * @param pRECIOVENTA_PRODUCTO
    * @param vALORMINIMO_PRODUCTO
    * @param fECHAINGRESO_PRODUCTO
-   * @param cATEGORIA_PRODUCTO
    * @param fECHAVENCIMIENTO_PRODUCTO
-   * @param tIENDA_idTIENDA
    * @param cATEGORIA_idCATEGORIA
-   * @param pROVEEDORES_idPROVEEDORES
-   * @param pROVEEDORES_TIENDA_idTIENDA
+   * @param tIENDA_idTIENDA
    */
-  public static function update($idPRODUCTOS, $nOMBRE_PRODUCTO, $uNIDAD_PRODUCTO, $cOSTO_PRODUCTO, $pRECIOVENTA_PRODUCTO, $vALORMINIMO_PRODUCTO, $fECHAINGRESO_PRODUCTO, $cATEGORIA_PRODUCTO, $fECHAVENCIMIENTO_PRODUCTO, $tIENDA_idTIENDA, $cATEGORIA_idCATEGORIA, $pROVEEDORES_idPROVEEDORES, $pROVEEDORES_TIENDA_idTIENDA){
-      $productos = self::select($idPRODUCTOS, $tIENDA_idTIENDA, $cATEGORIA_idCATEGORIA, $pROVEEDORES_idPROVEEDORES, $pROVEEDORES_TIENDA_idTIENDA);
+  public static function update($idPRODUCTOS, $pROVEEDORES_idPROVEEDORES, $nOMBRE_PRODUCTO, $uNIDAD_PRODUCTO, $cOSTO_PRODUCTO, $cANTIDAD_PRODUCTO, $pRECIOVENTA_PRODUCTO, $vALORMINIMO_PRODUCTO, $fECHAINGRESO_PRODUCTO, $fECHAVENCIMIENTO_PRODUCTO, $cATEGORIA_idCATEGORIA, $tIENDA_idTIENDA){
+      $productos = self::select($idPRODUCTOS);
+      $productos->setPROVEEDORES_idPROVEEDORES($pROVEEDORES_idPROVEEDORES); 
       $productos->setNOMBRE_PRODUCTO($nOMBRE_PRODUCTO); 
       $productos->setUNIDAD_PRODUCTO($uNIDAD_PRODUCTO); 
       $productos->setCOSTO_PRODUCTO($cOSTO_PRODUCTO); 
+      $productos->setCANTIDAD_PRODUCTO($cANTIDAD_PRODUCTO); 
       $productos->setPRECIOVENTA_PRODUCTO($pRECIOVENTA_PRODUCTO); 
       $productos->setVALORMINIMO_PRODUCTO($vALORMINIMO_PRODUCTO); 
       $productos->setFECHAINGRESO_PRODUCTO($fECHAINGRESO_PRODUCTO); 
-      $productos->setCATEGORIA_PRODUCTO($cATEGORIA_PRODUCTO); 
       $productos->setFECHAVENCIMIENTO_PRODUCTO($fECHAVENCIMIENTO_PRODUCTO); 
+      $productos->setCATEGORIA_idCATEGORIA($cATEGORIA_idCATEGORIA); 
+      $productos->setTIENDA_idTIENDA($tIENDA_idTIENDA); 
 
      $FactoryDao=new FactoryDao(self::getGestorDefault());
      $productosDao =$FactoryDao->getproductosDao(self::getDataBaseDefault());
@@ -135,18 +126,10 @@ class ProductosController {
    * Elimina un objeto Productos de la base de datos a partir de su(s) llave(s) primaria(s).
    * Puede recibir NullPointerException desde los métodos del Dao
    * @param idPRODUCTOS
-   * @param tIENDA_idTIENDA
-   * @param cATEGORIA_idCATEGORIA
-   * @param pROVEEDORES_idPROVEEDORES
-   * @param pROVEEDORES_TIENDA_idTIENDA
    */
-  public static function delete($idPRODUCTOS, $tIENDA_idTIENDA, $cATEGORIA_idCATEGORIA, $pROVEEDORES_idPROVEEDORES, $pROVEEDORES_TIENDA_idTIENDA){
+  public static function delete($idPRODUCTOS){
       $productos = new Productos();
       $productos->setIdPRODUCTOS($idPRODUCTOS); 
-      $productos->setTIENDA_idTIENDA($tIENDA_idTIENDA); 
-      $productos->setCATEGORIA_idCATEGORIA($cATEGORIA_idCATEGORIA); 
-      $productos->setPROVEEDORES_idPROVEEDORES($pROVEEDORES_idPROVEEDORES); 
-      $productos->setPROVEEDORES_TIENDA_idTIENDA($pROVEEDORES_TIENDA_idTIENDA); 
 
      $FactoryDao=new FactoryDao(self::getGestorDefault());
      $productosDao =$FactoryDao->getproductosDao(self::getDataBaseDefault());
@@ -163,91 +146,6 @@ class ProductosController {
      $FactoryDao=new FactoryDao(self::getGestorDefault());
      $productosDao =$FactoryDao->getproductosDao(self::getDataBaseDefault());
      $result = $productosDao->listAll();
-     $productosDao->close();
-     return $result;
-  }
-
-  /**
-   * Lista todos los objetos Productos de la base de datos a partir de idPRODUCTOS.
-   * Puede recibir NullPointerException desde los métodos del Dao
-   * @param idPRODUCTOS
-   * @return $result Array con los objetos en base de datos o Null
-   */
-  public static function listByIdPRODUCTOS($idPRODUCTOS){
-      $productos = new Productos();
-      $productos->setIdPRODUCTOS($idPRODUCTOS); 
-
-     $FactoryDao=new FactoryDao(self::getGestorDefault());
-     $productosDao =$FactoryDao->getproductosDao(self::getDataBaseDefault());
-     $result = $productosDao->listByIdPRODUCTOS($productos);
-     $productosDao->close();
-     return $result;
-  }
-
-  /**
-   * Lista todos los objetos Productos de la base de datos a partir de TIENDA_idTIENDA.
-   * Puede recibir NullPointerException desde los métodos del Dao
-   * @param tIENDA_idTIENDA
-   * @return $result Array con los objetos en base de datos o Null
-   */
-  public static function listByTIENDA_idTIENDA($tIENDA_idTIENDA){
-      $productos = new Productos();
-      $productos->setTIENDA_idTIENDA($tIENDA_idTIENDA); 
-
-     $FactoryDao=new FactoryDao(self::getGestorDefault());
-     $productosDao =$FactoryDao->getproductosDao(self::getDataBaseDefault());
-     $result = $productosDao->listByTIENDA_idTIENDA($productos);
-     $productosDao->close();
-     return $result;
-  }
-
-  /**
-   * Lista todos los objetos Productos de la base de datos a partir de CATEGORIA_idCATEGORIA.
-   * Puede recibir NullPointerException desde los métodos del Dao
-   * @param cATEGORIA_idCATEGORIA
-   * @return $result Array con los objetos en base de datos o Null
-   */
-  public static function listByCATEGORIA_idCATEGORIA($cATEGORIA_idCATEGORIA){
-      $productos = new Productos();
-      $productos->setCATEGORIA_idCATEGORIA($cATEGORIA_idCATEGORIA); 
-
-     $FactoryDao=new FactoryDao(self::getGestorDefault());
-     $productosDao =$FactoryDao->getproductosDao(self::getDataBaseDefault());
-     $result = $productosDao->listByCATEGORIA_idCATEGORIA($productos);
-     $productosDao->close();
-     return $result;
-  }
-
-  /**
-   * Lista todos los objetos Productos de la base de datos a partir de PROVEEDORES_idPROVEEDORES.
-   * Puede recibir NullPointerException desde los métodos del Dao
-   * @param pROVEEDORES_idPROVEEDORES
-   * @return $result Array con los objetos en base de datos o Null
-   */
-  public static function listByPROVEEDORES_idPROVEEDORES($pROVEEDORES_idPROVEEDORES){
-      $productos = new Productos();
-      $productos->setPROVEEDORES_idPROVEEDORES($pROVEEDORES_idPROVEEDORES); 
-
-     $FactoryDao=new FactoryDao(self::getGestorDefault());
-     $productosDao =$FactoryDao->getproductosDao(self::getDataBaseDefault());
-     $result = $productosDao->listByPROVEEDORES_idPROVEEDORES($productos);
-     $productosDao->close();
-     return $result;
-  }
-
-  /**
-   * Lista todos los objetos Productos de la base de datos a partir de PROVEEDORES_TIENDA_idTIENDA.
-   * Puede recibir NullPointerException desde los métodos del Dao
-   * @param pROVEEDORES_TIENDA_idTIENDA
-   * @return $result Array con los objetos en base de datos o Null
-   */
-  public static function listByPROVEEDORES_TIENDA_idTIENDA($pROVEEDORES_TIENDA_idTIENDA){
-      $productos = new Productos();
-      $productos->setPROVEEDORES_TIENDA_idTIENDA($pROVEEDORES_TIENDA_idTIENDA); 
-
-     $FactoryDao=new FactoryDao(self::getGestorDefault());
-     $productosDao =$FactoryDao->getproductosDao(self::getDataBaseDefault());
-     $result = $productosDao->listByPROVEEDORES_TIENDA_idTIENDA($productos);
      $productosDao->close();
      return $result;
   }

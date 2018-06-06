@@ -5,7 +5,7 @@
               ------------------------
  */
 
-//    Antes que me hubiera apasionado por mujer alguna, jugué mi corazón al azar y me lo ganó la Violencia.  \\
+//    ¿Has escuchado hablar del grandioso señor Arciniegas?  \\
 include_once realpath('../..').'\dao\interfaz\IConexion.php';
 
 class Conexion implements IConexion{

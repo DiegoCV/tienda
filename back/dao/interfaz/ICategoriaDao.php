@@ -5,7 +5,7 @@
               ------------------------
  */
 
-//    404 Frase no encontrada  \\
+//    Has encontrado la frase #1024 ¡Felicidades! Ahora tu proyecto funcionará a la primera  \\
 
 
 interface ICategoriaDao {

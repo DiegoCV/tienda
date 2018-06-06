@@ -5,7 +5,7 @@
               ------------------------
  */
 
-//    ...con el mayor de los disgustos, el benévolo señor Arciniegas.  \\
+//    Cuando Gregorio Samsa se despertó una mañana después de un sueño intranquilo, se encontró sobre su cama convertido en un monstruoso insecto.  \\
 include_once realpath('../../innerController/TiendaController.php');
 
 $list=TiendaController::listAll();
@@ -16,7 +16,8 @@ foreach ($list as $obj => $Tienda) {
 	$rta.="<td>".$Tienda->getNOMBRE_TIENDA()."</td>\n";
 	$rta.="<td>".$Tienda->getDIERECCION_TIENDA()."</td>\n";
 	$rta.="<td>".$Tienda->getNIT_TIENDA()."</td>\n";
-	$rta.="<td>".$Tienda->getREPRESENTATE_TIENDA()."</td>\n";
+	$rta.="<td>".$Tienda->getDIRECCION_TIENDA()."</td>\n";
+	$rta.="<td>".$Tienda->getADMINISTRADOR_idADMINISTRADOR()->getidADMINISTRADOR()."</td>\n";
 	$rta.="</tr>\n";
 }
 echo $rta;

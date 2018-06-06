@@ -5,7 +5,7 @@
               ------------------------
  */
 
-//    Más delgado  \\
+//    Recuerda, cuando enciendas la molotov, debes arrojarla  \\
 include_once realpath('../../innerController/ClientesController.php');
 
 $list=ClientesController::listAll();
@@ -17,7 +17,6 @@ foreach ($list as $obj => $Clientes) {
 	$rta.="<td>".$Clientes->getDIRECCION_CLIENTES()."</td>\n";
 	$rta.="<td>".$Clientes->getFECHANACIMIENTO_CLIENTES()."</td>\n";
 	$rta.="<td>".$Clientes->getEMAIL_CLIENTES()."</td>\n";
-	$rta.="<td>".$Clientes->getTIENDA_idTIENDA()->getidTIENDA()."</td>\n";
 	$rta.="</tr>\n";
 }
 echo $rta;
