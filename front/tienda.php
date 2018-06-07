@@ -30,6 +30,7 @@
                           </div>
                        </div>               
                         <button type="submit" class="btn btn-warning">Ingresar</button>
+                        <a href="javascript:cargaContenido('container','TiendaInsert.html')">Registrar una tienda</a>
                    </form>
                </div><!-- panel-body -->
           </div> <!-- panel -->
@@ -46,7 +47,13 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js "></script>
       <script type="text/javascript">
       	$.post( "../back/outerController/tienda/TiendaListByUsuario.php", function( data ) {
-			  $( "#algo" ).html( data );
+      		if(data != false){
+				$( "#algo" ).html( data );
+      		}else{
+      			$( "#algo" ).html( 'Por favor inserte una tienda' );
+      		}
+      			
+			  
 			});
 
       	$('#tiendaForm').submit(function(e){
@@ -54,6 +61,7 @@
       		var select = $('#tienda').val();
       		//alert(select);
       		$.post( "../back/outerController/administrador/Login2.php" ,{'tienda': select}).done(function(res){
+      			
       			window.location=res;
 
       		});

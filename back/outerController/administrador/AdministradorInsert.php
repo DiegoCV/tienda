@@ -14,6 +14,5 @@ $APELLIDO = $_POST['APELLIDO'];
 $USUARIO = $_POST['USUARIO'];
 $PASS = $_POST['PASS'];
 AdministradorController::insert($idADMINISTRADOR, $NOMBRE, $APELLIDO, $USUARIO, $PASS);
-echo "true";
-
+echo '<script language="javascript">window.location="../../../index.html"</script>';
 //That´s all folks!

@@ -5,7 +5,7 @@
               ------------------------
  */
 
-//    Ella existió sólo en un sueño. Él es un poema que el poeta nunca escribió.  \\
+//    Ella existiÃ³ sÃ³lo en un sueÃ±o. Ã‰l es un poema que el poeta nunca escribiÃ³.  \\
 
 include_once realpath('../..').'\dao\interfaz\ITiendaDao.php';
 include_once realpath('../..').'\dto\Tienda.php';
@@ -16,7 +16,7 @@ class TiendaDao implements ITiendaDao{
 private $cn;
 
     /**
-     * Inicializa una única conexión a la base de datos, que se usará para cada consulta.
+     * Inicializa una Ãºnica conexiÃ³n a la base de datos, que se usarÃ¡ para cada consulta.
      */
     function __construct($conexion) {
             $this->cn =$conexion;
@@ -37,8 +37,8 @@ $dIRECCION_TIENDA=$tienda->getDIRECCION_TIENDA();
 $aDMINISTRADOR_idADMINISTRADOR=$tienda->getADMINISTRADOR_idADMINISTRADOR()->getIdADMINISTRADOR();
 
       try {
-          $sql= "INSERT INTO `tienda`( `idTIENDA`, `NOMBRE_TIENDA`, `DIERECCION_TIENDA`, `NIT_TIENDA`, `DIRECCION_TIENDA`, `ADMINISTRADOR_idADMINISTRADOR`)"
-          ."VALUES ('$idTIENDA','$nOMBRE_TIENDA','$dIERECCION_TIENDA','$nIT_TIENDA','$dIRECCION_TIENDA','$aDMINISTRADOR_idADMINISTRADOR')";
+          $sql= "INSERT INTO `tienda`(`NOMBRE_TIENDA`, `DIERECCION_TIENDA`, `NIT_TIENDA`, `DIRECCION_TIENDA`, `ADMINISTRADOR_idADMINISTRADOR`)"
+          ."VALUES ('$nOMBRE_TIENDA','$dIERECCION_TIENDA','$nIT_TIENDA','$dIRECCION_TIENDA','$aDMINISTRADOR_idADMINISTRADOR')";
           return $this->insertarConsulta($sql);
       } catch (SQLException $e) {
           throw new Exception('Primary key is null');
@@ -78,7 +78,7 @@ $aDMINISTRADOR_idADMINISTRADOR=$tienda->getADMINISTRADOR_idADMINISTRADOR()->getI
 
     /**
      * Modifica un objeto Tienda en la base de datos.
-     * @param tienda objeto con la información a modificar
+     * @param tienda objeto con la informaciÃ³n a modificar
      * @return  Valor de la llave primaria 
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
@@ -117,7 +117,7 @@ $aDMINISTRADOR_idADMINISTRADOR=$tienda->getADMINISTRADOR_idADMINISTRADOR()->getI
 
     /**
      * Busca un objeto Tienda en la base de datos.
-     * @return ArrayList<Tienda> Puede contener los objetos consultados o estar vacío
+     * @return ArrayList<Tienda> Puede contener los objetos consultados o estar vacÃ­o
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function listAll(){
@@ -146,6 +146,7 @@ $aDMINISTRADOR_idADMINISTRADOR=$tienda->getADMINISTRADOR_idADMINISTRADOR()->getI
       return null;
       }
   }
+  
    public function listByUsuario($usuario){
       $lista = array();
       try {
@@ -189,10 +190,10 @@ $aDMINISTRADOR_idADMINISTRADOR=$tienda->getADMINISTRADOR_idADMINISTRADOR()->getI
           return $data;
     }
     /**
-     * Cierra la conexión actual a la base de datos
+     * Cierra la conexiÃ³n actual a la base de datos
      */
   public function close(){
       $cn=null;
   }
 }
-//That´s all folks!
+//ThatÂ´s all folks!
