@@ -22,25 +22,13 @@
 							New category
 						</div>
 						<div class="full-width panel-content">
-							<form>
-								<h5 class="text-condensedLight">Data category</h5>
-								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-									<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="NameCategory">
-									<label class="mdl-textfield__label" for="NameCategory">Name</label>
-									<span class="mdl-textfield__error">Invalid name</span>
-								</div>
-								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-									<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="descriptionCategory">
-									<label class="mdl-textfield__label" for="descriptionCategory">Description</label>
-									<span class="mdl-textfield__error">Invalid description</span>
-								</div>
-								<p class="text-center">
-									<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addCategory">
-										<i class="zmdi zmdi-plus"></i>
-									</button>
-									<div class="mdl-tooltip" for="btn-addCategory">Add category</div>
-								</p>
-							</form>
+							<form role="form" id="CategoriaInsert">
+		                      <div class="form-group">
+		                          <label for="InputNOMBRE_CATEGORIA">NOMBRE_CATEGORIA</label>
+		                          <input type="text" name="NOMBRE_CATEGORIA" class="form-control" id="InputNOMBRE_CATEGORIA" placeholder="NOMBRE_CATEGORIA">
+		                       </div>
+		                        <a href="javascript:preCategoriaInsert('CategoriaInsert')" class="btn btn-warning">Registrar</a>
+		                   </form>
 						</div>
 					</div>
 				</div>
@@ -65,33 +53,8 @@
 									</div>
 								</div>
 							</form>
-							<div class="mdl-list">
-								<div class="mdl-list__item mdl-list__item--two-line">
-									<span class="mdl-list__item-primary-content">
-										<i class="zmdi zmdi-label mdl-list__item-avatar"></i>
-										<span>1. Category Name</span>
-										<span class="mdl-list__item-sub-title">Sub tittle</span>
-									</span>
-									<a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
-								</div>
-								<li class="full-width divider-menu-h"></li>
-								<div class="mdl-list__item mdl-list__item--two-line">
-									<span class="mdl-list__item-primary-content">
-										<i class="zmdi zmdi-label mdl-list__item-avatar"></i>
-										<span>2. Category Name</span>
-										<span class="mdl-list__item-sub-title">Sub tittle</span>
-									</span>
-									<a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
-								</div>
-								<li class="full-width divider-menu-h"></li>
-								<div class="mdl-list__item mdl-list__item--two-line">
-									<span class="mdl-list__item-primary-content">
-										<i class="zmdi zmdi-label mdl-list__item-avatar"></i>
-										<span>3. Category Name</span>
-										<span class="mdl-list__item-sub-title">Sub tittle</span>
-									</span>
-									<a class="mdl-list__item-secondary-action" href="#!"><i class="zmdi zmdi-more"></i></a>
-								</div>
+							<div class="mdl-list" id="cont">
+								
 							</div>
 						</div>
 					</div>
@@ -101,3 +64,8 @@
 		</div>
 	</div>
 </section>
+<script type="text/javascript">
+	$(document).ready(function () {
+		preCategoriaList( 'cont' );
+	});
+</script>

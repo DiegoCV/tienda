@@ -9,16 +9,17 @@
 include_once realpath('../../innerController/VendedorController.php');
 
 $list=VendedorController::listAll();
-$rta="";
+$rta='
+	<div class="mdl-list__item mdl-list__item--two-line">
+		<span class="mdl-list__item-primary-content">
+			<i class="zmdi zmdi-label mdl-list__item-avatar"></i>
+';
+$fin = "";
 foreach ($list as $obj => $Vendedor) {	
-	$rta.="<tr>\n";
-	$rta.="<td>".$Vendedor->getidVENDEDOR()."</td>\n";
-	$rta.="<td>".$Vendedor->getNOMBRE_VENDEDOR()."</td>\n";
-	$rta.="<td>".$Vendedor->getUSUARIO_VENDEDOR()."</td>\n";
-	$rta.="<td>".$Vendedor->getPASS_VENDEDOR()."</td>\n";
-	$rta.="<td>".$Vendedor->getTIENDA_idTIENDA()->getidTIENDA()."</td>\n";
-	$rta.="</tr>\n";
+	$nombre = '<span>'.$Vendedor->getNOMBRE_VENDEDOR().'</span>';
+	$id = '<span class="mdl-list__item-sub-title">'.$Vendedor->getUSUARIO_VENDEDOR().'</span>';
+	$fin .= $rta.$nombre.$id.'</span></div>'; 
 }
-echo $rta;
+echo $fin;
 
 //That´s all folks!

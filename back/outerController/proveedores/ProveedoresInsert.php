@@ -8,7 +8,7 @@
 //    ...con el mayor de los disgustos, el benévolo señor Arciniegas.  \\
 include_once realpath('../../innerController/ProveedoresController.php');
 
-$idPROVEEDORES = $_POST['idPROVEEDORES'];
+$idPROVEEDORES = null;
 $NOMBREEMPRESA_PROVEEDORES = $_POST['NOMBREEMPRESA_PROVEEDORES'];
 $NOMBREEMPLEADO_PROVEEDORES = $_POST['NOMBREEMPLEADO_PROVEEDORES'];
 $DESCUENTO_PROVEEDOR = $_POST['DESCUENTO_PROVEEDOR'];

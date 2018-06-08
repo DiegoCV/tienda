@@ -78,14 +78,14 @@ function preCategoriaInsert(idForm){
 
 function preCategoriaList(container){
      //Solicite información del servidor
-     cargaContenido(container,'CategoriaList.html'); 
+     //cargaContenido(container,'CategoriaList.html'); 
  	enviar("",'../back/outerController/categoria/CategoriaList.php',postCategoriaList); 
 }
 
  function postCategoriaList(result,state){
      //Maneje aquí la respuesta del servidor.
      if(state=="success"){
-        document.getElementById("CategoriaList").innerHTML=result;
+        document.getElementById("cont").innerHTML=result;
      }else{
  		alert("Hubo un errror interno ( u.u)\n"+result);
      }
@@ -258,14 +258,14 @@ function preVendedorInsert(idForm){
 
 function preVendedorList(container){
      //Solicite información del servidor
-     cargaContenido(container,'VendedorList.html'); 
+    // cargaContenido(container,'VendedorList.html'); 
  	enviar("",'../back/outerController/vendedor/VendedorList.php',postVendedorList); 
 }
 
  function postVendedorList(result,state){
      //Maneje aquí la respuesta del servidor.
      if(state=="success"){
-        document.getElementById("VendedorList").innerHTML=result;
+        document.getElementById("cont").innerHTML=result;
      }else{
  		alert("Hubo un errror interno ( u.u)\n"+result);
      }
